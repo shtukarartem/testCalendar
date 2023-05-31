@@ -17,7 +17,7 @@ function App() {
         defaultCurrentDate={currentDate}
         height={900}
         groups={groups}
-        cellDuration={60}
+        cellDuration={61}
         firstDayOfWeek={0}
         startDayHour={8}
         endDayHour={20}>
