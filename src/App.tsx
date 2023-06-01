@@ -5,9 +5,6 @@ import { useEffect } from 'react';
 import { views } from 'src/constants/constants';
 
 import style from './style.module.css';
-
-
-
 import 'devextreme/dist/css/dx.light.css';
 
 import { data, priorityData, resourcesData } from './data';
@@ -24,8 +21,7 @@ const App = () => {
         className={style.wrapper}
         timeZone="Europe/Moscow"
         dataSource={data}
-        dataSource={data}
-        views={views}
+        views={views as any} // eslint-disable-line
         defaultCurrentView="timelineMonth"
         defaultCurrentDate={currentDate}
         height={900}

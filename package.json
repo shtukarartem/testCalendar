@@ -29,13 +29,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "postinstall": "husky install",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx, --fix",
-    "prettier": "prettier --check ."
+    "prettier": "prettier --check .",
+    "prettier:write": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
