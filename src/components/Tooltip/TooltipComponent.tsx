@@ -1,5 +1,6 @@
 import { ISchedulerOptions } from 'devextreme-react/scheduler';
 import React, { FC } from 'react';
+
 import styles from './styles.module.css';
 
 interface Props {

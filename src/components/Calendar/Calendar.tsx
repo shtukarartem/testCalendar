@@ -1,21 +1,23 @@
 import { Scheduler } from 'devextreme-react';
 import { Editing, Resource } from 'devextreme-react/scheduler';
-import { data, priorityData, resourcesData } from '../../data';
-import { TooltipComponent } from '../Tooltip/TooltipComponent';
+
+import { views } from 'src/constants/constants';
+
 import style from './style.module.css';
 
+import { data, priorityData, resourcesData } from '../../data';
+import { TooltipComponent } from '../Tooltip/TooltipComponent';
+
+const currentDate = new Date();
+
 export const Calendar = () => {
-  const views = ['timelineDay', 'timelineWeek', 'timelineMonth'];
-
   const groups = ['priority'];
-  const currentDate = new Date(2021, 1, 2);
-
   return (
     <Scheduler
       className={style.wrapper}
       timeZone="Europe/Moscow"
       dataSource={data}
-      views={views as any}
+      views={views as any} // eslint-disable-line
       defaultCurrentView="timelineMonth"
       defaultCurrentDate={currentDate}
       appointmentTooltipComponent={(data) => (
