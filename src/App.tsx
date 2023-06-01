@@ -24,7 +24,7 @@ const App = () => {
         className={style.wrapper}
         timeZone="Europe/Moscow"
         dataSource={data}
-        views={views as any} // eslint-disable-line
+        views={views}
         defaultCurrentView="timelineMonth"
         defaultCurrentDate={currentDate}
         height={900}
