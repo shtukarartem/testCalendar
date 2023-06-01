@@ -5,6 +5,9 @@ import { useEffect } from 'react';
 import { views } from 'src/constants/constants';
 
 import style from './style.module.css';
+
+
+
 import 'devextreme/dist/css/dx.light.css';
 
 import { data, priorityData, resourcesData } from './data';
