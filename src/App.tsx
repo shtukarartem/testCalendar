@@ -1,11 +1,11 @@
-import "devextreme/dist/css/dx.light.css"
-import Scheduler, { Resource } from "devextreme-react/scheduler"
-import { data, priorityData, resourcesData } from "./data"
-import style from "./style.module.css"
-import { views } from "./constants/constants"
+import 'devextreme/dist/css/dx.light.css';
+import Scheduler, { Resource } from 'devextreme-react/scheduler';
+import { data, priorityData, resourcesData } from './data';
+import style from './style.module.css';
+import { views } from 'src/constants/constants';
 
-const groups = ["priority"]
-const currentDate = new Date(2021, 1, 2)
+const groups = ['priority'];
+const currentDate = new Date(2021, 1, 2);
 function App() {
   return (
     <div className={style.container}>
@@ -23,11 +23,22 @@ function App() {
         startDayHour={8}
         endDayHour={20}
       >
-        <Resource fieldExpr="ownerId" allowMultiple={true} dataSource={resourcesData} label="Owner" useColorAsDefault={true} />
-        <Resource fieldExpr="priority" allowMultiple={false} dataSource={priorityData} label="Priority" />
+        <Resource
+          fieldExpr="ownerId"
+          allowMultiple={true}
+          dataSource={resourcesData}
+          label="Owner"
+          useColorAsDefault={true}
+        />
+        <Resource
+          fieldExpr="priority"
+          allowMultiple={false}
+          dataSource={priorityData}
+          label="Priority"
+        />
       </Scheduler>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
