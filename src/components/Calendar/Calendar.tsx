@@ -6,9 +6,11 @@ import dayjs from 'dayjs';
 import { views } from 'src/constants/constants';
 import { data, priorityData, resourcesData } from '../../data';
 import { TooltipComponent } from '../Tooltip/TooltipComponent';
-import style from './style.module.css';
 import { Header } from '../Header/Header';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
+import style from './style.module.css'
+
+
 
 export const Calendar = () => {
   const groups = ['priority'];
@@ -48,7 +50,7 @@ export const Calendar = () => {
       className={style.wrapper}
       timeZone="Europe/Moscow"
       dataSource={data}
-      views={views as any}
+      views={views as any} // eslint-disable-line
       defaultCurrentView="timelineMonth"
       currentDate={currentDate.toDate()}
       appointmentTooltipComponent={(data) => (
