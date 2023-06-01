@@ -24,6 +24,7 @@ const App = () => {
         className={style.wrapper}
         timeZone="Europe/Moscow"
         dataSource={data}
+        dataSource={data}
         views={views}
         defaultCurrentView="timelineMonth"
         defaultCurrentDate={currentDate}
