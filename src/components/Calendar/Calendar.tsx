@@ -1,7 +1,5 @@
-import { Popup, Scheduler } from 'devextreme-react'
+import { Scheduler } from 'devextreme-react'
 import { Editing, Resource } from 'devextreme-react/scheduler'
-import { AppointmentFormOpeningEvent } from 'devextreme/ui/scheduler';
-
 import { data, priorityData, resourcesData } from '../../data'
 import { TooltipComponent } from '../Tooltip/TooltipComponent'
 import style from './style.module.css';

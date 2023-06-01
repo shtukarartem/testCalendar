@@ -3,15 +3,18 @@ export const resourcesData = [
     text: 'Samantha Bright',
     id: 1,
     color: '#cb6bb2',
-  }, {
+  },
+  {
     text: 'John Heart',
     id: 2,
     color: '#56ca85',
-  }, {
+  },
+  {
     text: 'Todd Hoffman',
     id: 3,
     color: '#1e90ff',
-  }, {
+  },
+  {
     text: 'Sandra Johnson',
     id: 4,
     color: '#ff9747',
@@ -23,7 +26,8 @@ export const priorityData = [
     text: 'Low Priority',
     id: 1,
     color: '#1e90ff',
-  }, {
+  },
+  {
     text: 'High Priority',
     id: 2,
     color: '#ff9747',
@@ -31,18 +35,18 @@ export const priorityData = [
   {
     text: 'tesst2',
     id: 4,
-    color: '#fff'
+    color: '#fff',
   },
   {
     text: 'tesst3',
     id: 5,
-    color: '#fff'
+    color: '#fff',
   },
   {
     text: 'tesst4',
     id: 6,
-    color: '#fff'
-  }
+    color: '#fff',
+  },
 ];
 
 export const data = [{
