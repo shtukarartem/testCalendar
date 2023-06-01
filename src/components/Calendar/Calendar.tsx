@@ -1,28 +1,60 @@
 import { Scheduler } from 'devextreme-react';
-import { Editing, Resource } from 'devextreme-react/scheduler';
+import { Editing, Resource, View } from 'devextreme-react/scheduler';
+import dxScheduler from 'devextreme/ui/scheduler';
+import { useState } from 'react';
+import dayjs from 'dayjs';
+import { views } from 'src/constants/constants';
 import { data, priorityData, resourcesData } from '../../data';
 import { TooltipComponent } from '../Tooltip/TooltipComponent';
 import style from './style.module.css';
+import { Header } from '../Header/Header';
+import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 
 export const Calendar = () => {
-  const views = ['timelineDay', 'timelineWeek', 'timelineMonth'];
-
   const groups = ['priority'];
-  const currentDate = new Date(2021, 1, 2);
-
+  const [currentDate, setCurrentDate] = useState(dayjs(new Date(2021, 1, 2)))
+  const [currentView, setCurrentView] = useState<string>('Месяц')
+  const handleAddDate = () => {
+    switch (currentView) {
+      case 'Месяц' :
+        setCurrentDate(currentDate.add(1, 'month'));
+        break;
+      case 'Неделя':
+        setCurrentDate(currentDate.add(7, 'day'));
+        break;
+      case 'День':
+        setCurrentDate(currentDate.add(1, 'day'));
+        break;
+    }
+  }
+  const handleSubtractDate = () => {
+    switch (currentView) {
+      case 'Месяц' :
+        setCurrentDate(currentDate.subtract(1, 'month'));
+        break;
+      case 'Неделя':
+        setCurrentDate(currentDate.subtract(7, 'day'));
+        break;
+      case 'День':
+        setCurrentDate(currentDate.subtract(1, 'day'));
+        break;
+    }
+  }
   return (
-    <Scheduler
+<>
+<Header handleAddDate={handleAddDate} handleSubtractDate={handleSubtractDate}/>
+<button onClick={() => setCurrentDate(currentDate.add(7, 'day'))} type='button'> today </button>
+<Scheduler
       className={style.wrapper}
       timeZone="Europe/Moscow"
       dataSource={data}
       views={views as any}
       defaultCurrentView="timelineMonth"
-      defaultCurrentDate={currentDate}
+      currentDate={currentDate.toDate()}
       appointmentTooltipComponent={(data) => (
         <TooltipComponent data={data.data.appointmentData} />
       )}
-      // onAppointmentFormOpening={(e: AppointmentFormOpeningEvent) => console.log()}
-      // onAppointmentClick={() => false}
+      onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {if(e.name === 'currentView') setCurrentView(e.value)}}
       height={900}
       groups={groups}
       cellDuration={60}
@@ -30,6 +62,9 @@ export const Calendar = () => {
       startDayHour={8}
       endDayHour={20}
     >
+      <View 
+      
+      />
       <Resource
         fieldExpr="ownerId"
         allowMultiple={true}
@@ -50,5 +85,6 @@ export const Calendar = () => {
         allowUpdating={false}
       />
     </Scheduler>
+</>
   );
 };
