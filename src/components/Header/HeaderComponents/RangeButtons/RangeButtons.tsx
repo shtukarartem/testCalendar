@@ -14,9 +14,8 @@ export const RangeButtons: FC<Props> = ({
 }) => {
   const ads = '<';
   return (
-    <>
+    <div className={styles.wrapper}>
       <Button
-        sx={{ color: '#C9C5CA', borderColor: '#C9C5CA' }}
         variant="outlined"
         className={styles.button}
         onClick={handleSubtractDate}
@@ -24,13 +23,12 @@ export const RangeButtons: FC<Props> = ({
         {ads}
       </Button>
       <Button
-        sx={{ color: '#C9C5CA', borderColor: '#C9C5CA' }}
         variant="outlined"
         className={styles.button}
         onClick={handleAddDate}
       >
         {'>'}
       </Button>
-    </>
+    </div>
   );
 };

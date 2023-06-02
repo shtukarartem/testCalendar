@@ -1,5 +1,6 @@
-import { RangeButtons } from './RangeButtons';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { RangeButtons } from './RangeButtons';
 
 export default {
   title: 'Components/Header/RangeButtons',

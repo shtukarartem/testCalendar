@@ -3,8 +3,10 @@ import { Scheduler } from 'devextreme-react';
 import { Editing, Resource, View } from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler from 'devextreme/ui/scheduler';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 
+import { Header } from 'src/components/Header/Header';
+import { Room } from 'src/components/Room/Room';
 import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
 import { views } from 'src/constants/constants';
 import { data, resourcesData, roomsData } from 'src/data';
@@ -12,9 +14,7 @@ import { handleAddDate, handleSubtractDate } from 'src/utils/utils';
 
 import style from './style.module.css';
 
-import { Header } from '../Header/Header';
-
-export const Calendar = () => {
+export const Calendar: FC = () => {
   const groups = ['rooms'];
   const [currentDate, setCurrentDate] = useState(dayjs(new Date(2021, 1, 2)));
   const [currentView, setCurrentView] = useState<string>('Месяц');
@@ -34,8 +34,7 @@ export const Calendar = () => {
         onClick={() => setCurrentDate(currentDate.add(7, 'day'))}
         type="button"
       >
-        {' '}
-        today{' '}
+        today
       </button>
       <Scheduler
         className={style.wrapper}
@@ -56,6 +55,7 @@ export const Calendar = () => {
         firstDayOfWeek={0}
         startDayHour={8}
         endDayHour={20}
+        resourceCellComponent={(data) => <Room data={data.data.data} />}
       >
         <View />
         <Resource
@@ -69,7 +69,7 @@ export const Calendar = () => {
           fieldExpr="rooms"
           allowMultiple={false}
           dataSource={roomsData}
-          label="rooms"
+          label="Rooms"
         />
         <Editing
           allowDragging={false}
