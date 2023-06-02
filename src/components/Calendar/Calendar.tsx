@@ -1,43 +1,58 @@
 import dayjs from 'dayjs';
 import { Scheduler } from 'devextreme-react';
-import { Editing, Resource, View } from 'devextreme-react/scheduler';
+import { Editing, Resource } from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler from 'devextreme/ui/scheduler';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { views } from 'src/constants/constants';
+import { Header } from 'src/components/Header/Header';
+import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
+import { data, priorityData, resourcesData } from 'src/data';
+import {
+  handldleCheckView,
+  handleAddDate,
+  handleSubtractDate,
+} from 'src/utils/utils';
 
 import style from './style.module.css';
-
-import { data, priorityData, resourcesData } from '../../data';
-import { Header } from '../Header/Header';
-import { TooltipComponent } from '../Tooltip/TooltipComponent';
-import { handleAddDate, handleSubtractDate } from 'src/utils/utils';
 
 export const Calendar = () => {
   const groups = ['priority'];
   const [currentDate, setCurrentDate] = useState(dayjs(new Date(2021, 1, 2)));
-  const [currentView, setCurrentView] = useState<string>('Месяц');
- 
-
+  const [currentView, setCurrentView] = useState<{
+    type: string;
+    intervalCount?: number;
+  }>({ type: 'timelineMonth' });
+  const [selectedView, setSelectedView] = useState<string>(currentView.type);
+  useEffect(() => {
+    setCurrentView(handldleCheckView(selectedView) ?? currentView);
+  }, [selectedView]);
   return (
     <>
       <Header
-        handleAddDate={() => setCurrentDate(handleAddDate(currentView, currentDate) ?? currentDate)}
-        handleSubtractDate={() => setCurrentDate(handleSubtractDate(currentView, currentDate) ?? currentDate)}
+        selectViewValue={selectedView}
+        handleAddDate={() =>
+          setCurrentDate(
+            handleAddDate(selectedView, currentDate) ?? currentDate
+          )
+        }
+        handleSubtractDate={() =>
+          setCurrentDate(
+            handleSubtractDate(selectedView, currentDate) ?? currentDate
+          )
+        }
+        handleViewsChange={(value) => setSelectedView(value)}
       />
-      <button
-        onClick={() => setCurrentDate(currentDate.add(7, 'day'))}
-        type="button"
-      >
+      <button onClick={() => setCurrentDate(dayjs())} type="button">
         {' '}
         today{' '}
       </button>
       <Scheduler
+        currentView={currentView.type as any}
         className={style.wrapper}
         timeZone="Europe/Moscow"
         dataSource={data}
-        views={views as any} // eslint-disable-line
+        views={[currentView] as any} // eslint-disable-line
         defaultCurrentView="timelineMonth"
         currentDate={currentDate.toDate()}
         appointmentTooltipComponent={(data) => (
@@ -53,7 +68,6 @@ export const Calendar = () => {
         startDayHour={8}
         endDayHour={20}
       >
-        <View />
         <Resource
           fieldExpr="ownerId"
           allowMultiple={true}
