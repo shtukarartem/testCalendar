@@ -6,10 +6,24 @@
   max-height: 450px !important;
   height: 400px !important;
 }
+
 .wrapper
   :global
   .dx-scheduler-appointment-tooltip-wrapper
   > div.dx-overlay-content {
   max-height: 450px !important;
   height: 400px !important;
+}
+
+.wrapper
+  :global
+  .dx-scheduler-group-flex-container
+  .dx-scheduler-group-row:last-child
+  .dx-scheduler-group-header {
+  width: 12.5rem;
+}
+
+.wrapper :global .dx-scheduler-group-header-content {
+  font-size: 0.875rem;
+  font-weight: 500;
 }

@@ -1,17 +1,16 @@
 import { Scheduler } from 'devextreme-react';
 import { Editing, Resource } from 'devextreme-react/scheduler';
 
+import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
 import { views } from 'src/constants/constants';
+import { data, resourcesData, roomsData } from 'src/data';
 
 import style from './style.module.css';
-
-import { data, priorityData, resourcesData } from '../../data';
-import { TooltipComponent } from '../Tooltip/TooltipComponent';
 
 const currentDate = new Date();
 
 export const Calendar = () => {
-  const groups = ['priority'];
+  const groups = ['rooms'];
   return (
     <Scheduler
       className={style.wrapper}
@@ -40,12 +39,12 @@ export const Calendar = () => {
         useColorAsDefault={true}
       />
       <Resource
-        fieldExpr="priority"
+        fieldExpr="rooms"
         allowMultiple={false}
-        dataSource={priorityData}
-        label="Priority"
+        dataSource={roomsData}
+        label="rooms"
+        valueExpr="csdcs"
       />
-
       <Editing
         allowDragging={false}
         allowResizing={false}

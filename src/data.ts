@@ -21,30 +21,35 @@ export const resourcesData = [
   },
 ];
 
-export const priorityData = [
+export const roomsData = [
   {
-    text: 'Low Priority',
+    text: 'Рабочее место 1',
     id: 1,
     color: '#1e90ff',
   },
   {
-    text: 'High Priority',
+    text: 'Рабочее место 2',
     id: 2,
     color: '#ff9747',
   },
   {
-    text: 'tesst2',
+    text: 'Офис 1',
     id: 4,
     color: '#fff',
   },
   {
-    text: 'tesst3',
+    text: 'Офис 2',
     id: 5,
     color: '#fff',
   },
   {
-    text: 'tesst4',
+    text: 'Переговорная 1',
     id: 6,
+    color: '#fff',
+  },
+  {
+    text: 'Переговорная 2',
+    id: 7,
     color: '#fff',
   },
 ];
