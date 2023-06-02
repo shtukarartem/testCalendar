@@ -1,11 +1,12 @@
 import { FC } from 'react';
 
 import { changeViewOptions } from 'src/constants/constants';
+import { SelectComponent } from 'src/components/Select/Select';
 
-import { Select } from '..';
+
 import { RangeButtons } from './HeaderComponents/RangeButtons/RangeButtons';
 
-interface Props {
+type Props = {
   handleAddDate: () => void;
   handleSubtractDate: () => void;
   handleViewsChange: (value: string) => void;
@@ -23,7 +24,7 @@ export const Header: FC<Props> = ({
       handleAddDate={handleAddDate}
       handleSubtractDate={handleSubtractDate}
     />
-    <Select
+    <SelectComponent
       sx={{ height: '32px', fontSize: '14px' }}
       value={selectViewValue}
       label="asdsadasdasd"

@@ -3,7 +3,7 @@ import { Scheduler } from 'devextreme-react';
 import { Editing, Resource } from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler from 'devextreme/ui/scheduler';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { Header } from 'src/components/Header/Header';
 import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
@@ -16,7 +16,7 @@ import {
 
 import style from './style.module.css';
 
-export const Calendar = () => {
+export const Calendar: FC = () => {
   const groups = ['priority'];
   const [currentDate, setCurrentDate] = useState(dayjs(new Date(2021, 1, 2)));
   const [currentView, setCurrentView] = useState<{
@@ -44,8 +44,7 @@ export const Calendar = () => {
         handleViewsChange={(value) => setSelectedView(value)}
       />
       <button onClick={() => setCurrentDate(dayjs())} type="button">
-        {' '}
-        today{' '}
+        today
       </button>
       <Scheduler
         currentView={currentView.type as any}

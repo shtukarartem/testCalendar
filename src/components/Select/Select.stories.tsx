@@ -1,8 +1,9 @@
 import { StoryObj } from '@storybook/react';
 
 import { SelectOptions } from 'src/types/types';
+import { SelectComponent } from './Select';
 
-import { Select } from '..';
+
 
 const options: SelectOptions[] = [
   {
@@ -19,17 +20,17 @@ const options: SelectOptions[] = [
   },
 ];
 
-type Story = StoryObj<typeof Select>;
+type Story = StoryObj<typeof SelectComponent>;
 
 export default {
-  component: Select,
+  component: SelectComponent,
 };
 
-export const SelectComponent: Story = {
+export const SelectStoryComponent: Story = {
   args: {
     value: '',
     options: options,
-    handleChange: (value) => console.log(value),
+    handleChange: (value:string) => console.log(value),
     label: 'default',
   },
 };
