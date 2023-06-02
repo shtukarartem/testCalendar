@@ -1,6 +1,5 @@
 {
   "trailingComma": "es5",
-  "printWidth": 80,
   "singleQuote": true,
   "importOrder": [
     "^dayjs/locale/(.*)$",

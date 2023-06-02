@@ -1,28 +1,32 @@
 :root {
-	--neutral-sec-30: #49454f;
+  --neutral-sec-30: #49454f;
+  --neutral-sec-50: #79747e;
+
+  --yellow-40: #daa104;
+
+  --red-40: #ff8686;
+
+  --cyan-40: #0ebdba;
 }
 
 * {
-	box-sizing: border-box;
-
-	--filter-blue-color: brightness(0) saturate(100%) invert(38%) sepia(53%) saturate(5000%) hue-rotate(228deg) brightness(101%) contrast(111%);
-	--filter-black-color: brightness(0) saturate(100%) invert(9%) sepia(8%) saturate(678%) hue-rotate(214deg) brightness(101%) contrast(96%);
+  box-sizing: border-box;
 }
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	--webkit-overflow-scrolling: touch;
+  --webkit-overflow-scrolling: touch;
 }
 
 ul,
 li {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
 }
 
 h1,
@@ -31,22 +35,10 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-	text-decoration: none;
-}
-
-@media (max-height: 767px) {
-	html {
-		font-size: 15px;
-	}
-}
-
-@media (max-height: 656px) {
-	html {
-		font-size: 14px;
-	}
+  text-decoration: none;
 }
