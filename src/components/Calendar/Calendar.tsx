@@ -12,42 +12,19 @@ import style from './style.module.css';
 import { data, priorityData, resourcesData } from '../../data';
 import { Header } from '../Header/Header';
 import { TooltipComponent } from '../Tooltip/TooltipComponent';
+import { handleAddDate, handleSubtractDate } from 'src/utils/utils';
 
 export const Calendar = () => {
   const groups = ['priority'];
   const [currentDate, setCurrentDate] = useState(dayjs(new Date(2021, 1, 2)));
   const [currentView, setCurrentView] = useState<string>('Месяц');
-  const handleAddDate = () => {
-    switch (currentView) {
-      case 'Месяц':
-        setCurrentDate(currentDate.add(1, 'month'));
-        break;
-      case 'Неделя':
-        setCurrentDate(currentDate.add(7, 'day'));
-        break;
-      case 'День':
-        setCurrentDate(currentDate.add(1, 'day'));
-        break;
-    }
-  };
-  const handleSubtractDate = () => {
-    switch (currentView) {
-      case 'Месяц':
-        setCurrentDate(currentDate.subtract(1, 'month'));
-        break;
-      case 'Неделя':
-        setCurrentDate(currentDate.subtract(7, 'day'));
-        break;
-      case 'День':
-        setCurrentDate(currentDate.subtract(1, 'day'));
-        break;
-    }
-  };
+ 
+
   return (
     <>
       <Header
-        handleAddDate={handleAddDate}
-        handleSubtractDate={handleSubtractDate}
+        handleAddDate={() => setCurrentDate(handleAddDate(currentView, currentDate) ?? currentDate)}
+        handleSubtractDate={() => setCurrentDate(handleSubtractDate(currentView, currentDate) ?? currentDate)}
       />
       <button
         onClick={() => setCurrentDate(currentDate.add(7, 'day'))}
