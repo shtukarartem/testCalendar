@@ -1,21 +1,21 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { RangeButtons } from './RangeButtons';
 
-export default {
-  title: 'Components/Header/RangeButtons',
+type Story = StoryObj<typeof RangeButtons>;
+
+const meta: Meta<typeof RangeButtons> = {
   component: RangeButtons,
-} as ComponentMeta<typeof RangeButtons>;
+};
 
-export const RangeButtonsComponent: ComponentStory<typeof RangeButtons> = (
-  args
-) => <RangeButtons {...args} />;
-
-RangeButtonsComponent.args = {
-  handleAddDate: () => {
-    console.log();
-  },
-  handleSubtractDate: () => {
-    console.log();
+export const RangeButtonsComponent: Story = {
+  args: {
+    handleAddDate: () => {
+      console.log('adsadsadasadsadasd');
+    },
+    handleSubtractDate: () => {
+      console.log();
+    },
   },
 };
+export default meta;

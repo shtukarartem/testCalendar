@@ -3,10 +3,10 @@ import { FC } from 'react';
 
 import styles from './styles.module.css';
 
-interface Props {
+type Props = {
   handleAddDate: () => void;
   handleSubtractDate: () => void;
-}
+};
 
 export const RangeButtons: FC<Props> = ({
   handleAddDate,

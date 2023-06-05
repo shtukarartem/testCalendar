@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { FC } from 'react';
 
-import { RoomType } from 'src/types';
+import { RoomType } from 'src/types/types';
 
 import styles from './styles.module.css';
 
