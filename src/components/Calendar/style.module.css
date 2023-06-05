@@ -1,18 +1,18 @@
 .wrapper :global .dx-scheduler-cell-sizes-horizontal {
-  width: 50px;
+  width: 3.125rem;
 }
 
 .wrapper :global .dx-tooltip-wrapper .dx-overlay-content .dx-popup-content {
-  max-height: 450px !important;
-  height: 400px !important;
+  max-height: 28.125rem !important;
+  height: 25rem !important;
 }
 
 .wrapper
   :global
   .dx-scheduler-appointment-tooltip-wrapper
   > div.dx-overlay-content {
-  max-height: 450px !important;
-  height: 400px !important;
+  max-height: 28.125rem !important;
+  height: 25rem !important;
 }
 
 .wrapper
