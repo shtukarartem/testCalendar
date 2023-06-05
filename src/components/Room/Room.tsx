@@ -26,7 +26,6 @@ export const Room: FC<Props> = (props) => {
   return (
     <div>
       <div className={styles.room}>
-        <div className={styles.point}></div>
         <div className={classNames(styles.point, roomVariants[type])}></div>
         <span>{room}</span>
       </div>
