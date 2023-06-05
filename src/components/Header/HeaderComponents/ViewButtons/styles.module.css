@@ -1,0 +1,14 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+}
+.button {
+  width: 40px;
+  height: 20px;
+  font-size: 14px;
+}
+.wrapper :global .MuiButton-root {
+  border: 1px solid #c9c5ca;
+  color: #c9c5ca;
+}

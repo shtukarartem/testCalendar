@@ -47,18 +47,18 @@ export const handleSubtractDate = (
 export const handldleCheckView = (selectedView: string) => {
   switch (selectedView) {
     case 'timelineDay':
-      return { type: 'timelineDay' };
+      return { type: 'timelineDay', intervalCount: 1 };
     case 'twoDays':
       return { type: 'timelineDay', intervalCount: 2 };
     case 'threeDays':
       return { type: 'timelineDay', intervalCount: 3 };
     case 'timelineWeek':
-      return { type: 'timelineWeek' };
+      return { type: 'timelineWeek', intervalCount: 1 };
     case 'threeWeeks':
       return { type: 'timelineWeek', intervalCount: 3 };
     case 'twoWeeks':
       return { type: 'timelineWeek', intervalCount: 2 };
     case 'timelineMonth':
-      return { type: 'timelineMonth' };
+      return { type: 'timelineMonth'};
   }
 };
