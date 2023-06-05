@@ -34,12 +34,12 @@ export const Calendar: FC = () => {
         selectViewValue={selectedView}
         handleAddDate={() =>
           setCurrentDate(
-            handleAddDate(currentView.type, currentDate) ?? currentDate
+            handleAddDate(selectedView, currentDate) ?? currentDate
           )
         }
         handleSubtractDate={() =>
           setCurrentDate(
-            handleSubtractDate(currentView.type, currentDate) ?? currentDate
+            handleSubtractDate(selectedView, currentDate) ?? currentDate
           )
         }
         handleViewsChange={(value) => setSelectedView(value)}
@@ -48,7 +48,7 @@ export const Calendar: FC = () => {
         today
       </button>
       <Scheduler
-        currentView={currentView.type as any}
+        currentView={currentView.type as any} // eslint-disable-line
         className={style.wrapper}
         timeZone="Europe/Moscow"
         dataSource={data}
