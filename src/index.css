@@ -2,11 +2,20 @@
   --neutral-sec-30: #49454f;
   --neutral-sec-50: #79747e;
 
+  --neutral-10: #1c1b1f;
+  --neutral-80: #c9c5ca;
+
   --yellow-40: #daa104;
 
   --red-40: #ff8686;
 
   --cyan-40: #0ebdba;
+
+  --white-transp-100: #fff;
+
+  --electric-blue-10: #f7f7ff;
+  --electric-blue-60: #5c5cff;
+  --electric-blue-70: #3737ff;
 }
 
 * {

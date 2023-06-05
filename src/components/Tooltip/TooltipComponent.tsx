@@ -7,7 +7,9 @@ interface Props {
   data: React.PropsWithChildren<ISchedulerOptions>;
 }
 
-export const TooltipComponent: FC<Props> = ({ data }: any) => (
+export const TooltipComponent: FC<Props> = (
+  { data }: any // eslint-disable-line
+) => (
   <div className={styles.wrapper}>
     <div className={styles.fio}> {data.text}</div>
     <div className={styles.data}>

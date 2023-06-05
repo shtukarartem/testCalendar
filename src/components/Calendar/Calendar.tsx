@@ -27,7 +27,7 @@ export const Calendar: FC = () => {
   const [selectedView, setSelectedView] = useState<string>(currentView.type);
   useEffect(() => {
     setCurrentView(handldleCheckView(selectedView) ?? currentView);
-  }, [selectedView]);
+  }, [selectedView]); // eslint-disable-line
   return (
     <>
       <Header
