@@ -6,8 +6,9 @@ import dxScheduler from 'devextreme/ui/scheduler';
 import { FC, useEffect, useState } from 'react';
 
 import { Header } from 'src/components/Header/Header';
+import { Room } from 'src/components/Room/Room';
 import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
-import { data, priorityData, resourcesData } from 'src/data';
+import { data, resourcesData, roomsData } from 'src/data';
 import {
   handldleCheckView,
   handleAddDate,
@@ -17,7 +18,7 @@ import {
 import style from './style.module.css';
 
 export const Calendar: FC = () => {
-  const groups = ['priority'];
+  const groups = ['rooms'];
   const [currentDate, setCurrentDate] = useState(dayjs(new Date(2021, 1, 2)));
   const [currentView, setCurrentView] = useState<{
     type: string;
@@ -47,7 +48,7 @@ export const Calendar: FC = () => {
         today
       </button>
       <Scheduler
-        currentView={currentView.type as any}
+        currentView={currentView.type as any} // eslint-disable-line
         className={style.wrapper}
         timeZone="Europe/Moscow"
         dataSource={data}
@@ -66,6 +67,7 @@ export const Calendar: FC = () => {
         firstDayOfWeek={0}
         startDayHour={8}
         endDayHour={20}
+        resourceCellComponent={(data) => <Room data={data.data.data} />}
       >
         <Resource
           fieldExpr="ownerId"
@@ -75,12 +77,11 @@ export const Calendar: FC = () => {
           useColorAsDefault={true}
         />
         <Resource
-          fieldExpr="priority"
+          fieldExpr="rooms"
           allowMultiple={false}
-          dataSource={priorityData}
-          label="Priority"
+          dataSource={roomsData}
+          label="Rooms"
         />
-
         <Editing
           allowDragging={false}
           allowResizing={false}

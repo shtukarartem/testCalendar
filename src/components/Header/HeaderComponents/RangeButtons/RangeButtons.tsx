@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 type Props = {
   handleAddDate: () => void;
   handleSubtractDate: () => void;
-}
+};
 
 export const RangeButtons: FC<Props> = ({
   handleAddDate,

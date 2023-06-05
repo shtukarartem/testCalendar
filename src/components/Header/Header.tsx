@@ -1,8 +1,7 @@
 import { FC } from 'react';
 
-import { changeViewOptions } from 'src/constants/constants';
 import { SelectComponent } from 'src/components/Select/Select';
-
+import { changeViewOptions } from 'src/constants/constants';
 
 import { RangeButtons } from './HeaderComponents/RangeButtons/RangeButtons';
 
@@ -11,7 +10,7 @@ type Props = {
   handleSubtractDate: () => void;
   handleViewsChange: (value: string) => void;
   selectViewValue: string;
-}
+};
 
 export const Header: FC<Props> = ({
   selectViewValue,
