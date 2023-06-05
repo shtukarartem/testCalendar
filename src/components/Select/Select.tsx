@@ -6,7 +6,7 @@ import { FC } from 'react';
 
 import { SelectOptions } from 'src/types/types';
 
-interface Props {
+type Props = {
   sx?: SxProps<Theme>;
   options: SelectOptions[];
   label?: string;

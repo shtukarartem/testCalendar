@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import { Scheduler } from 'devextreme-react';
-import { Editing, Resource } from 'devextreme-react/scheduler';
+import { Editing, Resource, View} from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler from 'devextreme/ui/scheduler';
 import { FC, useEffect, useState } from 'react';
@@ -32,6 +32,8 @@ export const Calendar: FC = () => {
     <>
       <Header
         selectViewValue={selectedView}
+        handleMinusButton={() => setCurrentView({...currentView, intervalCount: currentView.intervalCount ? currentView.intervalCount - 1 : 1})}
+        handlePlusButton={() => setCurrentView({...currentView, intervalCount: currentView.intervalCount ? currentView.intervalCount + 1 : 1})}
         handleAddDate={() =>
           setCurrentDate(
             handleAddDate(selectedView, currentDate) ?? currentDate
@@ -53,13 +55,13 @@ export const Calendar: FC = () => {
         timeZone="Europe/Moscow"
         dataSource={data}
         views={[currentView] as any} // eslint-disable-line
-        defaultCurrentView="timelineMonth"
         currentDate={currentDate.toDate()}
         appointmentTooltipComponent={(data) => (
           <TooltipComponent data={data.data.appointmentData} />
         )}
         onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {
           if (e.name === 'currentView') setCurrentView(e.value);
+          console.log(currentDate);
         }}
         height={900}
         groups={groups}
@@ -69,6 +71,9 @@ export const Calendar: FC = () => {
         endDayHour={20}
         resourceCellComponent={(data) => <Room data={data.data.data} />}
       >
+        <View 
+        type='timelineMonth'
+        />
         <Resource
           fieldExpr="ownerId"
           allowMultiple={true}

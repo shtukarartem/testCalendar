@@ -11,16 +11,14 @@ type Props = {
 export const RangeButtons: FC<Props> = ({
   handleAddDate,
   handleSubtractDate,
-}) => {
-  const ads = '<';
-  return (
+}) => (
     <div className={styles.wrapper}>
       <Button
         variant="outlined"
         className={styles.button}
         onClick={handleSubtractDate}
       >
-        {ads}
+        {'<'}
       </Button>
       <Button
         variant="outlined"
@@ -31,4 +29,3 @@ export const RangeButtons: FC<Props> = ({
       </Button>
     </div>
   );
-};
