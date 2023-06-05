@@ -1,8 +1,9 @@
-.button {
-  width: 40px;
-  height: 40px;
-}
 .wrapper :global .MuiButton-root {
-  border: 1px solid #c9c5ca;
-  color: #c9c5ca;
+  border: 1px solid var(--neutral-80);
+  color: var(--neutral-80);
+}
+
+.button {
+  width: 2.5rem;
+  height: 2.5rem;
 }

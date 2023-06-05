@@ -1,9 +1,8 @@
 import { StoryObj } from '@storybook/react';
 
 import { SelectOptions } from 'src/types/types';
+
 import { SelectComponent } from './Select';
-
-
 
 const options: SelectOptions[] = [
   {
@@ -30,7 +29,7 @@ export const SelectStoryComponent: Story = {
   args: {
     value: '',
     options: options,
-    handleChange: (value:string) => console.log(value),
+    handleChange: (value: string) => console.log(value),
     label: 'default',
   },
 };

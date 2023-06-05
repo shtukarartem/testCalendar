@@ -35,7 +35,7 @@ export const Header: FC<Props> = ({
       handlePlusButton={handlePlusButton}
     />
     <SelectComponent
-      sx={{ height: '32px', fontSize: '14px' }}
+      sx={{ height: '32px', fontSize: '0.875rem' }}
       value={selectViewValue}
       label="asdsadasdasd"
       handleChange={handleViewsChange}

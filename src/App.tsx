@@ -1,12 +1,12 @@
 import { locale } from 'devextreme/localization';
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 
 import './App.css';
 import 'devextreme/dist/css/dx.light.css';
 
 import { Calendar } from './components/Calendar/Calendar';
 
-const App = () => {
+const App: FC = () => {
   useEffect(() => {
     locale('ru');
   }, []);
