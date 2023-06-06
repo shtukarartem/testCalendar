@@ -12,7 +12,7 @@ type Props = {
   label?: string;
   value?: string;
   handleChange: (value: string) => void;
-}
+};
 
 export const SelectComponent: FC<Props> = ({
   options,

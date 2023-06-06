@@ -1,5 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { ViewButtons } from "./ViewButtons";
+import { Meta, StoryObj } from '@storybook/react';
+
+import { ViewButtons } from './ViewButtons';
 
 type Story = StoryObj<typeof ViewButtons>;
 
