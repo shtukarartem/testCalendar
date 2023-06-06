@@ -13,8 +13,8 @@ type Props = {
   handleSubtractDate: () => void;
   handleViewsChange: (value: string) => void;
   selectViewValue: string;
-  handleMinusButton:() => void;
-  handlePlusButton:() => void;
+  handleMinusButton: () => void;
+  handlePlusButton: () => void;
 };
 
 export const Header: FC<Props> = ({

@@ -1,21 +1,21 @@
-export const resourcesData = [
+export const ownersData = [
   {
-    text: 'Samantha Bright',
+    owner: 'Samantha Bright',
     id: 1,
     color: '#cb6bb2',
   },
   {
-    text: 'John Heart',
+    owner: 'John Heart',
     id: 2,
     color: '#56ca85',
   },
   {
-    text: 'Todd Hoffman',
+    owner: 'Todd Hoffman',
     id: 3,
     color: '#1e90ff',
   },
   {
-    text: 'Sandra Johnson',
+    owner: 'Sandra Johnson',
     id: 4,
     color: '#ff9747',
   },
@@ -68,7 +68,7 @@ export const roomsData = [
 
 export const data = [
   {
-    text: 'Google AdWords Strategy',
+    renter: 'Газпром',
     ownerId: [2],
     startDate: new Date('2021-02-01T16:00:00.000Z'),
     endDate: new Date('2021-02-01T17:30:00.000Z'),
@@ -77,7 +77,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'New Brochures',
+    renter: 'New Brochures',
     ownerId: [1],
     startDate: new Date('2021-02-01T18:30:00.000Z'),
     endDate: new Date('2021-02-01T21:15:00.000Z'),
@@ -86,7 +86,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Brochure Design Review',
+    renter: 'Brochure Design Review',
     ownerId: [4],
     startDate: new Date('2021-02-01T20:15:00.000Z'),
     endDate: new Date('2021-02-01T23:15:00.000Z'),
@@ -95,7 +95,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Website Re-Design Plan',
+    renter: 'Website Re-Design Plan',
     ownerId: [3],
     startDate: new Date('2021-02-01T23:45:00.000Z'),
     endDate: new Date('2021-02-02T18:15:00.000Z'),
@@ -104,7 +104,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Rollout of New Website and Marketing Brochures',
+    renter: 'Yandex',
     ownerId: [1],
     startDate: new Date('2021-02-02T15:15:00.000Z'),
     endDate: new Date('2021-02-02T17:45:00.000Z'),
@@ -113,7 +113,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Update Sales Strategy Documents',
+    renter: 'Exadel',
     ownerId: [2],
     startDate: new Date('2021-02-02T19:00:00.000Z'),
     endDate: new Date('2021-02-02T20:45:00.000Z'),
@@ -122,7 +122,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Non-Compete Agreements',
+    renter: 'Non-Compete Agreements',
     ownerId: [4],
     startDate: new Date('2021-02-03T16:15:00.000Z'),
     endDate: new Date('2021-02-03T17:00:00.000Z'),
@@ -131,7 +131,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Approve Hiring of John Jeffers',
+    renter: 'Approve Hiring of John Jeffers',
     ownerId: [2],
     startDate: new Date('2021-02-03T17:00:00.000Z'),
     endDate: new Date('2021-02-03T18:15:00.000Z'),
@@ -140,7 +140,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Update NDA Agreement',
+    renter: 'Update NDA Agreement',
     ownerId: [3],
     startDate: new Date('2021-02-03T18:45:00.000Z'),
     endDate: new Date('2021-02-03T20:45:00.000Z'),
@@ -149,7 +149,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Update Employee Files with New NDA',
+    renter: 'Update Employee Files with New NDA',
     ownerId: [2],
     startDate: new Date('2021-02-03T21:00:00.000Z'),
     endDate: new Date('2021-02-03T23:45:00.000Z'),
@@ -158,7 +158,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Submit Questions Regarding New NDA',
+    renter: 'Submit Questions Regarding New NDA',
     ownerId: [1],
     startDate: new Date('2021-02-05T01:00:00.000Z'),
     endDate: new Date('2021-02-04T16:30:00.000Z'),
@@ -167,7 +167,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Submit Signed NDA',
+    renter: 'Submit Signed NDA',
     ownerId: [2],
     startDate: new Date('2021-02-04T19:45:00.000Z'),
     endDate: new Date('2021-02-04T21:00:00.000Z'),
@@ -176,7 +176,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Review Revenue Projections',
+    renter: 'Review Revenue Projections',
     ownerId: [3],
     startDate: new Date('2021-02-05T00:15:00.000Z'),
     endDate: new Date('2021-02-04T15:00:00.000Z'),
@@ -185,7 +185,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Comment on Revenue Projections',
+    renter: 'Comment on Revenue Projections',
     ownerId: [2],
     startDate: new Date('2021-02-05T16:15:00.000Z'),
     endDate: new Date('2021-02-05T18:15:00.000Z'),
@@ -194,7 +194,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Provide New Health Insurance Docs',
+    renter: 'Provide New Health Insurance Docs',
     ownerId: [3],
     startDate: new Date('2021-02-05T19:45:00.000Z'),
     endDate: new Date('2021-02-05T21:15:00.000Z'),
@@ -203,7 +203,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Review Changes to Health Insurance Coverage',
+    renter: 'Review Changes to Health Insurance Coverage',
     ownerId: [2],
     startDate: new Date('2021-02-05T21:15:00.000Z'),
     endDate: new Date('2021-02-05T22:30:00.000Z'),
@@ -212,7 +212,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Review Training Course for any Omissions',
+    renter: 'Review Training Course for any Omissions',
     ownerId: [2],
     startDate: new Date('2021-02-08T21:00:00.000Z'),
     endDate: new Date('2021-02-09T19:00:00.000Z'),
@@ -221,7 +221,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Recall Rebate Form',
+    renter: 'Recall Rebate Form',
     ownerId: [1],
     startDate: new Date('2021-02-08T19:45:00.000Z'),
     endDate: new Date('2021-02-08T20:15:00.000Z'),
@@ -230,7 +230,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Create Report on Customer Feedback',
+    renter: 'Create Report on Customer Feedback',
     ownerId: [4],
     startDate: new Date('2021-02-09T22:15:00.000Z'),
     endDate: new Date('2021-02-10T00:30:00.000Z'),
@@ -239,7 +239,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Review Customer Feedback Report',
+    renter: 'Review Customer Feedback Report',
     ownerId: [2],
     startDate: new Date('2021-02-09T23:15:00.000Z'),
     endDate: new Date('2021-02-10T01:30:00.000Z'),
@@ -248,7 +248,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Customer Feedback Report Analysis',
+    renter: 'Customer Feedback Report Analysis',
     ownerId: [3],
     startDate: new Date('2021-02-10T16:30:00.000Z'),
     endDate: new Date('2021-02-10T17:30:00.000Z'),
@@ -257,7 +257,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Prepare Shipping Cost Analysis Report',
+    renter: 'Prepare Shipping Cost Analysis Report',
     ownerId: [4],
     startDate: new Date('2021-02-10T19:30:00.000Z'),
     endDate: new Date('2021-02-10T20:30:00.000Z'),
@@ -266,7 +266,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Provide Feedback on Shippers',
+    renter: 'Provide Feedback on Shippers',
     ownerId: [2],
     startDate: new Date('2021-02-10T21:15:00.000Z'),
     endDate: new Date('2021-02-10T23:00:00.000Z'),
@@ -275,7 +275,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Select Preferred Shipper',
+    renter: 'Select Preferred Shipper',
     ownerId: [1],
     startDate: new Date('2021-02-11T00:30:00.000Z'),
     endDate: new Date('2021-02-11T03:00:00.000Z'),
@@ -284,7 +284,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Complete Shipper Selection Form',
+    renter: 'Complete Shipper Selection Form',
     ownerId: [2],
     startDate: new Date('2021-02-11T15:30:00.000Z'),
     endDate: new Date('2021-02-11T17:00:00.000Z'),
@@ -293,7 +293,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Upgrade Server Hardware',
+    renter: 'Upgrade Server Hardware',
     ownerId: [4],
     startDate: new Date('2021-02-11T19:00:00.000Z'),
     endDate: new Date('2021-02-11T21:15:00.000Z'),
@@ -302,7 +302,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Upgrade Personal Computers',
+    renter: 'Upgrade Personal Computers',
     ownerId: [3],
     startDate: new Date('2021-02-11T21:45:00.000Z'),
     endDate: new Date('2021-02-11T23:30:00.000Z'),
@@ -311,7 +311,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Upgrade Apps to Windows RT or stay with WinForms',
+    renter: 'Upgrade Apps to Windows RT or stay with WinForms',
     ownerId: [1],
     startDate: new Date('2021-02-12T17:30:00.000Z'),
     endDate: new Date('2021-02-12T20:00:00.000Z'),
@@ -320,7 +320,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Estimate Time Required to Touch-Enable Apps',
+    renter: 'Estimate Time Required to Touch-Enable Apps',
     ownerId: [1],
     startDate: new Date('2021-02-12T21:45:00.000Z'),
     endDate: new Date('2021-02-12T23:30:00.000Z'),
@@ -329,7 +329,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Report on Tranistion to Touch-Based Apps',
+    renter: 'Report on Tranistion to Touch-Based Apps',
     ownerId: [2],
     startDate: new Date('2021-02-13T01:30:00.000Z'),
     endDate: new Date('2021-02-13T02:00:00.000Z'),
@@ -338,7 +338,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Submit New Website Design',
+    renter: 'Submit New Website Design',
     ownerId: [2],
     startDate: new Date('2021-02-15T15:00:00.000Z'),
     endDate: new Date('2021-02-15T17:00:00.000Z'),
@@ -347,7 +347,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Create Icons for Website',
+    renter: 'Create Icons for Website',
     ownerId: [4],
     startDate: new Date('2021-02-15T18:30:00.000Z'),
     endDate: new Date('2021-02-15T20:15:00.000Z'),
@@ -356,7 +356,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Create New Product Pages',
+    renter: 'Create New Product Pages',
     ownerId: [1],
     startDate: new Date('2021-02-16T16:45:00.000Z'),
     endDate: new Date('2021-02-16T18:45:00.000Z'),
@@ -365,7 +365,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Approve Website Launch',
+    renter: 'Approve Website Launch',
     ownerId: [3],
     startDate: new Date('2021-02-16T19:00:00.000Z'),
     endDate: new Date('2021-02-16T22:15:00.000Z'),
@@ -374,7 +374,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Update Customer Shipping Profiles',
+    renter: 'Update Customer Shipping Profiles',
     ownerId: [3],
     startDate: new Date('2021-02-17T16:30:00.000Z'),
     endDate: new Date('2021-02-17T18:00:00.000Z'),
@@ -383,7 +383,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Create New Shipping Return Labels',
+    renter: 'Create New Shipping Return Labels',
     ownerId: [4],
     startDate: new Date('2021-02-17T19:45:00.000Z'),
     endDate: new Date('2021-02-17T21:00:00.000Z'),
@@ -392,7 +392,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Get Design for Shipping Return Labels',
+    renter: 'Get Design for Shipping Return Labels',
     ownerId: [3],
     startDate: new Date('2021-02-17T22:00:00.000Z'),
     endDate: new Date('2021-02-17T23:30:00.000Z'),
@@ -401,7 +401,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'PSD needed for Shipping Return Labels',
+    renter: 'PSD needed for Shipping Return Labels',
     ownerId: [4],
     startDate: new Date('2021-02-18T15:30:00.000Z'),
     endDate: new Date('2021-02-18T16:15:00.000Z'),
@@ -410,7 +410,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Contact ISP and Discuss Payment Options',
+    renter: 'Contact ISP and Discuss Payment Options',
     ownerId: [1],
     startDate: new Date('2021-02-18T18:30:00.000Z'),
     endDate: new Date('2021-02-18T23:00:00.000Z'),
@@ -419,7 +419,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Prepare Year-End Support Summary Report',
+    renter: 'Prepare Year-End Support Summary Report',
     ownerId: [2],
     startDate: new Date('2021-02-19T00:00:00.000Z'),
     endDate: new Date('2021-02-19T03:00:00.000Z'),
@@ -428,7 +428,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Review New Training Material',
+    renter: 'Review New Training Material',
     ownerId: [3],
     startDate: new Date('2021-02-19T15:00:00.000Z'),
     endDate: new Date('2021-02-19T16:15:00.000Z'),
@@ -437,7 +437,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Distribute Training Material to Support Staff',
+    renter: 'Distribute Training Material to Support Staff',
     ownerId: [2],
     startDate: new Date('2021-02-19T19:45:00.000Z'),
     endDate: new Date('2021-02-19T21:00:00.000Z'),
@@ -446,7 +446,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Training Material Distribution Schedule',
+    renter: 'Training Material Distribution Schedule',
     ownerId: [2],
     startDate: new Date('2021-02-19T21:15:00.000Z'),
     endDate: new Date('2021-02-19T23:15:00.000Z'),
@@ -455,7 +455,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Approval on Converting to New HDMI Specification',
+    renter: 'Approval on Converting to New HDMI Specification',
     ownerId: [4],
     startDate: new Date('2021-02-22T16:30:00.000Z'),
     endDate: new Date('2021-02-22T17:15:00.000Z'),
@@ -464,7 +464,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Create New Spike for Automation Server',
+    renter: 'Create New Spike for Automation Server',
     ownerId: [3],
     startDate: new Date('2021-02-22T17:00:00.000Z'),
     endDate: new Date('2021-02-22T19:30:00.000Z'),
@@ -473,7 +473,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Code Review - New Automation Server',
+    renter: 'Code Review - New Automation Server',
     ownerId: [1],
     startDate: new Date('2021-02-22T20:00:00.000Z'),
     endDate: new Date('2021-02-22T22:00:00.000Z'),
@@ -482,7 +482,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Confirm Availability for Sales Meeting',
+    renter: 'Confirm Availability for Sales Meeting',
     ownerId: [1],
     startDate: new Date('2021-02-23T17:15:00.000Z'),
     endDate: new Date('2021-02-23T22:15:00.000Z'),
@@ -491,7 +491,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Reschedule Sales Team Meeting',
+    renter: 'Reschedule Sales Team Meeting',
     ownerId: [2],
     startDate: new Date('2021-02-23T23:15:00.000Z'),
     endDate: new Date('2021-02-24T01:00:00.000Z'),
@@ -500,7 +500,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Send 2 Remotes for Giveaways',
+    renter: 'Send 2 Remotes for Giveaways',
     ownerId: [3],
     startDate: new Date('2021-02-24T16:30:00.000Z'),
     endDate: new Date('2021-02-24T18:45:00.000Z'),
@@ -509,7 +509,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Discuss Product Giveaways with Management',
+    renter: 'Discuss Product Giveaways with Management',
     ownerId: [1],
     startDate: new Date('2021-02-24T19:15:00.000Z'),
     endDate: new Date('2021-02-24T23:45:00.000Z'),
@@ -518,7 +518,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Replace Desktops on the 3rd Floor',
+    renter: 'Replace Desktops on the 3rd Floor',
     ownerId: [2],
     startDate: new Date('2021-02-25T16:30:00.000Z'),
     endDate: new Date('2021-02-25T17:45:00.000Z'),
@@ -527,7 +527,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Update Database with New Leads',
+    renter: 'Update Database with New Leads',
     ownerId: [3],
     startDate: new Date('2021-02-25T19:00:00.000Z'),
     endDate: new Date('2021-02-25T21:15:00.000Z'),
@@ -536,7 +536,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Mail New Leads for Follow Up',
+    renter: 'Mail New Leads for Follow Up',
     ownerId: [1],
     startDate: new Date('2021-02-25T21:45:00.000Z'),
     endDate: new Date('2021-02-25T22:30:00.000Z'),
@@ -545,7 +545,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Send Territory Sales Breakdown',
+    renter: 'Send Territory Sales Breakdown',
     ownerId: [2],
     startDate: new Date('2021-02-26T01:00:00.000Z'),
     endDate: new Date('2021-02-26T03:00:00.000Z'),
@@ -554,7 +554,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Territory Sales Breakdown Report',
+    renter: 'Territory Sales Breakdown Report',
     ownerId: [1],
     startDate: new Date('2021-02-26T15:45:00.000Z'),
     endDate: new Date('2021-02-26T16:45:00.000Z'),
@@ -563,7 +563,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Report on the State of Engineering Dept',
+    renter: 'Report on the State of Engineering Dept',
     ownerId: [3],
     startDate: new Date('2021-02-26T21:45:00.000Z'),
     endDate: new Date('2021-02-26T22:30:00.000Z'),
@@ -572,7 +572,7 @@ export const data = [
     number: '+375295976883',
   },
   {
-    text: 'Staff Productivity Report',
+    renter: 'Staff Productivity Report',
     ownerId: [4],
     startDate: new Date('2021-02-26T23:15:00.000Z'),
     endDate: new Date('2021-02-27T02:30:00.000Z'),

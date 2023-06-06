@@ -59,6 +59,6 @@ export const handldleCheckView = (selectedView: string) => {
     case 'twoWeeks':
       return { type: 'timelineWeek', intervalCount: 2 };
     case 'timelineMonth':
-      return { type: 'timelineMonth'};
+      return { type: 'timelineMonth' };
   }
 };

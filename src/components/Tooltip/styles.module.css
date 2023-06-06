@@ -8,6 +8,13 @@
   background-color: var(--white-transp-100);
 }
 
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+}
+
 .footer {
   display: flex;
   flex-direction: row;

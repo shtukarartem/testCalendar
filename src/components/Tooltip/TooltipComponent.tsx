@@ -1,17 +1,34 @@
-import { ISchedulerOptions } from 'devextreme-react/scheduler';
-import React, { FC } from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { IconButton } from '@mui/material';
+import { FC, MouseEvent } from 'react';
 
 import styles from './styles.module.css';
 
-interface Props {
-  data: React.PropsWithChildren<ISchedulerOptions>;
-}
+type Props = {
+  data: {
+    renter: string;
+    ownerId: number[];
+    startDate: Date;
+    endDate: Date;
+    rooms: number;
+    email: string;
+    number: string;
+  };
+  handleClose: (e: MouseEvent<HTMLButtonElement>) => void;
+};
 
-export const TooltipComponent: FC<Props> = (
-  { data }: any // eslint-disable-line
-) => (
+export const TooltipComponent: FC<Props> = ({ data, handleClose }) => (
   <div className={styles.wrapper}>
-    <div className={styles.fio}> {data.text}</div>
+    <div className={styles.icons}>
+      <IconButton disabled>
+        <OpenInNewIcon />
+      </IconButton>
+      <IconButton onClick={handleClose}>
+        <CloseIcon />
+      </IconButton>
+    </div>
+    <div className={styles.fio}>{data.renter}</div>
     <div className={styles.data}>
       <span className={styles.dataTitle}>Крайний срок</span>
       <span className={styles.dateText}>
@@ -30,16 +47,16 @@ export const TooltipComponent: FC<Props> = (
     <div className={styles.footer}>
       <button
         type="button"
-        onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
-          event.stopPropagation()
-        }
+        onClick={(event: MouseEvent<HTMLButtonElement>) => {
+          event.stopPropagation();
+        }}
         className={styles.buttonLight}
       >
         Отменить бронь
       </button>
       <button
         type="button"
-        onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
+        onClick={(event: MouseEvent<HTMLButtonElement>) =>
           event.stopPropagation()
         }
         className={styles.buttonLight}
