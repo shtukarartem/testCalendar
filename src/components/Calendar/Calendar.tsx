@@ -24,7 +24,7 @@ const editMeeting = () => {
 
 export const Calendar: FC = () => {
   const groups = ['rooms'];
-  const [currentDate, setCurrentDate] = useState(dayjs(new Date(2021, 1, 2)));
+  const [currentDate, setCurrentDate] = useState(dayjs(new Date()));
   const [currentView, setCurrentView] = useState<{
     type: string;
     intervalCount?: number;
