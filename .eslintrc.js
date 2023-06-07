@@ -4,12 +4,7 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   plugins: ['prettier', '@typescript-eslint'],
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'react-app',
-    'prettier',
-  ],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'react-app', 'prettier'],
   rules: {
     '@typescript-eslint/ban-types': ['error', { types: { '{}': false } }],
     '@typescript-eslint/explicit-module-boundary-types': 'off',

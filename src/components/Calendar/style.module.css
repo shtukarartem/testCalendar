@@ -7,18 +7,26 @@
   height: 25rem !important;
 }
 
-.wrapper
-  :global
-  .dx-scheduler-appointment-tooltip-wrapper
-  > div.dx-overlay-content {
+.wrapper :global .dx-scheduler-appointment-tooltip-wrapper > div.dx-overlay-content {
   max-height: 28.125rem !important;
   height: 25rem !important;
 }
 
-.wrapper
-  :global
-  .dx-scheduler-group-flex-container
-  .dx-scheduler-group-row:last-child
-  .dx-scheduler-group-header {
+.wrapper :global .dx-scheduler-group-row {
+  display: block;
+}
+
+.wrapper :global .dx-scheduler-group-row:last-child .dx-scheduler-group-header {
   width: 12.5rem;
+  height: 5rem;
+}
+
+.wrapper :global .dx-scheduler-date-table .dx-scheduler-date-table-row {
+  height: 5rem;
+  flex: none !important;
+}
+
+.wrapper :global .dx-scheduler-appointment-horizontal {
+  height: 5rem !important;
+  margin-top: -1.625rem;
 }

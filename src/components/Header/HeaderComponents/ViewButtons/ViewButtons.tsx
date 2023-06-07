@@ -8,23 +8,12 @@ type Props = {
   handleMinusButton: () => void;
 };
 
-export const ViewButtons: FC<Props> = ({
-  handleMinusButton,
-  handlePlusButton,
-}) => (
+export const ViewButtons: FC<Props> = ({ handleMinusButton, handlePlusButton }) => (
   <div className={styles.wrapper}>
-    <Button
-      variant="outlined"
-      className={styles.button}
-      onClick={handlePlusButton}
-    >
+    <Button variant="outlined" className={styles.button} onClick={handlePlusButton}>
       {'+'}
     </Button>
-    <Button
-      variant="outlined"
-      className={styles.button}
-      onClick={handleMinusButton}
-    >
+    <Button variant="outlined" className={styles.button} onClick={handleMinusButton}>
       {'-'}
     </Button>
   </div>
