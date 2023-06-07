@@ -16,6 +16,18 @@
   --electric-blue-10: #f7f7ff;
   --electric-blue-60: #5c5cff;
   --electric-blue-70: #3737ff;
+
+  --green-light-10: #effbe4;
+  --green-light-20: #c7f1a4;
+  --green-light-70: #386810;
+
+  --sky-10: #f4f8ff;
+  --sky-20: #d9e6ff;
+  --sky-70: #004ce6;
+
+  --magenta-10: #fef4ff;
+  --magenta-20: #fbdaff;
+  --magenta-70: #a000b6;
 }
 
 * {
