@@ -32,9 +32,8 @@ export const TooltipComponent: FC<Props> = ({ data, handleClose }) => (
     <div className={styles.data}>
       <span className={styles.dataTitle}>Крайний срок</span>
       <span className={styles.dateText}>
-        {data.endDate.getDate()}.{data.endDate.getMonth()}.
-        {data.endDate.getFullYear()} c {data.startDate.getHours()}:
-        {data.startDate.getMinutes()} по {data.endDate.getHours()}:
+        {data.endDate.getDate()}.{data.endDate.getMonth()}.{data.endDate.getFullYear()} c{' '}
+        {data.startDate.getHours()}:{data.startDate.getMinutes()} по {data.endDate.getHours()}:
         {data.endDate.getMinutes()}
       </span>
     </div>
@@ -56,9 +55,7 @@ export const TooltipComponent: FC<Props> = ({ data, handleClose }) => (
       </button>
       <button
         type="button"
-        onClick={(event: MouseEvent<HTMLButtonElement>) =>
-          event.stopPropagation()
-        }
+        onClick={(event: MouseEvent<HTMLButtonElement>) => event.stopPropagation()}
         className={styles.buttonLight}
       >
         Звонить

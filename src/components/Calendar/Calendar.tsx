@@ -9,11 +9,7 @@ import { Header } from 'src/components/Header/Header';
 import { Room } from 'src/components/Room/Room';
 import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
 import { data, ownersData, roomsData } from 'src/sefviceFormData';
-import {
-  handldleCheckView,
-  handleAddDate,
-  handleSubtractDate,
-} from 'src/utils/utils';
+import { handldleCheckView, handleAddDate, handleSubtractDate } from 'src/utils/utils';
 
 import style from './style.module.css';
 
@@ -53,28 +49,20 @@ export const Calendar: FC = () => {
         handleMinusButton={() =>
           setCurrentView({
             ...currentView,
-            intervalCount: currentView.intervalCount
-              ? currentView.intervalCount - 1
-              : 1,
+            intervalCount: currentView.intervalCount ? currentView.intervalCount - 1 : 1,
           })
         }
         handlePlusButton={() =>
           setCurrentView({
             ...currentView,
-            intervalCount: currentView.intervalCount
-              ? currentView.intervalCount + 1
-              : 1,
+            intervalCount: currentView.intervalCount ? currentView.intervalCount + 1 : 1,
           })
         }
         handleAddDate={() =>
-          setCurrentDate(
-            handleAddDate(selectedView, currentDate) ?? currentDate
-          )
+          setCurrentDate(handleAddDate(selectedView, currentDate) ?? currentDate)
         }
         handleSubtractDate={() =>
-          setCurrentDate(
-            handleSubtractDate(selectedView, currentDate) ?? currentDate
-          )
+          setCurrentDate(handleSubtractDate(selectedView, currentDate) ?? currentDate)
         }
         handleViewsChange={(value) => setSelectedView(value)}
       />
@@ -90,10 +78,7 @@ export const Calendar: FC = () => {
         views={[currentView] as any} // eslint-disable-line
         currentDate={currentDate.toDate()}
         appointmentTooltipComponent={(data) => (
-          <TooltipComponent
-            data={data.data.appointmentData}
-            handleClose={closeTooltip}
-          />
+          <TooltipComponent data={data.data.appointmentData} handleClose={closeTooltip} />
         )}
         onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {
           if (e.name === 'currentView') setCurrentView(e.value);
@@ -125,17 +110,8 @@ export const Calendar: FC = () => {
           label="Owner"
           useColorAsDefault={true}
         />
-        <Resource
-          fieldExpr="rooms"
-          allowMultiple={false}
-          dataSource={roomsData}
-          label="Rooms"
-        />
-        <Editing
-          allowDragging={false}
-          allowResizing={false}
-          allowUpdating={false}
-        />
+        <Resource fieldExpr="rooms" allowMultiple={false} dataSource={roomsData} label="Rooms" />
+        <Editing allowDragging={false} allowResizing={false} allowUpdating={false} />
       </Scheduler>
     </>
   );

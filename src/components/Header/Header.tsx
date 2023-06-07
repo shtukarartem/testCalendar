@@ -26,14 +26,8 @@ export const Header: FC<Props> = ({
   handlePlusButton,
 }) => (
   <div className={styles.wrapper}>
-    <RangeButtons
-      handleAddDate={handleAddDate}
-      handleSubtractDate={handleSubtractDate}
-    />
-    <ViewButtons
-      handleMinusButton={handleMinusButton}
-      handlePlusButton={handlePlusButton}
-    />
+    <RangeButtons handleAddDate={handleAddDate} handleSubtractDate={handleSubtractDate} />
+    <ViewButtons handleMinusButton={handleMinusButton} handlePlusButton={handlePlusButton} />
     <SelectComponent
       sx={{ height: '32px', fontSize: '0.875rem' }}
       value={selectViewValue}

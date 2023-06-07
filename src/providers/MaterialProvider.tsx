@@ -1,8 +1,4 @@
-import {
-  StyledEngineProvider,
-  ThemeProvider,
-  createTheme,
-} from '@mui/material/styles';
+import { StyledEngineProvider, ThemeProvider, createTheme } from '@mui/material/styles';
 import { FC, ReactNode } from 'react';
 
 const theme = createTheme({
