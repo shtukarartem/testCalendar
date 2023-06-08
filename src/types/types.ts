@@ -4,3 +4,9 @@ export type SelectOptions = {
 };
 
 export type RoomType = 'workPlace' | 'office' | 'meeting';
+
+export type ViewListType = {
+  icon:string,
+  title: string,
+  isPinned: boolean
+}

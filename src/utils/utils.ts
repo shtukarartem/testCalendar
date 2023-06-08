@@ -62,3 +62,44 @@ export const handldleCheckView = (selectedView: string) => {
       return { type: 'timelineMonth'};
   }
 };
+
+export const handleCorrectDateDifference = (diff:number) => {
+  diff++
+  if (Math.abs(diff) % 100 > 10 && Math.abs(diff) % 100 < 20) {
+    return `${diff} дней: `
+  }
+  if (diff % 10 > 1 && diff % 10 < 5) {
+    return `${diff} дня: `
+  }
+  if (diff % 10 === 1) {
+    return `${diff} день: `
+  }
+  return `${diff} дней: `
+} 
+
+export const handleSelectedData = (icon:string) => {
+  switch(icon) {
+    case 'Сегодня' : 
+    return {currentData: dayjs(), currentView: {type: 'timelineDay', intervalCount: 1}};
+    case 'Вчера' : 
+    return {currentData: dayjs().subtract(1, 'day'), currentView: {type: 'timelineDay', intervalCount: 1}};
+    case 'Завтра' : 
+    return {currentData: dayjs().add(1, 'day'), currentView: {type: 'timelineDay', intervalCount: 1}};
+    case 'Последние 3 дня' : 
+    return {currentData: dayjs().subtract(2, 'day'), currentView: {type: 'timelineDay', intervalCount: 3}};
+    case 'Текущая неделя' : 
+    return {currentData: dayjs(), currentView: {type: 'timelineWeek', intervalCount: 1}};
+    case 'Прошлая неделя' : 
+    return {currentData: dayjs().subtract(1, 'week'), currentView: {type: 'timelineWeek', intervalCount: 1}};
+    case 'Следующая неделя' : 
+    return {currentData: dayjs().add(1, 'week'), currentView: {type: 'timelineWeek', intervalCount: 1}};
+    case 'Последние две недели' : 
+    return {currentData: dayjs().subtract(1, 'week'), currentView: {type: 'timelineWeek', intervalCount: 2}};
+    case 'Текущий месяц' : 
+    return {currentData: dayjs(), currentView: {type: 'timelineMonth', intervalCount: 1}};
+    case 'Прошлый месяц' : 
+    return {currentData: dayjs().subtract(1, 'month'), currentView: {type: 'timelineMonth', intervalCount: 1}};
+    case 'Следующий месяц' : 
+    return {currentData: dayjs().add(1, 'month'), currentView: {type: 'timelineMonth', intervalCount: 1}};
+  }
+}

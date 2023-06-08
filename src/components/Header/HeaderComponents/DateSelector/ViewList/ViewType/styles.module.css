@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  width: 15.625rem;
+}
+.pin{
+  justify-content: flex-end;
+  height: 1.25rem;
+}
+.title{
+  display: flex;
+  gap: 0.5rem;
+  margin-right: auto;
+}
+.description{
+  font-family: 'Noto Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--neutral-10);
+}
+.unpin{
+  display: none;
+}
+.wrapper:hover{
+  background: #F8F8F8;
+  width: 15.625rem;
+  overflow: hidden;
+  text-overflow:ellipsis ;
+}
+.wrapper:hover .unpin{
+  display: block;
+}

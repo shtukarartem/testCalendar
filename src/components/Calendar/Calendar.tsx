@@ -12,6 +12,7 @@ import { data, resourcesData, roomsData } from 'src/data';
 import {
   handldleCheckView,
   handleAddDate,
+  handleSelectedData,
   handleSubtractDate,
 } from 'src/utils/utils';
 
@@ -31,6 +32,7 @@ export const Calendar: FC = () => {
   return (
     <>
       <Header
+      selectPlaceholder='sdssd'
         selectViewValue={selectedView}
         handleMinusButton={() => setCurrentView({...currentView, intervalCount: currentView.intervalCount ? currentView.intervalCount - 1 : 1})}
         handlePlusButton={() => setCurrentView({...currentView, intervalCount: currentView.intervalCount ? currentView.intervalCount + 1 : 1})}
@@ -45,10 +47,12 @@ export const Calendar: FC = () => {
           )
         }
         handleViewsChange={(value) => setSelectedView(value)}
+        handleSelect={(icon:string) => {
+          const data = handleSelectedData(icon);
+          setCurrentDate(data?.currentData ?? currentDate)
+          setCurrentView(data?.currentView ?? currentView)
+        }}
       />
-      <button onClick={() => setCurrentDate(dayjs())} type="button">
-        today
-      </button>
       <Scheduler
         currentView={currentView.type as any} // eslint-disable-line
         className={style.wrapper}
@@ -61,7 +65,7 @@ export const Calendar: FC = () => {
         )}
         onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {
           if (e.name === 'currentView') setCurrentView(e.value);
-          console.log(currentDate);
+          console.log(e);
         }}
         height={900}
         groups={groups}
