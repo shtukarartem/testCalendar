@@ -85,8 +85,8 @@
 .root span[class*='ant-picker-clear'] {
   display: none;
 }
-.antPickerDropdown{
-  z-index: 12312!important;
+.antPickerDropdown {
+  z-index: 12312 !important;
 }
 
 .antPickerDropdown[class*='ant-picker-dropdown'] {
@@ -130,24 +130,32 @@
   color: #c9c5ca;
 }
 
-.antPickerDropdown :global .ant-picker-cell-range-start .ant-picker-cell-inner{
+.antPickerDropdown :global .ant-picker-cell-range-start .ant-picker-cell-inner {
   background: var(--electric-blue-70) !important;
   border-radius: 0.25rem 0px 0px 0.25rem !important;
 }
 
-.antPickerDropdown :global .ant-picker-cell-range-end .ant-picker-cell-inner{
+.antPickerDropdown :global .ant-picker-cell-range-end .ant-picker-cell-inner {
   background: var(--electric-blue-70) !important;
   border-radius: 0px 0.25rem 0.25rem 0px !important;
 }
 
-.antPickerDropdown :global .ant-picker-cell-in-view.ant-picker-cell-in-range::before{
+.antPickerDropdown :global .ant-picker-cell-in-view.ant-picker-cell-in-range::before {
   background: var(--electric-blue-10);
 }
 
-.antPickerDropdown :global .ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before{
+.antPickerDropdown
+  :global
+  .ant-picker-cell-in-view.ant-picker-cell-range-start:not(
+    .ant-picker-cell-range-start-single
+  )::before {
   background: var(--electric-blue-10);
 }
 
-.antPickerDropdown :global .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before{
+.antPickerDropdown
+  :global
+  .ant-picker-cell-in-view.ant-picker-cell-range-end:not(
+    .ant-picker-cell-range-end-single
+  )::before {
   background: var(--electric-blue-10);
 }

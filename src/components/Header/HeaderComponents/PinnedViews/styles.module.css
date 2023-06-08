@@ -1,12 +1,12 @@
-.wrapper{
+.wrapper {
   display: flex;
   cursor: pointer;
   margin: 0.625rem 0.688rem;
   gap: 0.625rem;
 }
-.icon:hover{
+.icon:hover {
   filter: invert(34%) sepia(85%) saturate(3241%) hue-rotate(230deg) brightness(100%) contrast(101%);
 }
-.select{
+.select {
   filter: invert(34%) sepia(85%) saturate(3241%) hue-rotate(230deg) brightness(100%) contrast(101%);
 }

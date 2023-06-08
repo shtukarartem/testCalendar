@@ -1,6 +1,6 @@
+import TimePickerLocale from 'antd/es/time-picker/locale/ru_RU';
 import { PickerLocale } from 'antd/lib/date-picker/generatePicker';
 import CalendarLocale from 'rc-picker/lib/locale/ru_RU';
-import TimePickerLocale from 'antd/es/time-picker/locale/ru_RU';
 
 // Merge into a locale object
 export const localeRu: PickerLocale = {

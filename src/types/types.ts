@@ -5,12 +5,20 @@ export type SelectOptions = {
 
 export type RoomType = 'workPlace' | 'office' | 'meeting';
 
-<<<<<<< HEAD
 export type ViewListType = {
-  icon:string,
-  title: string,
-  isPinned: boolean
-}
-=======
+  icon: string;
+  title: string;
+  isPinned: boolean;
+};
 export type RentStatusType = 'paid' | 'booked' | 'overdue';
->>>>>>> develop
+
+export type BookingType = {
+  text: string;
+  ownerId: number[];
+  startDate: Date;
+  endDate: Date;
+  rooms: number;
+  email: string;
+  number: string;
+  status: RentStatusType;
+};

@@ -31,7 +31,7 @@ const sizeStyles: Record<SizeType, string> = {
 type Props = {
   isFullWidth: boolean;
   isError: boolean;
-  isOpen:boolean;
+  isOpen: boolean;
   onChange: (dates: null | (Dayjs | null)[]) => void;
 };
 
@@ -41,15 +41,10 @@ export const DateRange: FC<Props> = ({ isFullWidth, isError, onChange }) => (
       open={true}
       locale={localeRu}
       format="DD MMMM YYYY"
-      className={classNames(
-        styles.root,
-        typeOfViewStyles['standard'],
-        sizeStyles['s'],
-        {
-          [styles.fullWidth]: isFullWidth,
-          [styles.error]: isError,
-        }
-      )}
+      className={classNames(styles.root, typeOfViewStyles['standard'], sizeStyles['s'], {
+        [styles.fullWidth]: isFullWidth,
+        [styles.error]: isError,
+      })}
       popupClassName={styles.antPickerDropdown}
       onChange={onChange}
     />

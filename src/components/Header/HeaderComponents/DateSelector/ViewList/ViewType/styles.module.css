@@ -4,16 +4,16 @@
   cursor: pointer;
   width: 15.625rem;
 }
-.pin{
+.pin {
   justify-content: flex-end;
   height: 1.25rem;
 }
-.title{
+.title {
   display: flex;
   gap: 0.5rem;
   margin-right: auto;
 }
-.description{
+.description {
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -21,15 +21,15 @@
   line-height: 1.25rem;
   color: var(--neutral-10);
 }
-.unpin{
+.unpin {
   display: none;
 }
-.wrapper:hover{
-  background: #F8F8F8;
+.wrapper:hover {
+  background: #f8f8f8;
   width: 15.625rem;
   overflow: hidden;
-  text-overflow:ellipsis ;
+  text-overflow: ellipsis;
 }
-.wrapper:hover .unpin{
+.wrapper:hover .unpin {
   display: block;
 }
