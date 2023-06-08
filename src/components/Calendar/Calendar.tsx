@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import { Scheduler } from 'devextreme-react';
 import { Editing, Resource, View } from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
-import dxScheduler, { CellClickEvent } from 'devextreme/ui/scheduler';
+import dxScheduler, { AppointmentAddingEvent, CellClickEvent } from 'devextreme/ui/scheduler';
 import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
 
 import { Appointment } from 'src/components/Appointment/Appointment';
@@ -10,9 +10,27 @@ import { Header } from 'src/components/Header/Header';
 import { Room } from 'src/components/Room/Room';
 import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
 import { data, ownersData, roomsData } from 'src/sefviceFormData';
-import { handldleCheckView, handleAddDate, handleSubtractDate } from 'src/utils/utils';
+import {
+  checkBusyRoom,
+  handldleCheckView,
+  handleAddDate,
+  handleSubtractDate,
+} from 'src/utils/utils';
 
 import style from './style.module.css';
+
+const onAppointmentAdding = (e: AppointmentAddingEvent) => {
+  const isBusyDate = checkBusyRoom(
+    data,
+    e.appointmentData.rooms,
+    e.appointmentData.startDate as Date,
+    e.appointmentData.endDate as Date
+  );
+  if (isBusyDate) {
+    e.cancel = true;
+    alert('Данная переговорка уже забронирована на выбранное Вами время');
+  }
+};
 
 const createMeeting = (e: CellClickEvent) => {
   e.event?.preventDefault();
@@ -96,6 +114,7 @@ export const Calendar: FC = () => {
         endDayHour={20}
         onCellClick={createMeeting}
         onAppointmentDblClick={editMeeting}
+        onAppointmentAdding={onAppointmentAdding}
         // TODO uncomment later. need for cancel default popul creation
         // onAppointmentFormOpening={(e: AppointmentFormOpeningEvent) => {
         //   e.cancel = true;

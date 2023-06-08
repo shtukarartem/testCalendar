@@ -1,3 +1,5 @@
+import { BookingType } from 'src/types/types';
+
 export const ownersData = [
   {
     owner: 'Samantha Bright',
@@ -94,7 +96,7 @@ export const roomsData = [
   },
 ];
 
-export const data = [
+export const data: BookingType[] = [
   {
     text: 'Газпром',
     ownerId: [2],
@@ -106,10 +108,10 @@ export const data = [
     status: 'paid',
   },
   {
-    text: 'New Brochures',
+    text: 'Лукойл',
     ownerId: [1],
     startDate: new Date('2023-06-01T18:30:00.000Z'),
-    endDate: new Date('2023-06-01T21:15:00.000Z'),
+    endDate: new Date('2023-06-01T20:15:00.000Z'),
     rooms: 2,
     email: 'qweqew@qweqwe.com',
     number: '+375295976883',

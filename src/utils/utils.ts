@@ -1,5 +1,7 @@
 import dayjs from 'dayjs';
 
+import { BookingType } from 'src/types/types';
+
 export const handleAddDate = (currentView: string, currentDate: dayjs.Dayjs) => {
   switch (currentView) {
     case 'timelineMonth':
@@ -56,3 +58,26 @@ export const handldleCheckView = (selectedView: string) => {
       return { type: 'timelineMonth' };
   }
 };
+
+const isBetween = (date: Date, start: Date, end: Date) => start < date && date < end;
+const isEqualDates = (date1: Date, date2: Date) => {
+  if (date1 > date2 || date1 < date2) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+export const checkBusyRoom = (
+  bookings: BookingType[],
+  rooms: number,
+  startDate: Date,
+  endDate: Date
+) =>
+  bookings.some(
+    (item) =>
+      item.rooms === rooms &&
+      (isBetween(startDate, item.startDate, item.endDate) ||
+        isBetween(endDate, item.startDate, item.endDate) ||
+        (isEqualDates(startDate, item.startDate) && isEqualDates(startDate, item.startDate)))
+  );

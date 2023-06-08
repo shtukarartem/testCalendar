@@ -2,21 +2,12 @@ import classNames from 'classnames';
 import dayjs from 'dayjs';
 import { FC } from 'react';
 
-import { RentStatusType } from 'src/types/types';
+import { BookingType } from 'src/types/types';
 
 import styles from './styles.module.css';
 
 type Props = {
-  data: {
-    text: string;
-    ownerId: number[];
-    startDate: Date;
-    endDate: Date;
-    rooms: number;
-    email: string;
-    number: string;
-    status: RentStatusType;
-  };
+  data: BookingType;
   currentDate: dayjs.Dayjs;
 };
 
