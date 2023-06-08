@@ -1,9 +1,6 @@
 import dayjs from 'dayjs';
 
-export const handleAddDate = (
-  currentView: string,
-  currentDate: dayjs.Dayjs
-) => {
+export const handleAddDate = (currentView: string, currentDate: dayjs.Dayjs) => {
   switch (currentView) {
     case 'timelineMonth':
       return currentDate.add(1, 'month');
@@ -22,10 +19,7 @@ export const handleAddDate = (
   }
 };
 
-export const handleSubtractDate = (
-  currentView: string,
-  currentDate: dayjs.Dayjs
-) => {
+export const handleSubtractDate = (currentView: string, currentDate: dayjs.Dayjs) => {
   switch (currentView) {
     case 'timelineMonth':
       return currentDate.subtract(1, 'month');
@@ -59,7 +53,7 @@ export const handldleCheckView = (selectedView: string) => {
     case 'twoWeeks':
       return { type: 'timelineWeek', intervalCount: 2 };
     case 'timelineMonth':
-      return { type: 'timelineMonth'};
+      return { type: 'timelineMonth' };
   }
 };
 

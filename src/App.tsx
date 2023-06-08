@@ -1,6 +1,8 @@
 import { locale } from 'devextreme/localization';
 import { FC, useEffect } from 'react';
 
+import { MaterialProvider } from 'src/providers/MaterialProvider';
+
 import './App.css';
 import 'devextreme/dist/css/dx.light.css';
 
@@ -10,7 +12,11 @@ const App: FC = () => {
   useEffect(() => {
     locale('ru');
   }, []);
-  return <Calendar />;
+  return (
+    <MaterialProvider>
+      <Calendar />
+    </MaterialProvider>
+  );
 };
 
 export default App;

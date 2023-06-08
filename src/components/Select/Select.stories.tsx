@@ -21,10 +21,6 @@ const options: SelectOptions[] = [
 
 type Story = StoryObj<typeof SelectComponent>;
 
-export default {
-  component: SelectComponent,
-};
-
 export const SelectStoryComponent: Story = {
   args: {
     value: '',
@@ -33,3 +29,7 @@ export const SelectStoryComponent: Story = {
     label: 'default',
   },
 };
+
+const SelectDefaultExport = { component: SelectComponent };
+
+export default SelectDefaultExport;

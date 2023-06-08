@@ -16,6 +16,6 @@ export const RoomComponent: Story = {
   },
 };
 
-export default {
-  component: Room,
-};
+const RoomDefaultExport = { component: Room };
+
+export default RoomDefaultExport;

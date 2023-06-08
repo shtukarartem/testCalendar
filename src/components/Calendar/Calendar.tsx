@@ -65,7 +65,6 @@ export const Calendar: FC = () => {
         )}
         onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {
           if (e.name === 'currentView') setCurrentView(e.value);
-          console.log(e);
         }}
         height={900}
         groups={groups}

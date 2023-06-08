@@ -12,15 +12,9 @@ type Props = {
   label?: string;
   value?: string;
   handleChange: (value: string) => void;
-}
+};
 
-export const SelectComponent: FC<Props> = ({
-  options,
-  value,
-  sx,
-  label,
-  handleChange,
-}) => (
+export const SelectComponent: FC<Props> = ({ options, value, sx, label, handleChange }) => (
   <Select
     sx={sx}
     value={value}
