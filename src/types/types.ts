@@ -4,3 +4,5 @@ export type SelectOptions = {
 };
 
 export type RoomType = 'workPlace' | 'office' | 'meeting';
+
+export type RentStatusType = 'paid' | 'booked' | 'overdue';

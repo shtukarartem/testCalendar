@@ -5,6 +5,7 @@ import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler, { CellClickEvent } from 'devextreme/ui/scheduler';
 import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
 
+import { Appointment } from 'src/components/Appointment/Appointment';
 import { Header } from 'src/components/Header/Header';
 import { Room } from 'src/components/Room/Room';
 import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
@@ -79,6 +80,9 @@ export const Calendar: FC = () => {
         currentDate={currentDate.toDate()}
         appointmentTooltipComponent={(data) => (
           <TooltipComponent data={data.data.appointmentData} handleClose={closeTooltip} />
+        )}
+        appointmentRender={(data) => (
+          <Appointment data={data.appointmentData} currentDate={currentDate} />
         )}
         onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {
           if (e.name === 'currentView') setCurrentView(e.value);
