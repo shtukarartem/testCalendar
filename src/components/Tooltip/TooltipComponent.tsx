@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 
 type Props = {
   data: {
-    renter: string;
+    text: string;
     ownerId: number[];
     startDate: Date;
     endDate: Date;
@@ -28,7 +28,7 @@ export const TooltipComponent: FC<Props> = ({ data, handleClose }) => (
         <CloseIcon />
       </IconButton>
     </div>
-    <div className={styles.fio}>{data.renter}</div>
+    <div className={styles.fio}>{data.text}</div>
     <div className={styles.data}>
       <span className={styles.dataTitle}>Крайний срок</span>
       <span className={styles.dateText}>
