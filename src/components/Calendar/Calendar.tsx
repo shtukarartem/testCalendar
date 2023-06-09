@@ -95,7 +95,7 @@ export const Calendar: FC = () => {
       <Scheduler
         currentView={currentView.type as any} // eslint-disable-line
         className={style.wrapper}
-        timeZone="Europe/Moscow"
+        //timeZone="Europe/Moscow"
         dataSource={data}
         ref={schedulerRef}
         views={[currentView] as any} // eslint-disable-line
