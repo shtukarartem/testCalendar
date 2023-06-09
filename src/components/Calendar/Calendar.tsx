@@ -14,6 +14,7 @@ import {
   checkBusyRoom,
   handldleCheckView,
   handleAddDate,
+  handleSelectData,
   handleSubtractDate,
 } from 'src/utils/utils';
 
@@ -64,6 +65,7 @@ export const Calendar: FC = () => {
   return (
     <>
       <Header
+        selectPlaceholder="sdssd"
         selectViewValue={selectedView}
         handleMinusButton={() =>
           setCurrentView({
@@ -84,10 +86,12 @@ export const Calendar: FC = () => {
           setCurrentDate(handleSubtractDate(selectedView, currentDate) ?? currentDate)
         }
         handleViewsChange={(value) => setSelectedView(value)}
+        handleSelect={(icon: string) => {
+          const data = handleSelectData(icon);
+          setCurrentDate(data?.currentData ?? currentDate);
+          setCurrentView(data?.currentView ?? currentView);
+        }}
       />
-      <button onClick={() => setCurrentDate(dayjs())} type="button">
-        today
-      </button>
       <Scheduler
         currentView={currentView.type as any} // eslint-disable-line
         className={style.wrapper}
