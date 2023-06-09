@@ -159,3 +159,7 @@
   )::before {
   background: var(--electric-blue-10);
 }
+
+.antPickerDropdown :global .ant-picker-panel-container {
+  box-shadow: none !important;
+}
