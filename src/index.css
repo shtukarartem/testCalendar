@@ -3,11 +3,13 @@
   --neutral-sec-50: #79747e;
 
   --neutral-10: #1c1b1f;
+  --neutral-60: #939094;
   --neutral-80: #c9c5ca;
 
   --yellow-40: #daa104;
 
   --red-40: #ff8686;
+  --red-70: #bd0000;
 
   --cyan-40: #0ebdba;
 
@@ -28,6 +30,10 @@
   --magenta-10: #fef4ff;
   --magenta-20: #fbdaff;
   --magenta-70: #a000b6;
+
+  --transition-2: 0.3s;
+
+  --z-index-collapser: 1201;
 }
 
 * {
