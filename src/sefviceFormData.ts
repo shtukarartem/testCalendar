@@ -469,4 +469,3 @@ export const data: BookingType[] = [
     status: 'paid',
   },
 ];
-console.log(data[0].startDate)
