@@ -113,8 +113,8 @@ export const Calendar: FC = () => {
         groups={groups}
         cellDuration={60}
         firstDayOfWeek={0}
-        startDayHour={8}
-        endDayHour={20}
+        startDayHour={0}
+        endDayHour={24}
         onCellClick={createMeeting}
         onAppointmentDblClick={editMeeting}
         onAppointmentAdding={onAppointmentAdding}
