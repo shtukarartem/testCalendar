@@ -1,16 +1,15 @@
 import { FC, useState } from 'react';
 
-import { SelectComponent } from 'src/components/Select/Select';
-import { changeViewOptions } from 'src/constants/constants';
-import { ViewListType } from 'src/types/types';
-
-import styles from './styles.module.css';
-
 import { DateSelector } from 'src/components/Header/HeaderComponents/DateSelector/DateSelector';
 import { viewList } from 'src/components/Header/HeaderComponents/DateSelector/ViewList/ViewListConstants';
 import { PinnedViews } from 'src/components/Header/HeaderComponents/PinnedViews/PinnedViews';
 import { RangeButtons } from 'src/components/Header/HeaderComponents/RangeButtons/RangeButtons';
 import { ViewButtons } from 'src/components/Header/HeaderComponents/ViewButtons/ViewButtons';
+import { SelectComponent } from 'src/components/Select/Select';
+import { changeViewOptions } from 'src/constants/constants';
+import { ViewListType } from 'src/types/types';
+
+import styles from './styles.module.css';
 
 type Props = {
   selectViewValue: string;
