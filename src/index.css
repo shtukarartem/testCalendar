@@ -30,6 +30,10 @@
   --magenta-10: #fef4ff;
   --magenta-20: #fbdaff;
   --magenta-70: #a000b6;
+
+  --transition-2: 0.3s;
+
+  --z-index-collapser: 1201;
 }
 
 * {

@@ -92,9 +92,6 @@ export const Calendar: FC = () => {
           setCurrentView(data?.currentView ?? currentView);
         }}
       />
-      <button onClick={() => setCurrentDate(dayjs())} type="button">
-        today
-      </button>
       <Scheduler
         currentView={currentView.type as any} // eslint-disable-line
         className={style.wrapper}
@@ -146,7 +143,3 @@ export const Calendar: FC = () => {
     </>
   );
 };
-
-// function handleSelectedData(icon: string) { // eslint-disable-line
-//   throw new Error('Function not implemented.'); // eslint-disable-line
-// }
