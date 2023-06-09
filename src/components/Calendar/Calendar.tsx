@@ -7,6 +7,7 @@ import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
 
 import { Appointment } from 'src/components/Appointment/Appointment';
 import { Header } from 'src/components/Header/Header';
+import { MoreAppointments } from 'src/components/MoreAppointments/MoreAppointments';
 import { Room } from 'src/components/Room/Room';
 import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
 import { data, ownersData, roomsData } from 'src/sefviceFormData';
@@ -20,7 +21,7 @@ import {
 
 import style from './style.module.css';
 
-const onAppointmentAdding = (e: AppointmentAddingEvent) => {
+const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
   const isBusyDate = checkBusyRoom(
     data,
     e.appointmentData.rooms,
@@ -110,6 +111,7 @@ export const Calendar: FC = () => {
           console.log(currentDate);
         }}
         height={900}
+        dropDownAppointmentComponent={(data) => <MoreAppointments data={data.data} />}
         groups={groups}
         cellDuration={60}
         firstDayOfWeek={0}
@@ -117,7 +119,7 @@ export const Calendar: FC = () => {
         endDayHour={24}
         onCellClick={createMeeting}
         onAppointmentDblClick={editMeeting}
-        onAppointmentAdding={onAppointmentAdding}
+        onAppointmentAdding={handleAppointmentAdding}
         // TODO uncomment later. need for cancel default popul creation
         // onAppointmentFormOpening={(e: AppointmentFormOpeningEvent) => {
         //   e.cancel = true;

@@ -21,14 +21,17 @@
 
   --green-light-10: #effbe4;
   --green-light-20: #c7f1a4;
+  --green-light-40: #66bf1d;
   --green-light-70: #386810;
 
   --sky-10: #f4f8ff;
   --sky-20: #d9e6ff;
+  --sky-40: #7faaff;
   --sky-70: #004ce6;
 
   --magenta-10: #fef4ff;
   --magenta-20: #fbdaff;
+  --magenta-40: #f07dff;
   --magenta-70: #a000b6;
 
   --transition-2: 0.3s;
