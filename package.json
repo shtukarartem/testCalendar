@@ -1,7 +1,7 @@
 {
   "name": "ds-calendar",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "homepage": "https://github.com/shtukarartem/testCalendar",
   "dependencies": {

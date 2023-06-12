@@ -22,5 +22,8 @@
     "main.44e1bcfc.css.map": "/shtukarartem/testCalendar/static/css/main.44e1bcfc.css.map",
     "main.88f83761.js.map": "/shtukarartem/testCalendar/static/js/main.88f83761.js.map"
   },
-  "entrypoints": ["static/css/main.44e1bcfc.css", "static/js/main.88f83761.js"]
+  "entrypoints": [
+    "static/css/main.44e1bcfc.css",
+    "static/js/main.88f83761.js"
+  ]
 }
