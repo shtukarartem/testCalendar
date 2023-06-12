@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import { FC, useState } from 'react';
 
 import { DateSelector } from 'src/components/Header/HeaderComponents/DateSelector/DateSelector';
@@ -8,6 +9,7 @@ import { ViewButtons } from 'src/components/Header/HeaderComponents/ViewButtons/
 import { SelectComponent } from 'src/components/Select/Select';
 import { changeViewOptions } from 'src/constants/constants';
 import { ViewListType } from 'src/types/types';
+import { handleFirstCharInUpperCase, handleSelectedPlaceholder } from 'src/utils/utils';
 
 import styles from './styles.module.css';
 
@@ -33,7 +35,7 @@ export const Header: FC<Props> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [views, setViews] = useState<ViewListType[]>(viewList);
-  const [selectedPlaceholde, setSelectedPlaceholde] = useState('месяц');
+  const [selectedPlaceholder, setSelectedPlaceholder] = useState(handleFirstCharInUpperCase(dayjs().locale('ru').format('MMMM')));
 
   const handlePinned = (i: number) => {
     const newState: ViewListType[] = views.map((item, index) => {
@@ -52,21 +54,21 @@ export const Header: FC<Props> = ({
         views={views}
         handlePinned={handlePinned}
         isOpen={isOpen}
-        selectPlaceholder={selectedPlaceholde}
+        selectPlaceholder={selectedPlaceholder}
         onCancel={() => setIsOpen(false)}
         handleOpen={() => setIsOpen(true)}
         onSubmit={() => setIsOpen(false)}
         handleViewClick={(title: string) => {
           setIsOpen(false);
           handleSelect(title);
-          setSelectedPlaceholde(title);
+          setSelectedPlaceholder(handleSelectedPlaceholder(title));
         }}
       />
       <PinnedViews
         views={views}
         handleSelect={(title) => {
           handleSelect(title);
-          setSelectedPlaceholde(title);
+          setSelectedPlaceholder(handleSelectedPlaceholder(title));
         }}
       />
       <SelectComponent
