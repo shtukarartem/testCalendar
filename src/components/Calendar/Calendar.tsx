@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 import { Scheduler } from 'devextreme-react';
-import { Editing, Resource, View } from 'devextreme-react/scheduler';
+import { Editing, Resource, Scrolling, View } from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler, { AppointmentAddingEvent, CellClickEvent } from 'devextreme/ui/scheduler';
 import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
@@ -107,7 +107,6 @@ export const Calendar: FC = () => {
         )}
         onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {
           if (e.name === 'currentView') setCurrentView(e.value);
-          console.log(currentDate);
         }}
         height={900}
         groups={groups}
@@ -129,6 +128,7 @@ export const Calendar: FC = () => {
         // }}
       >
         <View type="timelineMonth" />
+        <Scrolling mode="virtual" />
         <Resource
           fieldExpr="ownerId"
           allowMultiple={true}

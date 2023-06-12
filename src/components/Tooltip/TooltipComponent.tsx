@@ -45,7 +45,7 @@ export const TooltipComponent: FC<Props> = ({ data, handleClose }) => (
     <div className={styles.number}>{data.number}</div>
     <div className={styles.footer}>
       <button
-      disabled
+        disabled
         type="button"
         onClick={(event: MouseEvent<HTMLButtonElement>) => {
           event.stopPropagation();
@@ -55,7 +55,7 @@ export const TooltipComponent: FC<Props> = ({ data, handleClose }) => (
         Отменить бронь
       </button>
       <button
-      disabled
+        disabled
         type="button"
         onClick={(event: MouseEvent<HTMLButtonElement>) => event.stopPropagation()}
         className={styles.buttonLight}

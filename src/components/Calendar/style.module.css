@@ -1,5 +1,5 @@
 .wrapper :global .dx-scheduler-cell-sizes-horizontal {
-  width: 3.125rem;
+  width: 2.5rem;
 }
 
 .wrapper :global .dx-tooltip-wrapper .dx-overlay-content .dx-popup-content {
@@ -20,6 +20,9 @@
   width: 12.5rem;
   height: 5rem;
 }
+.wrapper :global .dx-scheduler-header-panel-empty-cell {
+  width: 12.5rem;
+}
 
 .wrapper :global .dx-scheduler-date-table .dx-scheduler-date-table-row {
   height: 5rem;
@@ -34,4 +37,10 @@
 
 .wrapper :global .dx-scheduler-appointment-content {
   padding: 0;
+}
+.wrapper
+  :global
+  .dx-scheduler-timeline
+  .dx-scheduler-header-panel-cell:not(.dx-scheduler-header-panel-week-cell) {
+  width: 40px;
 }
