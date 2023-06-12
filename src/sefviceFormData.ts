@@ -119,7 +119,7 @@ export const data: BookingType[] = [
     status: 'paid',
   },
   {
-    text: 'Brochure Design Review',
+    text: 'Тинькофф',
     ownerId: [4],
     startDate: new Date('2023-06-01T20:15:00.000'),
     endDate: new Date('2023-06-01T23:15:00.000'),
@@ -129,7 +129,7 @@ export const data: BookingType[] = [
     status: 'paid',
   },
   {
-    text: 'Website Re-Design Plan',
+    text: 'Andersen',
     ownerId: [3],
     startDate: new Date('2023-06-01T23:45:00.000'),
     endDate: new Date('2023-06-02T18:15:00.000'),
@@ -159,7 +159,7 @@ export const data: BookingType[] = [
     status: 'overdue',
   },
   {
-    text: 'Approve Hiring of John Jeffers',
+    text: 'Epam',
     ownerId: [2],
     startDate: new Date('2023-06-03T17:00:00.000'),
     endDate: new Date('2023-06-03T18:15:00.000'),
@@ -169,7 +169,7 @@ export const data: BookingType[] = [
     status: 'paid',
   },
   {
-    text: 'Update NDA Agreement',
+    text: 'VironIT',
     ownerId: [3],
     startDate: new Date('2023-06-03T18:45:00.000'),
     endDate: new Date('2023-06-03T20:45:00.000'),
@@ -179,7 +179,7 @@ export const data: BookingType[] = [
     status: 'paid',
   },
   {
-    text: 'Submit Questions Regarding New NDA',
+    text: 'T-Mobile',
     ownerId: [1],
     startDate: new Date('2023-06-05T01:00:00.000'),
     endDate: new Date('2023-06-04T16:30:00.000'),
@@ -189,7 +189,7 @@ export const data: BookingType[] = [
     status: 'overdue',
   },
   {
-    text: 'Review Revenue Projections',
+    text: 'Liddl',
     ownerId: [3],
     startDate: new Date('2023-06-05T00:15:00.000'),
     endDate: new Date('2023-06-04T15:00:00.000'),
@@ -199,7 +199,7 @@ export const data: BookingType[] = [
     status: 'paid',
   },
   {
-    text: 'Review Changes to Health Insurance Coverage',
+    text: 'Алексей Иванов',
     ownerId: [2],
     startDate: new Date('2023-06-05T21:15:00.000'),
     endDate: new Date('2023-06-05T22:30:00.000'),
@@ -209,7 +209,7 @@ export const data: BookingType[] = [
     status: 'paid',
   },
   {
-    text: 'Review Training Course for any Omissions',
+    text: 'Билайн',
     ownerId: [2],
     startDate: new Date('2023-06-08T21:00:00.000'),
     endDate: new Date('2023-06-09T19:00:00.000'),

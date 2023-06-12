@@ -3,18 +3,12 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { IconButton } from '@mui/material';
 import { FC, MouseEvent } from 'react';
 
+import { BookingType } from 'src/types/types';
+
 import styles from './styles.module.css';
 
 type Props = {
-  data: {
-    text: string;
-    ownerId: number[];
-    startDate: Date;
-    endDate: Date;
-    rooms: number;
-    email: string;
-    number: string;
-  };
+  data: BookingType;
   handleClose: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
