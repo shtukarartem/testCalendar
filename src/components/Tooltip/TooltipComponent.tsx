@@ -3,18 +3,12 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { IconButton } from '@mui/material';
 import { FC, MouseEvent } from 'react';
 
+import { BookingType } from 'src/types/types';
+
 import styles from './styles.module.css';
 
 type Props = {
-  data: {
-    text: string;
-    ownerId: number[];
-    startDate: Date;
-    endDate: Date;
-    rooms: number;
-    email: string;
-    number: string;
-  };
+  data: BookingType;
   handleClose: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
@@ -45,7 +39,7 @@ export const TooltipComponent: FC<Props> = ({ data, handleClose }) => (
     <div className={styles.number}>{data.number}</div>
     <div className={styles.footer}>
       <button
-      disabled
+        disabled
         type="button"
         onClick={(event: MouseEvent<HTMLButtonElement>) => {
           event.stopPropagation();
@@ -55,7 +49,7 @@ export const TooltipComponent: FC<Props> = ({ data, handleClose }) => (
         Отменить бронь
       </button>
       <button
-      disabled
+        disabled
         type="button"
         onClick={(event: MouseEvent<HTMLButtonElement>) => event.stopPropagation()}
         className={styles.buttonLight}

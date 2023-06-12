@@ -35,3 +35,14 @@
 .wrapper :global .dx-scheduler-appointment-content {
   padding: 0;
 }
+
+.wrapper :global .dx-scheduler-appointment-collector {
+  margin: 1px 1px 0 1px;
+  width: 3.125rem !important;
+  box-shadow: none !important;
+  border-radius: 0.25rem !important;
+}
+
+.wrapper :global .dx-scheduler-appointment-collector:hover::before {
+  border-radius: 0.25rem !important;
+}
