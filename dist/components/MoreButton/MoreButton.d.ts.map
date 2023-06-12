@@ -1,0 +1,1 @@
+{"version":3,"file":"MoreButton.d.ts","sourceRoot":"","sources":["../../../src/components/MoreButton/MoreButton.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,EAAE,EAAE,MAAM,OAAO,CAAC;AAI3B,KAAK,KAAK,GAAG;IACX,IAAI,EAAE;QACJ,gBAAgB,EAAE,MAAM,CAAC;QACzB,SAAS,EAAE,OAAO,CAAC;KACpB,CAAC;CACH,CAAC;AAEF,eAAO,MAAM,UAAU,EAAE,EAAE,CAAC,KAAK,CAGhC,CAAC"}
