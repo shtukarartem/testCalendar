@@ -1,3 +1,6 @@
 .wrapper {
   display: flex;
 }
+.settingsIcon{
+  margin-bottom: 0.625rem;
+}
