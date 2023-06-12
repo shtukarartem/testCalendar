@@ -1,7 +1,8 @@
 import { FC } from 'react';
+
 type Props = {
-    handlePlusButton: () => void;
-    handleMinusButton: () => void;
+  handlePlusButton: () => void;
+  handleMinusButton: () => void;
 };
 export declare const ViewButtons: FC<Props>;
 export {};

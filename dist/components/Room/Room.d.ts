@@ -1,13 +1,15 @@
 import { FC } from 'react';
+
 import { RoomType } from 'src/types/types';
+
 type Props = {
-    data: {
-        room: string;
-        description: string;
-        type: RoomType;
-        id: number;
-        color: string;
-    };
+  data: {
+    room: string;
+    description: string;
+    type: RoomType;
+    id: number;
+    color: string;
+  };
 };
 export declare const Room: FC<Props>;
 export {};

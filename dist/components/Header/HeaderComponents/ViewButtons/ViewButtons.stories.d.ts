@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
+
 import { ViewButtons } from './ViewButtons';
+
 type Story = StoryObj<typeof ViewButtons>;
 declare const meta: Meta<typeof ViewButtons>;
 export declare const RangeButtonsComponent: Story;

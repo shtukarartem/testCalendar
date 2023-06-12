@@ -1,8 +1,10 @@
 import { FC } from 'react';
+
 import { ViewListType } from 'src/types/types';
+
 type Props = {
-    views: ViewListType[];
-    handleSelect: (icon: string) => void;
+  views: ViewListType[];
+  handleSelect: (icon: string) => void;
 };
 export declare const PinnedViews: FC<Props>;
 export {};
