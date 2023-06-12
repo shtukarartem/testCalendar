@@ -14,6 +14,9 @@
 .dx-state-active {
   background: #fff !important;
 }
+.dx-state-hover {
+  background: #fff !important;
+}
 
 .dx-state-hover {
   background: #fff !important;
