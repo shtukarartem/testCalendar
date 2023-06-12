@@ -1,7 +1,9 @@
+import IconButton from '@mui/material/IconButton/IconButton';
 import dayjs from 'dayjs';
 import { FC, useState } from 'react';
 
 import { DateSelector } from 'src/components/Header/HeaderComponents/DateSelector/DateSelector';
+import IconSettings from 'src/assets/images/IconButton.svg';
 import { viewList } from 'src/components/Header/HeaderComponents/DateSelector/ViewList/ViewListConstants';
 import { PinnedViews } from 'src/components/Header/HeaderComponents/PinnedViews/PinnedViews';
 import { RangeButtons } from 'src/components/Header/HeaderComponents/RangeButtons/RangeButtons';
@@ -78,6 +80,9 @@ export const Header: FC<Props> = ({
         handleChange={handleViewsChange}
         options={changeViewOptions}
       />
+      <IconButton className={styles.settingsIcon}>
+        <img src={IconSettings} alt="" />
+      </IconButton>
     </div>
   );
 };
