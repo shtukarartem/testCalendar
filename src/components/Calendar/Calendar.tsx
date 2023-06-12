@@ -33,15 +33,20 @@ const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
     e.cancel = true;
     alert('Данная переговорка уже забронирована на выбранное Вами время');
   }
+  console.log('// TODO here will be action for adding appointment');
 };
 
-const createMeeting = (e: CellClickEvent) => {
+const openCreationModal = (e: CellClickEvent) => {
   e.event?.preventDefault();
-  console.log('this action income from service form');
+  console.log('this action open CreationModal and will income from service form');
 };
 
-const editMeeting = () => {
+const openEditingModal = () => {
   console.log('metting dbl click this action income from service form');
+};
+
+const updateAppointment = () => {
+  console.log('// TODO here will be action for update appointment');
 };
 
 export const Calendar: FC = () => {
@@ -117,8 +122,10 @@ export const Calendar: FC = () => {
         firstDayOfWeek={0}
         startDayHour={0}
         endDayHour={24}
-        onCellClick={createMeeting}
-        onAppointmentDblClick={editMeeting}
+        onCellClick={openCreationModal}
+        editing
+        onAppointmentUpdating={updateAppointment}
+        onAppointmentDblClick={openEditingModal}
         appointmentCollectorComponent={(data) => <MoreButton data={data.data} />}
         onAppointmentAdding={handleAppointmentAdding}
         // TODO uncomment later. need for cancel default popul creation
