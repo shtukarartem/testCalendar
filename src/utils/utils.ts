@@ -159,4 +159,5 @@ export const handleSelectedPlaceholder = (title: string) => {
   }
 };
 
-export const handleFirstCharInUpperCase = (title: string) => title.charAt(0).toUpperCase() + title.slice(1)
+export const handleFirstCharInUpperCase = (title: string) =>
+  title.charAt(0).toUpperCase() + title.slice(1);

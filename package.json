@@ -1,7 +1,9 @@
 {
-  "name": "calen1",
-  "version": "0.1.0",
+  "name": "ds-calendar",
+  "version": "1.0.0",
   "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/shtukarartem/testCalendar",
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",

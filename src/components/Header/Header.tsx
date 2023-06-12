@@ -35,7 +35,9 @@ export const Header: FC<Props> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [views, setViews] = useState<ViewListType[]>(viewList);
-  const [selectedPlaceholder, setSelectedPlaceholder] = useState(handleFirstCharInUpperCase(dayjs().locale('ru').format('MMMM')));
+  const [selectedPlaceholder, setSelectedPlaceholder] = useState(
+    handleFirstCharInUpperCase(dayjs().locale('ru').format('MMMM'))
+  );
 
   const handlePinned = (i: number) => {
     const newState: ViewListType[] = views.map((item, index) => {
