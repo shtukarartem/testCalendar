@@ -145,3 +145,18 @@ export const checkBusyRoom = (
         isBetween(endDate, item.startDate, item.endDate) ||
         (isEqualDates(startDate, item.startDate) && isEqualDates(startDate, item.startDate)))
   );
+
+export const handleSelectedPlaceholder = (title: string) => {
+  switch (title) {
+    case 'Текущий месяц':
+      return handleFirstCharInUpperCase(dayjs().locale('ru').format('MMMM'));
+    case 'Прошлый месяц':
+      return handleFirstCharInUpperCase(dayjs().subtract(1, 'month').locale('ru').format('MMMM'));
+    case 'Следующий месяц':
+      return handleFirstCharInUpperCase(dayjs().add(1, 'month').locale('ru').format('MMMM'));
+    default:
+      return title;
+  }
+};
+
+export const handleFirstCharInUpperCase = (title: string) => title.charAt(0).toUpperCase() + title.slice(1)
