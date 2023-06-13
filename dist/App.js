@@ -7,10 +7,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _localization = require("devextreme/localization");
 var _react = require("react");
-var _MaterialProvider = require("src/providers/MaterialProvider");
 require("./App.css");
 require("devextreme/dist/css/dx.light.css");
 var _Calendar = require("./components/Calendar/Calendar");
+var _MaterialProvider = require("./providers/MaterialProvider");
 var App = function App() {
   (0, _react.useEffect)(function () {
     (0, _localization.locale)('ru');
