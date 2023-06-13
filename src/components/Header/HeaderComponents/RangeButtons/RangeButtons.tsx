@@ -1,5 +1,6 @@
-import { FC } from 'react';
 import IconButton from '@mui/material/IconButton';
+import { FC } from 'react';
+
 import styles from './styles.module.css';
 
 type Props = {
