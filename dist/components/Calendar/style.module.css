@@ -1,0 +1,56 @@
+.wrapper :global .dx-scheduler-cell-sizes-horizontal {
+  width: 2.5rem;
+}
+
+.wrapper :global .dx-tooltip-wrapper .dx-overlay-content .dx-popup-content {
+  max-height: 28.125rem !important;
+  height: 25rem !important;
+}
+
+.wrapper :global .dx-scheduler-appointment-tooltip-wrapper > div.dx-overlay-content {
+  max-height: 28.125rem !important;
+  height: 25rem !important;
+}
+
+.wrapper :global .dx-scheduler-group-row {
+  display: block;
+}
+
+.wrapper :global .dx-scheduler-group-row:last-child .dx-scheduler-group-header {
+  width: 12.5rem;
+  height: 5rem;
+}
+.wrapper :global .dx-scheduler-header-panel-empty-cell {
+  width: 12.5rem;
+}
+
+.wrapper :global .dx-scheduler-date-table .dx-scheduler-date-table-row {
+  height: 5rem;
+  flex: none !important;
+}
+
+.wrapper :global .dx-scheduler-appointment-horizontal {
+  height: 5rem !important;
+  margin-top: -1.625rem;
+  border: none;
+}
+
+.wrapper :global .dx-scheduler-appointment-content {
+  padding: 0;
+}
+.wrapper
+  :global
+  .dx-scheduler-timeline
+  .dx-scheduler-header-panel-cell:not(.dx-scheduler-header-panel-week-cell) {
+  width: 40px;
+}
+.wrapper :global .dx-scheduler-appointment-collector {
+  margin: 1px 1px 0 1px;
+  width: 3.125rem !important;
+  box-shadow: none !important;
+  border-radius: 0.25rem !important;
+}
+
+.wrapper :global .dx-scheduler-appointment-collector:hover::before {
+  border-radius: 0.25rem !important;
+}

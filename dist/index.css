@@ -1,0 +1,75 @@
+:root {
+  --neutral-sec-30: #49454f;
+  --neutral-sec-50: #79747e;
+
+  --neutral-10: #1c1b1f;
+  --neutral-60: #939094;
+  --neutral-80: #c9c5ca;
+
+  --yellow-10: #fff7e1;
+  --yellow-40: #daa104;
+
+  --red-40: #ff8686;
+  --red-70: #bd0000;
+
+  --cyan-40: #0ebdba;
+
+  --white-transp-100: #fff;
+
+  --electric-blue-10: #f7f7ff;
+  --electric-blue-60: #5c5cff;
+  --electric-blue-70: #3737ff;
+
+  --green-light-10: #effbe4;
+  --green-light-20: #c7f1a4;
+  --green-light-40: #66bf1d;
+  --green-light-70: #386810;
+
+  --sky-10: #f4f8ff;
+  --sky-20: #d9e6ff;
+  --sky-40: #7faaff;
+  --sky-70: #004ce6;
+
+  --magenta-10: #fef4ff;
+  --magenta-20: #fbdaff;
+  --magenta-40: #f07dff;
+  --magenta-70: #a000b6;
+
+  --transition-2: 0.3s;
+
+  --z-index-collapser: 1201;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  --webkit-overflow-scrolling: touch;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}

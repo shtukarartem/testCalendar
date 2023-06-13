@@ -3,6 +3,8 @@
   "version": "1.0.4",
   "private": false,
   "license": "MIT",
+  "main": "dist/index.tsx",
+  "types": "dist/index.d.ts",
   "homepage": "https://github.com/shtukarartem/testCalendar",
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -41,6 +43,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:js": "babel src --out-dir dist --copy-files --extensions \".ts,.tsx\" --source-maps true",
     "test": "react-scripts test",
     "tsc": "tsc",
     "eject": "react-scripts eject",
@@ -75,6 +78,11 @@
     }
   },
   "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
     "@storybook/addon-essentials": "^7.0.18",
     "@storybook/addon-interactions": "^7.0.18",
     "@storybook/addon-links": "^7.0.18",
