@@ -1,6 +1,5 @@
-import { Button } from '@mui/material';
 import { FC } from 'react';
-
+import IconButton from '@mui/material/IconButton';
 import styles from './styles.module.css';
 
 type Props = {
@@ -10,11 +9,11 @@ type Props = {
 
 export const RangeButtons: FC<Props> = ({ handleAddDate, handleSubtractDate }) => (
   <div className={styles.wrapper}>
-    <Button variant="outlined" className={styles.button} onClick={handleSubtractDate}>
+    <IconButton className={styles.leftButton} onClick={handleSubtractDate}>
       {'<'}
-    </Button>
-    <Button variant="outlined" className={styles.button} onClick={handleAddDate}>
+    </IconButton>
+    <IconButton className={styles.rightButton} onClick={handleAddDate}>
       {'>'}
-    </Button>
+    </IconButton>
   </div>
 );

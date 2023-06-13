@@ -1,6 +1,7 @@
-import Button from '@mui/material/Button/Button';
 import { FC } from 'react';
-
+import IconButton from '@mui/material/IconButton';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import styles from './styles.module.css';
 
 type Props = {
@@ -10,11 +11,11 @@ type Props = {
 
 export const ViewButtons: FC<Props> = ({ handleMinusButton, handlePlusButton }) => (
   <div className={styles.wrapper}>
-    <Button variant="outlined" className={styles.button} onClick={handlePlusButton}>
-      {'+'}
-    </Button>
-    <Button variant="outlined" className={styles.button} onClick={handleMinusButton}>
-      {'-'}
-    </Button>
+  <IconButton className={styles.addButton} onClick={handlePlusButton}>
+  <AddIcon/>
+  </IconButton>
+  <IconButton className={styles.removeButton} onClick={handleMinusButton}>
+  <RemoveIcon />
+  </IconButton>
   </div>
 );
