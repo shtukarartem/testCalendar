@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": false,
   "license": "MIT",
-  "main": "dist/index.tsx",
-  "types": "dist/index.d.ts",
+  "main": "dist/App.js",
+  "types": "dist/App.d.ts",
   "homepage": "https://github.com/shtukarartem/testCalendar",
   "dependencies": {
     "@emotion/react": "^11.11.0",
