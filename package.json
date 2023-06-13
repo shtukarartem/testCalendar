@@ -1,6 +1,6 @@
 {
   "name": "ds-calendar",
-  "version": "1.0.4",
+  "version": "0.0.1",
   "private": false,
   "license": "MIT",
   "main": "dist/index.tsx",
