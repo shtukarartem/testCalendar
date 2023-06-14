@@ -1,5 +1,4 @@
 import IconButton from '@mui/material/IconButton/IconButton';
-import dayjs from 'dayjs';
 import { FC, useState } from 'react';
 
 import { DateSelector } from 'src/components/Header/HeaderComponents/DateSelector/DateSelector';
@@ -10,9 +9,10 @@ import { ViewButtons } from 'src/components/Header/HeaderComponents/ViewButtons/
 import { SelectComponent } from 'src/components/Select/Select';
 import { changeViewOptions } from 'src/constants/constants';
 import { ViewListType } from 'src/types/types';
-import { handleFirstCharInUpperCase, handleSelectedPlaceholder } from 'src/utils/utils';
+import { handleSelectedPlaceholder } from 'src/utils/utils';
 
 import IconSettings from 'src/assets/images/IconButton.svg';
+
 
 import styles from './styles.module.css';
 
@@ -38,9 +38,7 @@ export const Header: FC<Props> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [views, setViews] = useState<ViewListType[]>(viewList);
-  const [selectedPlaceholder, setSelectedPlaceholder] = useState(
-    handleFirstCharInUpperCase(dayjs().locale('ru').format('MMMM'))
-  );
+  const [selectedPlaceholder, setSelectedPlaceholder] = useState('Сегодня');
 
   const handlePinned = (i: number) => {
     const newState: ViewListType[] = views.map((item, index) => {
