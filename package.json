@@ -1,10 +1,10 @@
 {
   "name": "sf-calendar",
-  "version": "0.0.13",
+  "version": "0.0.12",
   "private": false,
   "license": "MIT",
-  "main": "build/static/js/main.ac347945.js",
-  "module": "build/static/js/main.ac347945.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/App.d.ts",
   "files": [
     "dist",
