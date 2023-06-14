@@ -1,17 +1,18 @@
 import dayjs from 'dayjs';
 import { FC, useState } from 'react';
 
-import { DateSelector } from 'src/components/Header/HeaderComponents/DateSelector/DateSelector';
-import { viewList } from 'src/components/Header/HeaderComponents/DateSelector/ViewList/ViewListConstants';
-import { PinnedViews } from 'src/components/Header/HeaderComponents/PinnedViews/PinnedViews';
-import { RangeButtons } from 'src/components/Header/HeaderComponents/RangeButtons/RangeButtons';
-import { ViewButtons } from 'src/components/Header/HeaderComponents/ViewButtons/ViewButtons';
-import { SelectComponent } from 'src/components/Select/Select';
 import { changeViewOptions } from 'src/constants/constants';
 import { ViewListType } from 'src/types/types';
-import { handleFirstCharInUpperCase, handleSelectedPlaceholder } from 'src/utils/utils';
 
 import styles from './styles.module.css';
+
+import { handleFirstCharInUpperCase, handleSelectedPlaceholder } from '../../utils/utils';
+import { SelectComponent } from './../Select/Select';
+import { DateSelector } from './HeaderComponents/DateSelector/DateSelector';
+import { viewList } from './HeaderComponents/DateSelector/ViewList/ViewListConstants';
+import { PinnedViews } from './HeaderComponents/PinnedViews/PinnedViews';
+import { RangeButtons } from './HeaderComponents/RangeButtons/RangeButtons';
+import { ViewButtons } from './HeaderComponents/ViewButtons/ViewButtons';
 
 type Props = {
   selectViewValue: string;

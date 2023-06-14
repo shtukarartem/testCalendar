@@ -5,22 +5,22 @@ import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler, { AppointmentAddingEvent, CellClickEvent } from 'devextreme/ui/scheduler';
 import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
 
-import { data, ownersData, roomsData } from 'src/sefviceFormData';
+import style from './style.module.css';
+
+import { data, ownersData, roomsData } from '../../sefviceFormData';
 import {
   checkBusyRoom,
   handldleCheckView,
   handleAddDate,
   handleSelectData,
   handleSubtractDate,
-} from 'src/utils/utils';
-
-import style from './style.module.css';
+} from '../../utils/utils';
 import { Appointment } from './../Appointment/Appointment';
 import { Header } from './../Header/Header';
 import { MoreAppointments } from './../MoreAppointments/MoreAppointments';
 import { MoreButton } from './../MoreButton/MoreButton';
-import { Room } from 'src/components/Room/Room';
-import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
+import { Room } from './../Room/Room';
+import { TooltipComponent } from './../Tooltip/TooltipComponent';
 
 const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
   const isBusyDate = checkBusyRoom(
