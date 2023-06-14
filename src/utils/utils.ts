@@ -58,7 +58,17 @@ export const handldleCheckView = (selectedView: string) => {
       return { type: 'timelineMonth', intervalCount: 1 };
   }
 };
-
+export const handldleSelectTitle = (data: { type: string; intervalCount: number }) => {
+  console.log(data);
+  if (data.type === 'timelineDay' && data.intervalCount === 1) return 'timelineDay';
+  if (data.type === 'timelineDay' && data.intervalCount === 2) return 'twoDays';
+  if (data.type === 'timelineDay' && data.intervalCount === 3) return 'threeDays';
+  if (data.type === 'timelineWeek' && data.intervalCount === 1) return 'timelineWeek';
+  if (data.type === 'timelineWeek' && data.intervalCount === 2) return 'twoWeeks';
+  if (data.type === 'timelineWeek' && data.intervalCount === 3) return 'threeWeeks';
+  if (data.type === 'timelineMonth' && data.intervalCount === 1) return 'timelineMonth';
+  return data.type;
+};
 export const handleCorrectDateDifference = (diff: number) => {
   diff++;
   if (Math.abs(diff) % 100 > 10 && Math.abs(diff) % 100 < 20) {
@@ -145,7 +155,6 @@ export const checkBusyRoom = (
         isBetween(endDate, item.startDate, item.endDate) ||
         (isEqualDates(startDate, item.startDate) && isEqualDates(startDate, item.startDate)))
   );
-
 
 export const handleFirstCharInUpperCase = (title: string) =>
   title.charAt(0).toUpperCase() + title.slice(1);

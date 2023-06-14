@@ -9,15 +9,14 @@ import { ViewButtons } from 'src/components/Header/HeaderComponents/ViewButtons/
 import { SelectComponent } from 'src/components/Select/Select';
 import { changeViewOptions } from 'src/constants/constants';
 import { ViewListType } from 'src/types/types';
+
 //import { handleSelectedPlaceholder } from 'src/utils/utils';
-
 import IconSettings from 'src/assets/images/IconButton.svg';
-
 
 import styles from './styles.module.css';
 
 type Props = {
-  selectedPlaceholder:string;
+  selectedPlaceholder: string;
   selectViewValue: string;
   handleAddDate: () => void;
   handleSubtractDate: () => void;
@@ -39,7 +38,6 @@ export const Header: FC<Props> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [views, setViews] = useState<ViewListType[]>(viewList);
-
 
   const handlePinned = (i: number) => {
     const newState: ViewListType[] = views.map((item, index) => {
@@ -76,7 +74,6 @@ export const Header: FC<Props> = ({
       <SelectComponent
         sx={{ height: '32px', fontSize: '0.875rem', marginLeft: 'auto', marginRight: '20px' }}
         value={selectViewValue}
-        label="asdsadasdasd"
         handleChange={handleViewsChange}
         options={changeViewOptions}
       />

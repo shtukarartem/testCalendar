@@ -16,6 +16,7 @@ import { DateCellType } from 'src/types/types';
 import {
   checkBusyRoom,
   handldleCheckView,
+  handldleSelectTitle,
   handleAddDate,
   handleFirstCharInUpperCase,
   handleSelectData,
@@ -65,16 +66,19 @@ export const Calendar: FC = () => {
   }>({ type: 'timelineDay', intervalCount: 1 });
   const [selectedView, setSelectedView] = useState<string>(currentView.type);
   useEffect(() => {
-    setCurrentView(handldleCheckView(selectedView) ?? currentView);
-  }, [selectedView]); // eslint-disable-line
+    setSelectedView(handldleSelectTitle(currentView));
+  }, [currentDate, currentView]); // eslint-disable-line
 
   const schedulerRef = useRef<Scheduler>(null);
   const scheduler = schedulerRef.current;
 
   useEffect(() => {
     if (currentView.type === 'timelineDay' && currentView.intervalCount === 1) {
-      setSelectedPlaceholder(dayjs(currentDate).locale('ru').format('DD MMM'));
-    } else setSelectedPlaceholder(handleFirstCharInUpperCase(dayjs(currentDate).locale('ru').format('MMMM')));
+      setSelectedPlaceholder(dayjs(currentDate).locale('ru').format('DD MMMM YYYY'));
+    } else
+      setSelectedPlaceholder(
+        handleFirstCharInUpperCase(dayjs(currentDate).locale('ru').format('MMMM YYYY'))
+      );
   }, [currentDate, currentView]);
 
   const closeTooltip = (e: MouseEvent<HTMLButtonElement>) => {
@@ -104,7 +108,8 @@ export const Calendar: FC = () => {
         handleSubtractDate={() =>
           setCurrentDate(handleSubtractDate(currentView.type, currentDate) ?? currentDate)
         }
-        handleViewsChange={(value) => setSelectedView(value)}
+        //handleViewsChange={(value) => setSelectedView(value)}
+        handleViewsChange={(value) => setCurrentView(handldleCheckView(value)?? currentView)}
         handleSelect={(icon: string) => {
           const data = handleSelectData(icon);
           setCurrentDate(data?.currentData ?? currentDate);
