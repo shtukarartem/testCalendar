@@ -54,3 +54,7 @@
 .wrapper :global .dx-scheduler-appointment-collector:hover::before {
   border-radius: 0.25rem !important;
 }
+
+.wrapper :global .dx-scheduler-header-panel-cell {
+  height: 64px !important;
+}
