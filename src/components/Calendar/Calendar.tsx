@@ -17,6 +17,7 @@ import {
   checkBusyRoom,
   handldleCheckView,
   handleAddDate,
+  handleFirstCharInUpperCase,
   handleSelectData,
   handleSubtractDate,
 } from 'src/utils/utils';
@@ -54,11 +55,14 @@ const updateAppointment = () => {
 
 export const Calendar: FC = () => {
   const groups = ['rooms'];
+  const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
+    dayjs().locale('ru').format('DD MMMM')
+  );
   const [currentDate, setCurrentDate] = useState(dayjs(new Date()));
   const [currentView, setCurrentView] = useState<{
     type: string;
-    intervalCount?: number;
-  }>({ type: 'timelineDay' });
+    intervalCount: number;
+  }>({ type: 'timelineDay', intervalCount: 1 });
   const [selectedView, setSelectedView] = useState<string>(currentView.type);
   useEffect(() => {
     setCurrentView(handldleCheckView(selectedView) ?? currentView);
@@ -67,6 +71,12 @@ export const Calendar: FC = () => {
   const schedulerRef = useRef<Scheduler>(null);
   const scheduler = schedulerRef.current;
 
+  useEffect(() => {
+    if (currentView.type === 'timelineDay' && currentView.intervalCount === 1) {
+      setSelectedPlaceholder(dayjs(currentDate).locale('ru').format('DD MMM'));
+    } else setSelectedPlaceholder(handleFirstCharInUpperCase(dayjs(currentDate).locale('ru').format('MMMM')));
+  }, [currentDate, currentView]);
+
   const closeTooltip = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     scheduler?.instance.hideAppointmentTooltip();
@@ -74,7 +84,7 @@ export const Calendar: FC = () => {
   return (
     <>
       <Header
-        selectPlaceholder="sdssd"
+        selectedPlaceholder={selectedPlaceholder}
         selectViewValue={selectedView}
         handleMinusButton={() =>
           setCurrentView({

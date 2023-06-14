@@ -55,7 +55,7 @@ export const handldleCheckView = (selectedView: string) => {
     case 'twoWeeks':
       return { type: 'timelineWeek', intervalCount: 2 };
     case 'timelineMonth':
-      return { type: 'timelineMonth' };
+      return { type: 'timelineMonth', intervalCount: 1 };
   }
 };
 
@@ -146,22 +146,6 @@ export const checkBusyRoom = (
         (isEqualDates(startDate, item.startDate) && isEqualDates(startDate, item.startDate)))
   );
 
-export const handleSelectedPlaceholder = (title: string) => {
-  switch (title) {
-    case 'Вчера':
-      return dayjs().subtract(1, 'day').locale('ru').format('DD MMMM');
-    case 'Завтра':
-      return dayjs().add(1, 'day').locale('ru').format('DD MMMM');
-    case 'Текущий месяц':
-      return handleFirstCharInUpperCase(dayjs().locale('ru').format('MMMM'));
-    case 'Прошлый месяц':
-      return handleFirstCharInUpperCase(dayjs().subtract(1, 'month').locale('ru').format('MMMM'));
-    case 'Следующий месяц':
-      return handleFirstCharInUpperCase(dayjs().add(1, 'month').locale('ru').format('MMMM'));
-    default:
-      return title;
-  }
-};
 
 export const handleFirstCharInUpperCase = (title: string) =>
   title.charAt(0).toUpperCase() + title.slice(1);
