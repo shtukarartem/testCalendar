@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import { FC, useState } from 'react';
 
-import { ViewListType } from 'src/types/types';
-
 import styles from './styles.module.css';
+
+import { ViewListType } from '../../../../types/types';
 
 type Props = {
   views: ViewListType[];

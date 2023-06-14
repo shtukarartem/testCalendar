@@ -19,8 +19,8 @@ require("dayjs/locale/ru");
 var _antd = require("antd");
 var _by_BY = _interopRequireDefault(require("antd/locale/by_BY"));
 var _classnames = _interopRequireDefault(require("classnames"));
-var _locale = require("src/utils/locale");
-var _stylesModule = _interopRequireDefault(require("src/components/DateRange/styles.module.css"));
+var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
+var _locale = require("./../../utils/locale");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }

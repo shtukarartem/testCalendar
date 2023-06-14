@@ -1,11 +1,10 @@
 import dayjs from 'dayjs';
 import { FC, useState } from 'react';
 
-import { changeViewOptions } from 'src/constants/constants';
-import { ViewListType } from 'src/types/types';
-
 import styles from './styles.module.css';
 
+import { changeViewOptions } from '../../constants/constants';
+import { ViewListType } from '../../types/types';
 import { handleFirstCharInUpperCase, handleSelectedPlaceholder } from '../../utils/utils';
 import { SelectComponent } from './../Select/Select';
 import { DateSelector } from './HeaderComponents/DateSelector/DateSelector';

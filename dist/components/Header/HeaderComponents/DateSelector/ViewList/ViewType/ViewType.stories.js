@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = exports.RangeButtonsComponent = void 0;
-var _todayIcon = _interopRequireDefault(require("src/assets/images/todayIcon.svg"));
+var _todayIcon = _interopRequireDefault(require("../../../../../../assets/images/todayIcon.svg"));
 var _ViewType = require("./ViewType");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var meta = {

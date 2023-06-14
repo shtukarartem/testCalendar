@@ -6,9 +6,9 @@ import classNames from 'classnames';
 import { Dayjs } from 'dayjs';
 import { FC } from 'react';
 
-import { localeRu } from 'src/utils/locale';
+import styles from './styles.module.css';
 
-import styles from 'src/components/DateRange/styles.module.css';
+import { localeRu } from './../../utils/locale';
 
 const { RangePicker } = DatePicker;
 

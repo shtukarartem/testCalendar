@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import dayjs from 'dayjs';
 import { FC } from 'react';
 
-import { BookingType } from 'src/types/types';
-
 import styles from './styles.module.css';
+
+import { BookingType } from '../../types/types';
 
 type Props = {
   data: BookingType;

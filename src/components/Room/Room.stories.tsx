@@ -1,6 +1,6 @@
 import { StoryObj } from '@storybook/react';
 
-import { Room } from 'src/components/Room/Room';
+import { Room } from './Room';
 
 type Story = StoryObj<typeof Room>;
 

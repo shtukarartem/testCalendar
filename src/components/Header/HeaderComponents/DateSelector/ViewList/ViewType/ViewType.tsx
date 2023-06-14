@@ -1,11 +1,10 @@
 import { FC } from 'react';
 
-import { ViewListType } from 'src/types/types';
-
-import push_pin from 'src/assets/images/push_pin.svg';
-import unpush_pin from 'src/assets/images/unpush_pin.svg';
-
 import styles from './styles.module.css';
+
+import push_pin from '../../../../../../assets/images/push_pin.svg';
+import unpush_pin from '../../../../../../assets/images/unpush_pin.svg';
+import { ViewListType } from '../../../../../../types/types';
 
 type Props = {
   view: ViewListType;

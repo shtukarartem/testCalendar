@@ -1,9 +1,8 @@
 import { FC } from 'react';
 
-import { ViewListType } from 'src/types/types';
-
 import styles from './styles.module.css';
 
+import { ViewListType } from '../../../../../types/types';
 import { ViewType } from './ViewType/ViewType';
 
 type Props = {

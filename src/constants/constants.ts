@@ -1,4 +1,4 @@
-import { SelectOptions } from 'src/types/types';
+import { SelectOptions } from '../types/types';
 
 export const views = [
   {

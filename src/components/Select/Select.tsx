@@ -4,7 +4,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { SxProps } from '@mui/system';
 import { FC } from 'react';
 
-import { SelectOptions } from 'src/types/types';
+import { SelectOptions } from '../../types/types';
 
 type Props = {
   sx?: SxProps<Theme>;

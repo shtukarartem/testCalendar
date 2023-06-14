@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import todayIcon from 'src/assets/images/todayIcon.svg';
-
+import todayIcon from '../../../../../../assets/images/todayIcon.svg';
 import { ViewType } from './ViewType';
 
 type Story = StoryObj<typeof ViewType>;

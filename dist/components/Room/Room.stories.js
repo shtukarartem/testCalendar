@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = exports.RoomComponent = void 0;
-var _Room = require("src/components/Room/Room");
+var _Room = require("./Room");
 var RoomComponent = {
   args: {
     data: {

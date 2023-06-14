@@ -7,9 +7,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.ViewType = void 0;
 require("core-js/modules/es.symbol.js");
 require("core-js/modules/es.symbol.description.js");
-var _push_pin = _interopRequireDefault(require("src/assets/images/push_pin.svg"));
-var _unpush_pin = _interopRequireDefault(require("src/assets/images/unpush_pin.svg"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
+var _push_pin = _interopRequireDefault(require("../../../../../../assets/images/push_pin.svg"));
+var _unpush_pin = _interopRequireDefault(require("../../../../../../assets/images/unpush_pin.svg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var ViewType = function ViewType(_ref) {
   var view = _ref.view,

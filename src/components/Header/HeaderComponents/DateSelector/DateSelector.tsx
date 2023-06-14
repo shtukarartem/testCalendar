@@ -7,12 +7,11 @@ import { Button, Switch } from 'antd';
 import dayjs from 'dayjs';
 import { FC, useEffect, useState } from 'react';
 
-import { DateRange } from 'src/components/DateRange/DateRange';
-import { ViewListType } from 'src/types/types';
-import { handleCorrectDateDifference } from 'src/utils/utils';
+import styles from './styles.module.css';
 
-import styles from 'src/components/Header/HeaderComponents/DateSelector/styles.module.css';
-
+import { ViewListType } from '../../../../types/types';
+import { handleCorrectDateDifference } from '../../../../utils/utils';
+import { DateRange } from './../../../DateRange/DateRange';
 import { ViewList } from './ViewList/ViewList';
 
 type Props = {

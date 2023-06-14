@@ -3,9 +3,9 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { IconButton } from '@mui/material';
 import { FC, MouseEvent } from 'react';
 
-import { BookingType } from 'src/types/types';
-
 import styles from './styles.module.css';
+
+import { BookingType } from '../../types/types';
 
 type Props = {
   data: BookingType;
