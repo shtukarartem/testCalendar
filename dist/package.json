@@ -1,10 +1,10 @@
 {
   "name": "sf-calendar",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "private": false,
   "license": "MIT",
-  "main": "dist/App.js",
-  "types": "dist/App.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "homepage": "https://github.com/shtukarartem/testCalendar",
   "dependencies": {
     "@emotion/react": "^11.11.0",
