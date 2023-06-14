@@ -55,7 +55,7 @@ export const Calendar: FC = () => {
   const [currentView, setCurrentView] = useState<{
     type: string;
     intervalCount?: number;
-  }>({ type: 'timelineMonth' });
+  }>({ type: 'timelineDay' });
   const [selectedView, setSelectedView] = useState<string>(currentView.type);
   useEffect(() => {
     setCurrentView(handldleCheckView(selectedView) ?? currentView);
