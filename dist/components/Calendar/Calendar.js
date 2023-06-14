@@ -31,15 +31,15 @@ var _dayjs = _interopRequireDefault(require("dayjs"));
 var _devextremeReact = require("devextreme-react");
 var _scheduler = require("devextreme-react/scheduler");
 var _react = require("react");
-var _Appointment = require("src/components/Appointment/Appointment");
-var _Header = require("src/components/Header/Header");
-var _MoreAppointments = require("src/components/MoreAppointments/MoreAppointments");
-var _MoreButton = require("src/components/MoreButton/MoreButton");
-var _Room = require("src/components/Room/Room");
-var _TooltipComponent = require("src/components/Tooltip/TooltipComponent");
 var _sefviceFormData = require("src/sefviceFormData");
 var _utils = require("src/utils/utils");
 var _styleModule = _interopRequireDefault(require("./style.module.css"));
+var _Appointment = require("./../Appointment/Appointment");
+var _Header = require("./../Header/Header");
+var _MoreAppointments = require("./../MoreAppointments/MoreAppointments");
+var _MoreButton = require("./../MoreButton/MoreButton");
+var _Room = require("src/components/Room/Room");
+var _TooltipComponent = require("src/components/Tooltip/TooltipComponent");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
