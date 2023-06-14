@@ -12,6 +12,7 @@ import { MoreButton } from 'src/components/MoreButton/MoreButton';
 import { Room } from 'src/components/Room/Room';
 import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
 import { data, ownersData, roomsData } from 'src/sefviceFormData';
+import { DateCellType } from 'src/types/types';
 import {
   checkBusyRoom,
   handldleCheckView,
@@ -21,6 +22,8 @@ import {
 } from 'src/utils/utils';
 
 import style from './style.module.css';
+
+import { DateCell } from '../DateCell/DateCell';
 
 const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
   const isBusyDate = checkBusyRoom(
@@ -116,6 +119,9 @@ export const Calendar: FC = () => {
           if (e.name === 'currentView') setCurrentView(e.value);
         }}
         height={900}
+        dateCellRender={(itemData: DateCellType) => (
+          <DateCell data={itemData} currentView={currentView.type} />
+        )}
         dropDownAppointmentComponent={(data) => <MoreAppointments data={data.data} />}
         groups={groups}
         cellDuration={60}

@@ -34,4 +34,3 @@ export const localeRu: PickerLocale = {
     ...TimePickerLocale,
   },
 };
-

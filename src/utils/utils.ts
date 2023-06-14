@@ -148,8 +148,8 @@ export const checkBusyRoom = (
 
 export const handleSelectedPlaceholder = (title: string) => {
   switch (title) {
-    case 'Вчера': 
-    return dayjs().subtract(1, 'day').locale('ru').format('DD MMMM');
+    case 'Вчера':
+      return dayjs().subtract(1, 'day').locale('ru').format('DD MMMM');
     case 'Завтра':
       return dayjs().add(1, 'day').locale('ru').format('DD MMMM');
     case 'Текущий месяц':
@@ -163,4 +163,5 @@ export const handleSelectedPlaceholder = (title: string) => {
   }
 };
 
-export const handleFirstCharInUpperCase = (title: string) => title.charAt(0).toUpperCase() + title.slice(1)
+export const handleFirstCharInUpperCase = (title: string) =>
+  title.charAt(0).toUpperCase() + title.slice(1);

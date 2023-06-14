@@ -19,10 +19,11 @@ export const PinnedViews: FC<Props> = ({ views, handleSelect }) => {
   };
   return (
     <div className={styles.wrapper}>
-      {views.map((item) => (
+      {views.map((item, index) => (
         <>
           {item.isPinned && (
             <img
+              key={index}
               className={classNames(styles.icon, {
                 [styles.select]: isSelect && selectIcon === item.title,
               })}

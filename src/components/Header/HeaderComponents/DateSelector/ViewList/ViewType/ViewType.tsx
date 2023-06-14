@@ -16,7 +16,7 @@ type Props = {
 export const ViewType: FC<Props> = ({ view, handleClickChange, onClick }) => (
   /* eslint-disable */
   <div onClick={() => onClick(view.title)} className={styles.wrapper}>
-    <div className={styles.title} >
+    <div className={styles.title}>
       <img src={view.icon} alt="icon" />
       <div className={styles.description}>{view.title}</div>
     </div>

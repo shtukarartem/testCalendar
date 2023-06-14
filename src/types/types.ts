@@ -22,3 +22,10 @@ export type BookingType = {
   number: string;
   status: RentStatusType;
 };
+
+export type DateCellType = {
+  date: Date;
+  groupIndex?: number;
+  groups?: string;
+  text: string;
+};
