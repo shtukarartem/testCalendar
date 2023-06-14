@@ -1,7 +1,7 @@
 .wrapper {
-  padding-right: 16px;
+  padding-right: 1rem;
   border-right: 0.063rem solid var(--neutral-80);
-  height: 30px;
+  height: 1.875rem;
 }
 .views {
   border-right: 1px solid rgba(0, 0, 0, 0.15);

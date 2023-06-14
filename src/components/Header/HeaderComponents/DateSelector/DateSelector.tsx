@@ -40,7 +40,6 @@ export const DateSelector: FC<Props> = ({
   useEffect(() => {
     setSelectValue(selectPlaceholder);
   }, [selectPlaceholder]);
-  console.log(selectValue);
   return (
     <div className={styles.wrapper}>
       <Select
