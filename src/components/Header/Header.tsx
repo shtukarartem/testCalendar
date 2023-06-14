@@ -13,7 +13,6 @@ import { handleSelectedPlaceholder } from 'src/utils/utils';
 
 import IconSettings from 'src/assets/images/IconButton.svg';
 
-import IconSettings from 'src/assets/images/IconButton.svg';
 
 import styles from './styles.module.css';
 
