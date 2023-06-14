@@ -1,13 +1,14 @@
 {
   "name": "sf-calendar",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "private": false,
   "license": "MIT",
   "main": "dist/App.js",
   "module": "dist/App.js",
   "types": "dist/App.d.ts",
   "files": [
-    "dist", "build"
+    "dist",
+    "build"
   ],
   "homepage": "https://github.com/shtukarartem/testCalendar",
   "dependencies": {
