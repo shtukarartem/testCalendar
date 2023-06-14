@@ -22,8 +22,11 @@
 }
 .wrapper :global .dx-scheduler-header-panel-empty-cell {
   width: 12.5rem;
+  margin: 0;
 }
-
+.wrapper :global .dx-scheduler-header-panel{
+  margin: 0;
+}
 .wrapper :global .dx-scheduler-date-table .dx-scheduler-date-table-row {
   height: 5rem;
   flex: none !important;

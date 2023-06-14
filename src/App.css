@@ -8,9 +8,9 @@
   /* max-width: max-content !important; */
 }
 
-/* .dx-scheduler-header {
+.dx-scheduler-header {
   display: none !important;
-} */
+}
 .dx-state-active {
   background: #fff !important;
 }

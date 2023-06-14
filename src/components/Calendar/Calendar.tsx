@@ -71,7 +71,6 @@ export const Calendar: FC = () => {
     e.stopPropagation();
     scheduler?.instance.hideAppointmentTooltip();
   };
-
   return (
     <>
       <Header
@@ -90,10 +89,10 @@ export const Calendar: FC = () => {
           })
         }
         handleAddDate={() =>
-          setCurrentDate(handleAddDate(selectedView, currentDate) ?? currentDate)
+          setCurrentDate(handleAddDate(currentView.type, currentDate) ?? currentDate)
         }
         handleSubtractDate={() =>
-          setCurrentDate(handleSubtractDate(selectedView, currentDate) ?? currentDate)
+          setCurrentDate(handleSubtractDate(currentView.type, currentDate) ?? currentDate)
         }
         handleViewsChange={(value) => setSelectedView(value)}
         handleSelect={(icon: string) => {
