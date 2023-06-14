@@ -3,8 +3,8 @@
   "version": "0.0.16",
   "private": false,
   "license": "MIT",
-  "main": "dist/App.js",
-  "module": "dist/App.js",
+  "main": "./build/static/js/main.ac347945.js",
+  "module": "./build/static/js/main.ac347945.js",
   "types": "dist/App.d.ts",
   "files": [
     "dist",
@@ -36,6 +36,7 @@
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
+    "minify": "^10.2.0",
     "prettier": "^2.8.8",
     "pretty-quick": "^3.1.3",
     "react": "^18.2.0",
@@ -47,7 +48,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "build:js": "babel src --out-dir dist --copy-files --extensions \".ts,.tsx\" --source-maps true",
     "test": "react-scripts test",
     "tsc": "tsc",

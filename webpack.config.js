@@ -1,10 +1,10 @@
 var path = require('path');
 module.exports = {
   mode: 'production',
-  entry: 'index.tsx',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve('lib'),
-    filename: 'dist/index.js',
+    filename: './build/static/js/main.ac347945.js',
     libraryTarget: 'commonjs2',
   },
   module: {
