@@ -3,9 +3,9 @@
   "version": "0.0.20",
   "private": false,
   "license": "MIT",
-  "main": "./build/static/js/main.ac347945.js",
-  "module": "./build/static/js/main.ac347945.js",
-  "types": "dist/App.d.ts",
+  "main": "./dist/App.js",
+  "module": "./dist/App.js",
+  "types": "./dist/App.d.ts",
   "files": [
     "dist",
     "build"
