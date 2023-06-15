@@ -9,16 +9,15 @@ import { ViewButtons } from 'src/components/Header/HeaderComponents/ViewButtons/
 import { SelectComponent } from 'src/components/Select/Select';
 import { changeViewOptions } from 'src/constants/constants';
 import { ViewListType } from 'src/types/types';
-import { handleSelectedPlaceholder } from 'src/utils/utils';
 
+//import { handleSelectedPlaceholder } from 'src/utils/utils';
 import IconSettings from 'src/assets/images/IconButton.svg';
-
 
 import styles from './styles.module.css';
 
 type Props = {
+  selectedPlaceholder: string;
   selectViewValue: string;
-  selectPlaceholder: string;
   handleAddDate: () => void;
   handleSubtractDate: () => void;
   handleViewsChange: (value: string) => void;
@@ -28,6 +27,7 @@ type Props = {
 };
 
 export const Header: FC<Props> = ({
+  selectedPlaceholder,
   selectViewValue,
   handleSubtractDate,
   handleAddDate,
@@ -38,7 +38,6 @@ export const Header: FC<Props> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [views, setViews] = useState<ViewListType[]>(viewList);
-  const [selectedPlaceholder, setSelectedPlaceholder] = useState('Сегодня');
 
   const handlePinned = (i: number) => {
     const newState: ViewListType[] = views.map((item, index) => {
@@ -64,20 +63,17 @@ export const Header: FC<Props> = ({
         handleViewClick={(title: string) => {
           setIsOpen(false);
           handleSelect(title);
-          setSelectedPlaceholder(handleSelectedPlaceholder(title));
         }}
       />
       <PinnedViews
         views={views}
         handleSelect={(title) => {
           handleSelect(title);
-          setSelectedPlaceholder(handleSelectedPlaceholder(title));
         }}
       />
       <SelectComponent
         sx={{ height: '32px', fontSize: '0.875rem', marginLeft: 'auto', marginRight: '20px' }}
         value={selectViewValue}
-        label="asdsadasdasd"
         handleChange={handleViewsChange}
         options={changeViewOptions}
       />

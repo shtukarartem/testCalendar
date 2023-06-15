@@ -16,7 +16,9 @@ import { DateCellType } from 'src/types/types';
 import {
   checkBusyRoom,
   handldleCheckView,
+  handldleSelectTitle,
   handleAddDate,
+  handleFirstCharInUpperCase,
   handleSelectData,
   handleSubtractDate,
 } from 'src/utils/utils';
@@ -54,18 +56,30 @@ const updateAppointment = () => {
 
 export const Calendar: FC = () => {
   const groups = ['rooms'];
+  const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
+    dayjs().locale('ru').format('DD MMMM')
+  );
   const [currentDate, setCurrentDate] = useState(dayjs(new Date()));
   const [currentView, setCurrentView] = useState<{
     type: string;
-    intervalCount?: number;
-  }>({ type: 'timelineDay' });
+    intervalCount: number;
+  }>({ type: 'timelineDay', intervalCount: 1 });
   const [selectedView, setSelectedView] = useState<string>(currentView.type);
   useEffect(() => {
-    setCurrentView(handldleCheckView(selectedView) ?? currentView);
-  }, [selectedView]); // eslint-disable-line
+    setSelectedView(handldleSelectTitle(currentView));
+  }, [currentDate, currentView]); // eslint-disable-line
 
   const schedulerRef = useRef<Scheduler>(null);
   const scheduler = schedulerRef.current;
+
+  useEffect(() => {
+    if (currentView.type === 'timelineDay' && currentView.intervalCount === 1) {
+      setSelectedPlaceholder(dayjs(currentDate).locale('ru').format('DD MMMM YYYY'));
+    } else
+      setSelectedPlaceholder(
+        handleFirstCharInUpperCase(dayjs(currentDate).locale('ru').format('MMMM YYYY'))
+      );
+  }, [currentDate, currentView]);
 
   const closeTooltip = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -74,7 +88,7 @@ export const Calendar: FC = () => {
   return (
     <>
       <Header
-        selectPlaceholder="sdssd"
+        selectedPlaceholder={selectedPlaceholder}
         selectViewValue={selectedView}
         handleMinusButton={() =>
           setCurrentView({
@@ -94,7 +108,8 @@ export const Calendar: FC = () => {
         handleSubtractDate={() =>
           setCurrentDate(handleSubtractDate(currentView.type, currentDate) ?? currentDate)
         }
-        handleViewsChange={(value) => setSelectedView(value)}
+        //handleViewsChange={(value) => setSelectedView(value)}
+        handleViewsChange={(value) => setCurrentView(handldleCheckView(value)?? currentView)}
         handleSelect={(icon: string) => {
           const data = handleSelectData(icon);
           setCurrentDate(data?.currentData ?? currentDate);

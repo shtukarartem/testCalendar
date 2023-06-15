@@ -55,10 +55,25 @@ export const handldleCheckView = (selectedView: string) => {
     case 'twoWeeks':
       return { type: 'timelineWeek', intervalCount: 2 };
     case 'timelineMonth':
-      return { type: 'timelineMonth' };
+      return { type: 'timelineMonth', intervalCount: 1 };
   }
 };
+export const handldleSelectTitle = (data: { type: string; intervalCount: number }) => {
+  if (data.type === 'timelineDay' && data.intervalCount === 1) {
+    if(data.intervalCount === 1) return 'timelineDay'
+    if(data.intervalCount === 2) return 'twoDays'
+    if(data.intervalCount === 3) return 'threeDays'
+    
+  };
+  if (data.type === 'timelineWeek') {
+    if(data.intervalCount === 1) return 'timelineWeek'
+    if(data.intervalCount === 2) return 'twoWeeks'
+    if(data.intervalCount === 3) return 'threeWeeks'
+  };
 
+  if (data.type === 'timelineMonth' && data.intervalCount === 1) return 'timelineMonth';
+  return data.type;
+};
 export const handleCorrectDateDifference = (diff: number) => {
   diff++;
   if (Math.abs(diff) % 100 > 10 && Math.abs(diff) % 100 < 20) {
@@ -145,23 +160,6 @@ export const checkBusyRoom = (
         isBetween(endDate, item.startDate, item.endDate) ||
         (isEqualDates(startDate, item.startDate) && isEqualDates(startDate, item.startDate)))
   );
-
-export const handleSelectedPlaceholder = (title: string) => {
-  switch (title) {
-    case 'Вчера':
-      return dayjs().subtract(1, 'day').locale('ru').format('DD MMMM');
-    case 'Завтра':
-      return dayjs().add(1, 'day').locale('ru').format('DD MMMM');
-    case 'Текущий месяц':
-      return handleFirstCharInUpperCase(dayjs().locale('ru').format('MMMM'));
-    case 'Прошлый месяц':
-      return handleFirstCharInUpperCase(dayjs().subtract(1, 'month').locale('ru').format('MMMM'));
-    case 'Следующий месяц':
-      return handleFirstCharInUpperCase(dayjs().add(1, 'month').locale('ru').format('MMMM'));
-    default:
-      return title;
-  }
-};
 
 export const handleFirstCharInUpperCase = (title: string) =>
   title.charAt(0).toUpperCase() + title.slice(1);

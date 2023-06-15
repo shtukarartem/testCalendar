@@ -33,7 +33,7 @@ export const DateSelector: FC<Props> = ({
   handleViewClick,
 }) => {
   const [dates, setDates] = useState<(dayjs.Dayjs | null)[] | null>(null);
-  const [selectValue, setSelectValue] = useState<string>(selectPlaceholder); // eslint-disable-line
+  const [selectValue, setSelectValue] = useState<string>(selectPlaceholder);
   const handleDates = (dates: (dayjs.Dayjs | null)[] | null) => {
     setDates(dates);
   };
