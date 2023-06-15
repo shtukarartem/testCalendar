@@ -1,6 +1,6 @@
 {
   "name": "sf-calendar",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "private": false,
   "license": "MIT",
   "main": "./build/static/js/main.ac347945.js",
