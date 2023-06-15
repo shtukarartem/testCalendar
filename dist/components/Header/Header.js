@@ -23,13 +23,14 @@ require("core-js/modules/es.object.get-own-property-descriptor.js");
 require("core-js/modules/web.dom-collections.for-each.js");
 require("core-js/modules/es.object.get-own-property-descriptors.js");
 require("core-js/modules/es.object.define-properties.js");
+require("core-js/modules/es.weak-map.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Header = void 0;
 require("core-js/modules/es.array.map.js");
 var _dayjs = _interopRequireDefault(require("dayjs"));
-var _react = require("react");
+var _react = _interopRequireWildcard(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 var _constants = require("../../constants/constants");
 var _utils = require("../../utils/utils");
@@ -39,6 +40,8 @@ var _ViewListConstants = require("./HeaderComponents/DateSelector/ViewList/ViewL
 var _PinnedViews = require("./HeaderComponents/PinnedViews/PinnedViews");
 var _RangeButtons = require("./HeaderComponents/RangeButtons/RangeButtons");
 var _ViewButtons = require("./HeaderComponents/ViewButtons/ViewButtons");
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -82,15 +85,15 @@ var Header = function Header(_ref) {
     });
     setViews(newState);
   };
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: _stylesModule.default.wrapper
-  }, React.createElement(_RangeButtons.RangeButtons, {
+  }, _react.default.createElement(_RangeButtons.RangeButtons, {
     handleAddDate: handleAddDate,
     handleSubtractDate: handleSubtractDate
-  }), React.createElement(_ViewButtons.ViewButtons, {
+  }), _react.default.createElement(_ViewButtons.ViewButtons, {
     handleMinusButton: handleMinusButton,
     handlePlusButton: handlePlusButton
-  }), React.createElement(_DateSelector.DateSelector, {
+  }), _react.default.createElement(_DateSelector.DateSelector, {
     views: views,
     handlePinned: handlePinned,
     isOpen: isOpen,
@@ -109,13 +112,13 @@ var Header = function Header(_ref) {
       _handleSelect(title);
       setSelectedPlaceholder((0, _utils.handleSelectedPlaceholder)(title));
     }
-  }), React.createElement(_PinnedViews.PinnedViews, {
+  }), _react.default.createElement(_PinnedViews.PinnedViews, {
     views: views,
     handleSelect: function handleSelect(title) {
       _handleSelect(title);
       setSelectedPlaceholder((0, _utils.handleSelectedPlaceholder)(title));
     }
-  }), React.createElement(_Select.SelectComponent, {
+  }), _react.default.createElement(_Select.SelectComponent, {
     sx: {
       height: '32px',
       fontSize: '0.875rem',

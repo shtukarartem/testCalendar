@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React from 'react';
 
 import styles from './styles.module.css';
 
@@ -11,7 +11,7 @@ type Props = {
   handlePinned: (index: number) => void;
 };
 
-export const ViewList: FC<Props> = ({ viewList, handlePinned, handleClick }) => (
+export const ViewList: React.FC<Props> = ({ viewList, handlePinned, handleClick }) => (
   <div className={styles.wrapper}>
     {viewList.map((item, index) => (
       <ViewType

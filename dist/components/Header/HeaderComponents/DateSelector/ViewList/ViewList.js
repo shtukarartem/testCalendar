@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ViewList = void 0;
 require("core-js/modules/es.array.map.js");
+var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 var _ViewType = require("./ViewType/ViewType");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -13,10 +14,10 @@ var ViewList = function ViewList(_ref) {
   var viewList = _ref.viewList,
     handlePinned = _ref.handlePinned,
     handleClick = _ref.handleClick;
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: _stylesModule.default.wrapper
   }, viewList.map(function (item, index) {
-    return React.createElement(_ViewType.ViewType, {
+    return _react.default.createElement(_ViewType.ViewType, {
       key: index,
       view: item,
       onClick: handleClick,

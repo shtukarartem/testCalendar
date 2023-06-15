@@ -1,5 +1,6 @@
 "use strict";
 
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 require("core-js/modules/es.symbol.js");
 require("core-js/modules/es.symbol.description.js");
 require("core-js/modules/es.object.to-string.js");
@@ -12,7 +13,9 @@ require("core-js/modules/es.regexp.to-string.js");
 require("core-js/modules/es.array.from.js");
 require("core-js/modules/es.regexp.exec.js");
 require("core-js/modules/es.regexp.test.js");
+require("core-js/modules/es.weak-map.js");
 require("core-js/modules/es.object.define-property.js");
+require("core-js/modules/es.object.get-own-property-descriptor.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -23,11 +26,13 @@ var _MenuItem = _interopRequireDefault(require("@mui/material/MenuItem"));
 var _Select = _interopRequireDefault(require("@mui/material/Select"));
 var _antd = require("antd");
 var _dayjs = _interopRequireDefault(require("dayjs"));
-var _react = require("react");
+var _react = _interopRequireWildcard(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 var _utils = require("../../../../utils/utils");
 var _DateRange = require("./../../../DateRange/DateRange");
 var _ViewList = require("./ViewList/ViewList");
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -59,15 +64,15 @@ var DateSelector = function DateSelector(_ref) {
   (0, _react.useEffect)(function () {
     setSelectValue('');
   }, []);
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: _stylesModule.default.wrapper
-  }, React.createElement(_material.FormControl, {
+  }, _react.default.createElement(_material.FormControl, {
     className: _stylesModule.default.formControl,
     variant: "standard"
-  }, React.createElement(_material.InputLabel, {
+  }, _react.default.createElement(_material.InputLabel, {
     className: _stylesModule.default.inputLabel,
     id: "demo-simple-select-label"
-  }, selectPlaceholder), React.createElement(_Select.default, {
+  }, selectPlaceholder), _react.default.createElement(_Select.default, {
     disableUnderline: true,
     variant: "standard",
     className: _stylesModule.default.select,
@@ -76,44 +81,44 @@ var DateSelector = function DateSelector(_ref) {
     open: isOpen,
     label: "Age",
     value: selectValue
-  }, React.createElement(_MenuItem.default, {
+  }, _react.default.createElement(_MenuItem.default, {
     className: _stylesModule.default.menuItem
-  }, React.createElement("div", {
+  }, _react.default.createElement("div", {
     className: _stylesModule.default.items
-  }, React.createElement("div", {
+  }, _react.default.createElement("div", {
     className: _stylesModule.default.views
-  }, React.createElement(_ViewList.ViewList, {
+  }, _react.default.createElement(_ViewList.ViewList, {
     handleClick: handleViewClick,
     viewList: views,
     handlePinned: handlePinned
-  }), React.createElement("div", {
+  }), _react.default.createElement("div", {
     className: _stylesModule.default.switchContainer
-  }, React.createElement("div", {
+  }, _react.default.createElement("div", {
     className: _stylesModule.default.switchText
-  }, "\u0412\u044B\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u043D\u0438"), React.createElement(_antd.Switch, {
+  }, "\u0412\u044B\u0445\u043E\u0434\u043D\u044B\u0435 \u0434\u043D\u0438"), _react.default.createElement(_antd.Switch, {
     className: _stylesModule.default.switch,
     size: "small"
-  }))), React.createElement("div", {
+  }))), _react.default.createElement("div", {
     className: _stylesModule.default.dateRange
-  }, React.createElement(_DateRange.DateRange, {
+  }, _react.default.createElement(_DateRange.DateRange, {
     isOpen: isOpen,
     isFullWidth: true,
     isError: false,
     onChange: handleDates
-  }), React.createElement("div", {
+  }), _react.default.createElement("div", {
     className: _stylesModule.default.dateRangeFooter
-  }, dates && React.createElement("div", {
+  }, dates && _react.default.createElement("div", {
     className: _stylesModule.default.daysCounter
-  }, ' ', React.createElement("div", {
+  }, ' ', _react.default.createElement("div", {
     className: _stylesModule.default.counter
-  }, (0, _utils.handleCorrectDateDifference)((0, _dayjs.default)(dates[1]).diff((0, _dayjs.default)(dates[0]), 'd'))), React.createElement("div", {
+  }, (0, _utils.handleCorrectDateDifference)((0, _dayjs.default)(dates[1]).diff((0, _dayjs.default)(dates[0]), 'd'))), _react.default.createElement("div", {
     className: _stylesModule.default.range
-  }, "c ", (0, _dayjs.default)(dates[0]).locale('ru').format('DD MMMM'), " \u043F\u043E", ' ', (0, _dayjs.default)(dates[1]).locale('ru').format('DD MMMM'))), React.createElement("div", {
+  }, "c ", (0, _dayjs.default)(dates[0]).locale('ru').format('DD MMMM'), " \u043F\u043E", ' ', (0, _dayjs.default)(dates[1]).locale('ru').format('DD MMMM'))), _react.default.createElement("div", {
     className: _stylesModule.default.buttons
-  }, React.createElement(_antd.Button, {
+  }, _react.default.createElement(_antd.Button, {
     onClick: onCancel,
     className: _stylesModule.default.selectButton
-  }, "\u041E\u0442\u043C\u0435\u043D\u0430"), React.createElement(_antd.Button, {
+  }, "\u041E\u0442\u043C\u0435\u043D\u0430"), _react.default.createElement(_antd.Button, {
     onClick: onSubmit,
     className: _stylesModule.default.selectButton
   }, "\u041F\u0440\u0438\u043C\u0435\u043D\u0438\u0442\u044C")))))))));

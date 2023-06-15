@@ -7,6 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.MoreAppointments = void 0;
 var _classnames = _interopRequireDefault(require("classnames"));
 var _dayjs = _interopRequireDefault(require("dayjs"));
+var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var statusVariants = {
@@ -20,11 +21,11 @@ var MoreAppointments = function MoreAppointments(_ref) {
     status = data.status,
     startDate = data.startDate;
   var startTime = (0, _dayjs.default)(startDate).format('HH:mm');
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: _stylesModule.default.wrapper
-  }, React.createElement("div", {
+  }, _react.default.createElement("div", {
     className: (0, _classnames.default)(_stylesModule.default.point, statusVariants[status])
-  }), React.createElement("span", null, startTime, " ", text));
+  }), _react.default.createElement("span", null, startTime, " ", text));
 };
 exports.MoreAppointments = MoreAppointments;
 //# sourceMappingURL=MoreAppointments.js.map

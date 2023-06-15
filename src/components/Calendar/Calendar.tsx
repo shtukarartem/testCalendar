@@ -3,7 +3,7 @@ import { Scheduler } from 'devextreme-react';
 import { Editing, Resource, Scrolling, View } from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler, { AppointmentAddingEvent, CellClickEvent } from 'devextreme/ui/scheduler';
-import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
+import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 
 import style from './style.module.css';
 
@@ -44,7 +44,7 @@ const editMeeting = () => {
   console.log('metting dbl click this action income from service form');
 };
 
-export const Calendar: FC = () => {
+export const Calendar: React.FC = () => {
   const groups = ['rooms'];
   const [currentDate, setCurrentDate] = useState(dayjs(new Date()));
   const [currentView, setCurrentView] = useState<{

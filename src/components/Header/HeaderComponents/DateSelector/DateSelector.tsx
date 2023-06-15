@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { Button, Switch } from 'antd';
 import dayjs from 'dayjs';
-import { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styles from './styles.module.css';
 
@@ -25,7 +25,7 @@ type Props = {
   handleViewClick: (title: string) => void;
 };
 
-export const DateSelector: FC<Props> = ({
+export const DateSelector: React.FC<Props> = ({
   views,
   selectPlaceholder,
   isOpen = false,

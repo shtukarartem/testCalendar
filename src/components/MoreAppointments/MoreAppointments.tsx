@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import dayjs from 'dayjs';
-import { FC } from 'react';
+import React from 'react';
 
 import styles from './styles.module.css';
 
@@ -16,7 +16,7 @@ type Props = {
   data: BookingType;
 };
 
-export const MoreAppointments: FC<Props> = ({ data }) => {
+export const MoreAppointments: React.FC<Props> = ({ data }) => {
   const { text, status, startDate } = data;
   const startTime = dayjs(startDate).format('HH:mm');
   return (

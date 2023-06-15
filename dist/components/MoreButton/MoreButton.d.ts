@@ -1,11 +1,10 @@
-import { FC } from 'react';
-
+import React from 'react';
 type Props = {
-  data: {
-    appointmentCount: number;
-    isCompact: boolean;
-  };
+    data: {
+        appointmentCount: number;
+        isCompact: boolean;
+    };
 };
-export declare const MoreButton: FC<Props>;
+export declare const MoreButton: React.FC<Props>;
 export {};
 //# sourceMappingURL=MoreButton.d.ts.map

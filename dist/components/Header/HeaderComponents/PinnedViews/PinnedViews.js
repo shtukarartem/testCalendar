@@ -17,14 +17,18 @@ require("core-js/modules/es.symbol.to-primitive.js");
 require("core-js/modules/es.date.to-primitive.js");
 require("core-js/modules/es.number.constructor.js");
 require("core-js/modules/es.object.define-property.js");
+require("core-js/modules/es.weak-map.js");
+require("core-js/modules/es.object.get-own-property-descriptor.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.PinnedViews = void 0;
 require("core-js/modules/es.array.map.js");
 var _classnames = _interopRequireDefault(require("classnames"));
-var _react = require("react");
+var _react = _interopRequireWildcard(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
@@ -50,10 +54,10 @@ var PinnedViews = function PinnedViews(_ref) {
     setIsSelect(true);
     setSelectIcon(field);
   };
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: _stylesModule.default.wrapper
   }, views.map(function (item) {
-    return React.createElement(React.Fragment, null, item.isPinned && React.createElement("img", {
+    return _react.default.createElement(_react.default.Fragment, null, item.isPinned && _react.default.createElement("img", {
       className: (0, _classnames.default)(_stylesModule.default.icon, _defineProperty({}, _stylesModule.default.select, isSelect && selectIcon === item.title)),
       onClick: function onClick() {
         handleClick(item.title);

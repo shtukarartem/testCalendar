@@ -1,11 +1,9 @@
-import { FC } from 'react';
-
-import { ViewListType } from 'src/types/types';
-
+import React from 'react';
+import { ViewListType } from '../../../../types/types';
 type Props = {
-  views: ViewListType[];
-  handleSelect: (icon: string) => void;
+    views: ViewListType[];
+    handleSelect: (icon: string) => void;
 };
-export declare const PinnedViews: FC<Props>;
+export declare const PinnedViews: React.FC<Props>;
 export {};
 //# sourceMappingURL=PinnedViews.d.ts.map

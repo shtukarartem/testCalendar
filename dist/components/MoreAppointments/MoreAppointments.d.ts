@@ -1,10 +1,8 @@
-import { FC } from 'react';
-
-import { BookingType } from 'src/types/types';
-
+import React from 'react';
+import { BookingType } from '../../types/types';
 type Props = {
-  data: BookingType;
+    data: BookingType;
 };
-export declare const MoreAppointments: FC<Props>;
+export declare const MoreAppointments: React.FC<Props>;
 export {};
 //# sourceMappingURL=MoreAppointments.d.ts.map

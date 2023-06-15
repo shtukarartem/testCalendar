@@ -19,6 +19,7 @@ require("dayjs/locale/ru");
 var _antd = require("antd");
 var _by_BY = _interopRequireDefault(require("antd/locale/by_BY"));
 var _classnames = _interopRequireDefault(require("classnames"));
+var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 var _locale = require("./../../utils/locale");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -43,9 +44,9 @@ var DateRange = function DateRange(_ref) {
   var isFullWidth = _ref.isFullWidth,
     isError = _ref.isError,
     onChange = _ref.onChange;
-  return React.createElement(_antd.ConfigProvider, {
+  return _react.default.createElement(_antd.ConfigProvider, {
     locale: _by_BY.default
-  }, React.createElement(RangePicker, {
+  }, _react.default.createElement(RangePicker, {
     open: true,
     locale: _locale.localeRu,
     format: "DD MMMM YYYY",

@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { FC, useState } from 'react';
+import React, { useState } from 'react';
 
 import styles from './styles.module.css';
 
@@ -24,7 +24,7 @@ type Props = {
   handleSelect: (icon: string) => void;
 };
 
-export const Header: FC<Props> = ({
+export const Header: React.FC<Props> = ({
   selectViewValue,
   handleSubtractDate,
   handleAddDate,

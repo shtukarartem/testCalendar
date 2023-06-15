@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.MaterialProvider = void 0;
 var _styles = require("@mui/material/styles");
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var theme = (0, _styles.createTheme)({
   palette: {
     primary: {
@@ -18,9 +20,9 @@ var theme = (0, _styles.createTheme)({
 });
 var MaterialProvider = function MaterialProvider(_ref) {
   var children = _ref.children;
-  return React.createElement(_styles.StyledEngineProvider, {
+  return _react.default.createElement(_styles.StyledEngineProvider, {
     injectFirst: true
-  }, React.createElement(_styles.ThemeProvider, {
+  }, _react.default.createElement(_styles.ThemeProvider, {
     theme: theme
   }, children));
 };

@@ -2,7 +2,7 @@ import { Theme } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { SxProps } from '@mui/system';
-import { FC } from 'react';
+import React from 'react';
 
 import { SelectOptions } from '../../types/types';
 
@@ -14,7 +14,7 @@ type Props = {
   handleChange: (value: string) => void;
 };
 
-export const SelectComponent: FC<Props> = ({ options, value, sx, label, handleChange }) => (
+export const SelectComponent: React.FC<Props> = ({ options, value, sx, label, handleChange }) => (
   <Select
     sx={sx}
     value={value}

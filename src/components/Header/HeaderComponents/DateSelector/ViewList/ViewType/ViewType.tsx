@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React from 'react';
 
 import styles from './styles.module.css';
 
@@ -12,7 +12,7 @@ type Props = {
   handleClickChange: () => void;
 };
 
-export const ViewType: FC<Props> = ({ view, handleClickChange, onClick }) => (
+export const ViewType: React.FC<Props> = ({ view, handleClickChange, onClick }) => (
   /* eslint-disable */
   <div className={styles.wrapper}>
     <div className={styles.title} onClick={() => onClick(view.title)}>

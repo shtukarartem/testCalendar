@@ -1,4 +1,3 @@
-import { FC } from 'react';
-
-export declare const Calendar: FC;
+import React from 'react';
+export declare const Calendar: React.FC;
 //# sourceMappingURL=Calendar.d.ts.map

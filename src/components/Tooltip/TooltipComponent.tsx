@@ -1,7 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { IconButton } from '@mui/material';
-import { FC, MouseEvent } from 'react';
+import React, { MouseEvent } from 'react';
 
 import styles from './styles.module.css';
 
@@ -12,7 +12,7 @@ type Props = {
   handleClose: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
-export const TooltipComponent: FC<Props> = ({ data, handleClose }) => (
+export const TooltipComponent: React.FC<Props> = ({ data, handleClose }) => (
   <div className={styles.wrapper}>
     <div className={styles.icons}>
       <IconButton disabled>

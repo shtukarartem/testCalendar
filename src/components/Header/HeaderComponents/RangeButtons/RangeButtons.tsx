@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import { FC } from 'react';
+import React from 'react';
 
 import styles from './styles.module.css';
 
@@ -8,7 +8,7 @@ type Props = {
   handleSubtractDate: () => void;
 };
 
-export const RangeButtons: FC<Props> = ({ handleAddDate, handleSubtractDate }) => (
+export const RangeButtons: React.FC<Props> = ({ handleAddDate, handleSubtractDate }) => (
   <div className={styles.wrapper}>
     <Button variant="outlined" className={styles.button} onClick={handleSubtractDate}>
       {'<'}

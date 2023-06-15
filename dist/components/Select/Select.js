@@ -8,6 +8,7 @@ exports.SelectComponent = void 0;
 require("core-js/modules/es.array.map.js");
 var _MenuItem = _interopRequireDefault(require("@mui/material/MenuItem"));
 var _Select = _interopRequireDefault(require("@mui/material/Select"));
+var _react = _interopRequireDefault(require("react"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var SelectComponent = function SelectComponent(_ref) {
   var options = _ref.options,
@@ -15,7 +16,7 @@ var SelectComponent = function SelectComponent(_ref) {
     sx = _ref.sx,
     label = _ref.label,
     handleChange = _ref.handleChange;
-  return React.createElement(_Select.default, {
+  return _react.default.createElement(_Select.default, {
     sx: sx,
     value: value,
     label: label !== null && label !== void 0 ? label : 'test',
@@ -23,7 +24,7 @@ var SelectComponent = function SelectComponent(_ref) {
       handleChange(event.target.value);
     }
   }, options.map(function (item, index) {
-    return React.createElement(_MenuItem.default, {
+    return _react.default.createElement(_MenuItem.default, {
       key: index,
       value: item.value
     }, item.title);

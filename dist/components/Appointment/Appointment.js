@@ -17,6 +17,7 @@ require("core-js/modules/es.object.to-string.js");
 require("core-js/modules/es.number.constructor.js");
 var _classnames = _interopRequireDefault(require("classnames"));
 var _dayjs = _interopRequireDefault(require("dayjs"));
+var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -39,11 +40,11 @@ var Appointment = function Appointment(_ref) {
   var endTime = (0, _dayjs.default)(endDate).format('HH:mm');
   var endDateFormat = (0, _dayjs.default)(endDate);
   var isPast = endDateFormat.isBefore(currentDate);
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: (0, _classnames.default)(_stylesModule.default.wrapper, statusVariants[status], _defineProperty({}, _stylesModule.default.past, isPast))
-  }, React.createElement("div", {
+  }, _react.default.createElement("div", {
     className: _stylesModule.default.time
-  }, startTime, "-", endTime), React.createElement("div", {
+  }, startTime, "-", endTime), _react.default.createElement("div", {
     className: _stylesModule.default.time
   }, text));
 };

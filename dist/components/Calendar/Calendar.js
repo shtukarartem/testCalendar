@@ -23,6 +23,7 @@ require("core-js/modules/es.object.get-own-property-descriptor.js");
 require("core-js/modules/web.dom-collections.for-each.js");
 require("core-js/modules/es.object.get-own-property-descriptors.js");
 require("core-js/modules/es.object.define-properties.js");
+require("core-js/modules/es.weak-map.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -30,7 +31,7 @@ exports.Calendar = void 0;
 var _dayjs = _interopRequireDefault(require("dayjs"));
 var _devextremeReact = require("devextreme-react");
 var _scheduler = require("devextreme-react/scheduler");
-var _react = require("react");
+var _react = _interopRequireWildcard(require("react"));
 var _styleModule = _interopRequireDefault(require("./style.module.css"));
 var _sefviceFormData = require("../../sefviceFormData");
 var _utils = require("../../utils/utils");
@@ -40,6 +41,8 @@ var _MoreAppointments = require("./../MoreAppointments/MoreAppointments");
 var _MoreButton = require("./../MoreButton/MoreButton");
 var _Room = require("./../Room/Room");
 var _TooltipComponent = require("./../Tooltip/TooltipComponent");
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -93,7 +96,7 @@ var Calendar = function Calendar() {
     e.stopPropagation();
     scheduler === null || scheduler === void 0 ? void 0 : scheduler.instance.hideAppointmentTooltip();
   };
-  return React.createElement(React.Fragment, null, React.createElement(_Header.Header, {
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_Header.Header, {
     selectPlaceholder: "sdssd",
     selectViewValue: selectedView,
     handleMinusButton: function handleMinusButton() {
@@ -123,7 +126,7 @@ var Calendar = function Calendar() {
       setCurrentDate((_data$currentData = data === null || data === void 0 ? void 0 : data.currentData) !== null && _data$currentData !== void 0 ? _data$currentData : currentDate);
       setCurrentView((_data$currentView = data === null || data === void 0 ? void 0 : data.currentView) !== null && _data$currentView !== void 0 ? _data$currentView : currentView);
     }
-  }), React.createElement(_devextremeReact.Scheduler, {
+  }), _react.default.createElement(_devextremeReact.Scheduler, {
     currentView: currentView.type,
     className: _styleModule.default.wrapper,
     dataSource: _sefviceFormData.data,
@@ -131,13 +134,13 @@ var Calendar = function Calendar() {
     views: [currentView],
     currentDate: currentDate.toDate(),
     appointmentTooltipComponent: function appointmentTooltipComponent(data) {
-      return React.createElement(_TooltipComponent.TooltipComponent, {
+      return _react.default.createElement(_TooltipComponent.TooltipComponent, {
         data: data.data.appointmentData,
         handleClose: closeTooltip
       });
     },
     appointmentRender: function appointmentRender(data) {
-      return React.createElement(_Appointment.Appointment, {
+      return _react.default.createElement(_Appointment.Appointment, {
         data: data.appointmentData,
         currentDate: currentDate
       });
@@ -147,7 +150,7 @@ var Calendar = function Calendar() {
     },
     height: 900,
     dropDownAppointmentComponent: function dropDownAppointmentComponent(data) {
-      return React.createElement(_MoreAppointments.MoreAppointments, {
+      return _react.default.createElement(_MoreAppointments.MoreAppointments, {
         data: data.data
       });
     },
@@ -159,32 +162,32 @@ var Calendar = function Calendar() {
     onCellClick: createMeeting,
     onAppointmentDblClick: editMeeting,
     appointmentCollectorComponent: function appointmentCollectorComponent(data) {
-      return React.createElement(_MoreButton.MoreButton, {
+      return _react.default.createElement(_MoreButton.MoreButton, {
         data: data.data
       });
     },
     onAppointmentAdding: handleAppointmentAdding,
     resourceCellComponent: function resourceCellComponent(data) {
-      return React.createElement(_Room.Room, {
+      return _react.default.createElement(_Room.Room, {
         data: data.data.data
       });
     }
-  }, React.createElement(_scheduler.View, {
+  }, _react.default.createElement(_scheduler.View, {
     type: "timelineMonth"
-  }), React.createElement(_scheduler.Scrolling, {
+  }), _react.default.createElement(_scheduler.Scrolling, {
     mode: "virtual"
-  }), React.createElement(_scheduler.Resource, {
+  }), _react.default.createElement(_scheduler.Resource, {
     fieldExpr: "ownerId",
     allowMultiple: true,
     dataSource: _sefviceFormData.ownersData,
     label: "Owner",
     useColorAsDefault: true
-  }), React.createElement(_scheduler.Resource, {
+  }), _react.default.createElement(_scheduler.Resource, {
     fieldExpr: "rooms",
     allowMultiple: false,
     dataSource: _sefviceFormData.roomsData,
     label: "Rooms"
-  }), React.createElement(_scheduler.Editing, {
+  }), _react.default.createElement(_scheduler.Editing, {
     allowDragging: false,
     allowResizing: false,
     allowUpdating: false

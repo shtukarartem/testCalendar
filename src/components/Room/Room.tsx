@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { FC } from 'react';
+import React from 'react';
 
 import styles from './styles.module.css';
 
@@ -21,7 +21,7 @@ const roomVariants = {
   meeting: styles.meeting,
 };
 
-export const Room: FC<Props> = (props) => {
+export const Room: React.FC<Props> = (props) => {
   const { room, description, type } = props.data;
   return (
     <div>
