@@ -59,13 +59,18 @@ export const handldleCheckView = (selectedView: string) => {
   }
 };
 export const handldleSelectTitle = (data: { type: string; intervalCount: number }) => {
-  console.log(data);
-  if (data.type === 'timelineDay' && data.intervalCount === 1) return 'timelineDay';
-  if (data.type === 'timelineDay' && data.intervalCount === 2) return 'twoDays';
-  if (data.type === 'timelineDay' && data.intervalCount === 3) return 'threeDays';
-  if (data.type === 'timelineWeek' && data.intervalCount === 1) return 'timelineWeek';
-  if (data.type === 'timelineWeek' && data.intervalCount === 2) return 'twoWeeks';
-  if (data.type === 'timelineWeek' && data.intervalCount === 3) return 'threeWeeks';
+  if (data.type === 'timelineDay' && data.intervalCount === 1) {
+    if(data.intervalCount === 1) return 'timelineDay'
+    if(data.intervalCount === 2) return 'twoDays'
+    if(data.intervalCount === 3) return 'threeDays'
+    
+  };
+  if (data.type === 'timelineWeek') {
+    if(data.intervalCount === 1) return 'timelineWeek'
+    if(data.intervalCount === 2) return 'twoWeeks'
+    if(data.intervalCount === 3) return 'threeWeeks'
+  };
+
   if (data.type === 'timelineMonth' && data.intervalCount === 1) return 'timelineMonth';
   return data.type;
 };
