@@ -7,8 +7,7 @@
   "module": "./dist/App.js",
   "types": "./dist/App.d.ts",
   "files": [
-    "dist",
-    "build"
+    "dist"
   ],
   "homepage": "https://github.com/shtukarartem/testCalendar",
   "dependencies": {
