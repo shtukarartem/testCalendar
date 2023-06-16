@@ -1,7 +1,6 @@
-import { OwnerType, RoomComponentType } from './types/types';
-import { BookingType } from 'src/types/types';
+import { BookingType, OwnerType, RoomComponentType } from './types/types';
 
-export const ownersData:OwnerType[] = [
+export const ownersData: OwnerType[] = [
   {
     owner: 'Samantha Bright',
     id: '1',
@@ -20,7 +19,7 @@ export const ownersData:OwnerType[] = [
   },
 ];
 
-export const roomsData:RoomComponentType[] = [
+export const roomsData: RoomComponentType[] = [
   {
     room: 'Рабочее место 1',
     description: 'Окно',
@@ -487,8 +486,8 @@ export const data: BookingType[] = [
       name: 'Update Customer Shipping Profiles',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
-      type:'test'
-    }
+      type: 'test',
+    },
   },
   {
     eventId: '28',
@@ -498,13 +497,12 @@ export const data: BookingType[] = [
     endDate: new Date('2023-06-17T21:00:00.000'),
     status: 'overdue',
     comment: 'test',
-    client_data:{
+    client_data: {
       name: 'Create New Shipping Return Labels',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
-      type: 'OAO'
-    }
-
+      type: 'OAO',
+    },
   },
   {
     eventId: '29',
@@ -518,10 +516,8 @@ export const data: BookingType[] = [
       name: 'Get Design for Shipping Return Labels',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
-      type:'OAO'
-    }
-
-
+      type: 'OAO',
+    },
   },
   {
     eventId: '30',
@@ -531,13 +527,12 @@ export const data: BookingType[] = [
     endDate: new Date('2023-06-18T16:15:00.000'),
     status: 'overdue',
     comment: 'test',
-    client_data:{
+    client_data: {
       name: 'PSD needed for Shipping Return Labels',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
-      type: 'OAO'
-    }
-
+      type: 'OAO',
+    },
   },
   {
     eventId: '31',
@@ -547,13 +542,12 @@ export const data: BookingType[] = [
     endDate: new Date('2023-06-18T23:00:00.000'),
     status: 'paid',
     comment: 'test',
-    client_data:{
+    client_data: {
       name: 'Contact ISP and Discuss Payment Options',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
       type: 'OAO',
-    }
-
+    },
   },
   {
     eventId: '32',
@@ -563,13 +557,12 @@ export const data: BookingType[] = [
     endDate: new Date('2023-06-19T03:00:00.000'),
     status: 'booked',
     comment: 'test',
-    client_data:{
+    client_data: {
       name: 'Prepare Year-End Support Summary Report',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
-      type: 'OAO'
-    }
-
+      type: 'OAO',
+    },
   },
   {
     eventId: '33',
@@ -579,14 +572,12 @@ export const data: BookingType[] = [
     endDate: new Date('2023-06-19T16:15:00.000'),
     comment: 'test',
     status: 'booked',
-    client_data:{
+    client_data: {
       name: 'Review New Training Material',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
-      type: 'type'
-    }
-
-
+      type: 'type',
+    },
   },
   {
     eventId: '34',
@@ -596,12 +587,12 @@ export const data: BookingType[] = [
     endDate: new Date('2023-06-19T21:00:00.000'),
     status: 'booked',
     comment: 'test',
-    client_data:{
+    client_data: {
       name: 'Distribute Training Material to Support Staff',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
-      type: 'OAO'
-    }
+      type: 'OAO',
+    },
   },
   {
     eventId: '35',
@@ -611,13 +602,12 @@ export const data: BookingType[] = [
     endDate: new Date('2023-06-19T23:15:00.000'),
     status: 'booked',
     comment: 'test',
-    client_data:{
+    client_data: {
       name: 'Training Material Distribution Schedule',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
-      type: 'OAO'
-    }
-
+      type: 'OAO',
+    },
   },
   {
     eventId: '36',
@@ -627,13 +617,12 @@ export const data: BookingType[] = [
     endDate: new Date('2023-06-22T17:15:00.000'),
     status: 'booked',
     comment: 'test',
-    client_data:{
+    client_data: {
       name: 'Approval on Converting to New HDMI Specification',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
-      type: 'OAO'
-    }
-
+      type: 'OAO',
+    },
   },
   {
     eventId: '37',
@@ -643,12 +632,11 @@ export const data: BookingType[] = [
     endDate: new Date('2023-06-22T19:30:00.000'),
     status: 'paid',
     comment: 'test',
-    client_data:{
+    client_data: {
       name: 'Create New Spike for Automation Server',
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
-      type: 'OAO'
-    }
-
+      type: 'OAO',
+    },
   },
 ];

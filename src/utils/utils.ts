@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-import { BookingType } from 'src/types/types';
+import { BookingType } from '../types/types';
 
 export const handleAddDate = (currentView: string, currentDate: dayjs.Dayjs) => {
   switch (currentView) {
@@ -60,16 +60,15 @@ export const handldleCheckView = (selectedView: string) => {
 };
 export const handldleSelectTitle = (data: { type: string; intervalCount: number }) => {
   if (data.type === 'timelineDay' && data.intervalCount === 1) {
-    if(data.intervalCount === 1) return 'timelineDay'
-    if(data.intervalCount === 2) return 'twoDays'
-    if(data.intervalCount === 3) return 'threeDays'
-    
-  };
+    if (data.intervalCount === 1) return 'timelineDay';
+    if (data.intervalCount === 2) return 'twoDays';
+    if (data.intervalCount === 3) return 'threeDays';
+  }
   if (data.type === 'timelineWeek') {
-    if(data.intervalCount === 1) return 'timelineWeek'
-    if(data.intervalCount === 2) return 'twoWeeks'
-    if(data.intervalCount === 3) return 'threeWeeks'
-  };
+    if (data.intervalCount === 1) return 'timelineWeek';
+    if (data.intervalCount === 2) return 'twoWeeks';
+    if (data.intervalCount === 3) return 'threeWeeks';
+  }
 
   if (data.type === 'timelineMonth' && data.intervalCount === 1) return 'timelineMonth';
   return data.type;

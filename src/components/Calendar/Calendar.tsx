@@ -3,16 +3,12 @@ import { Scheduler } from 'devextreme-react';
 import { Editing, Resource, Scrolling, View } from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler, { AppointmentAddingEvent, CellClickEvent } from 'devextreme/ui/scheduler';
-import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
+import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 
-import { Appointment } from 'src/components/Appointment/Appointment';
-import { Header } from 'src/components/Header/Header';
-import { MoreAppointments } from 'src/components/MoreAppointments/MoreAppointments';
-import { MoreButton } from 'src/components/MoreButton/MoreButton';
-import { Room } from 'src/components/Room/Room';
-import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
-import { data, ownersData, roomsData } from 'src/sefviceFormData';
-import { BookingType, DateCellType, OwnerType, RoomComponentType } from 'src/types/types';
+import style from './style.module.css';
+
+import { data, ownersData, roomsData } from '../../sefviceFormData';
+import { BookingType, DateCellType, OwnerType, RoomComponentType } from '../../types/types';
 import {
   checkBusyRoom,
   handldleCheckView,
@@ -21,17 +17,20 @@ import {
   handleFirstCharInUpperCase,
   handleSelectData,
   handleSubtractDate,
-} from 'src/utils/utils';
-
-import style from './style.module.css';
-
+} from '../../utils/utils';
 import { DateCell } from '../DateCell/DateCell';
+import { Appointment } from './../Appointment/Appointment';
+import { Header } from './../Header/Header';
+import { MoreAppointments } from './../MoreAppointments/MoreAppointments';
+import { MoreButton } from './../MoreButton/MoreButton';
+import { Room } from './../Room/Room';
+import { TooltipComponent } from './../Tooltip/TooltipComponent';
 
 type Props = {
-  owners?:OwnerType[],
-  rooms?:RoomComponentType[],
-  events?:BookingType[],
-}
+  owners?: OwnerType[];
+  rooms?: RoomComponentType[];
+  events?: BookingType[];
+};
 const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
   const isBusyDate = checkBusyRoom(
     data,
@@ -59,7 +58,11 @@ const updateAppointment = () => {
   console.log('// TODO here will be action for update appointment');
 };
 
-export const Calendar: FC<Props> = ({owners=ownersData, rooms=roomsData, events=data}) => {
+export const Calendar: React.FC<Props> = ({
+  owners = ownersData,
+  rooms = roomsData,
+  events = data,
+}) => {
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
     dayjs().locale('ru').format('DD MMMM')
@@ -114,7 +117,7 @@ export const Calendar: FC<Props> = ({owners=ownersData, rooms=roomsData, events=
           setCurrentDate(handleSubtractDate(currentView.type, currentDate) ?? currentDate)
         }
         //handleViewsChange={(value) => setSelectedView(value)}
-        handleViewsChange={(value) => setCurrentView(handldleCheckView(value)?? currentView)}
+        handleViewsChange={(value) => setCurrentView(handldleCheckView(value) ?? currentView)}
         handleSelect={(icon: string) => {
           const data = handleSelectData(icon);
           setCurrentDate(data?.currentData ?? currentDate);

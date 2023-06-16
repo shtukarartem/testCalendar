@@ -3,12 +3,11 @@ import 'dayjs/locale/ru';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import dayjs from 'dayjs';
-import { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { ViewListType } from 'src/types/types';
+import styles from './styles.module.css';
 
-import styles from 'src/components/Header/HeaderComponents/DateSelector/styles.module.css';
-
+import { ViewListType } from '../../../../types/types';
 import { Menu } from './Menu';
 
 type Props = {
@@ -22,7 +21,7 @@ type Props = {
   handleViewClick: (title: string) => void;
 };
 
-export const DateSelector: FC<Props> = ({
+export const DateSelector: React.FC<Props> = ({
   views,
   selectPlaceholder,
   isOpen = false,

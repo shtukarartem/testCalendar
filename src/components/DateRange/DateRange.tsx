@@ -4,11 +4,11 @@ import { ConfigProvider, DatePicker } from 'antd';
 import locale from 'antd/locale/by_BY';
 import classNames from 'classnames';
 import { Dayjs } from 'dayjs';
-import { FC } from 'react';
+import React from 'react';
 
-import { localeRu } from 'src/utils/locale';
+import styles from './styles.module.css';
 
-import styles from 'src/components/DateRange/styles.module.css';
+import { localeRu } from './../../utils/locale';
 
 const { RangePicker } = DatePicker;
 
@@ -35,7 +35,7 @@ type Props = {
   onChange: (dates: null | (Dayjs | null)[]) => void;
 };
 
-export const DateRange: FC<Props> = ({ isFullWidth, isError, onChange }) => (
+export const DateRange: React.FC<Props> = ({ isFullWidth, isError, onChange }) => (
   <ConfigProvider locale={locale}>
     <RangePicker
       open={true}

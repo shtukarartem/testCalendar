@@ -1,16 +1,16 @@
 import classNames from 'classnames';
-import { FC, useState } from 'react';
-
-import { ViewListType } from 'src/types/types';
+import React, { useState } from 'react';
 
 import styles from './styles.module.css';
+
+import { ViewListType } from '../../../../types/types';
 
 type Props = {
   views: ViewListType[];
   handleSelect: (icon: string) => void;
 };
 
-export const PinnedViews: FC<Props> = ({ views, handleSelect }) => {
+export const PinnedViews: React.FC<Props> = ({ views, handleSelect }) => {
   const [isSelect, setIsSelect] = useState<boolean>(false);
   const [selectIcon, setSelectIcon] = useState<string>('');
   const handleClick = (field: string) => {

@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import dayjs from 'dayjs';
-import { FC } from 'react';
-
-import { BookingType } from 'src/types/types';
+import React from 'react';
 
 import styles from './styles.module.css';
+
+import { BookingType } from '../../types/types';
 
 type Props = {
   data: BookingType;
@@ -17,8 +17,9 @@ const statusVariants = {
   overdue: styles.overdue,
 };
 
-export const Appointment: FC<Props> = ({ data, currentDate }) => {
-  const { client_data , startDate, endDate, status } = data;
+export const Appointment: React.FC<Props> = ({ data, currentDate }) => {
+  const { client_data, startDate, endDate, status } = data;
+
   const startTime = dayjs(startDate).format('HH:mm');
   const endTime = dayjs(endDate).format('HH:mm');
   const endDateFormat = dayjs(endDate);

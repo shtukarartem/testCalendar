@@ -1,16 +1,15 @@
-import { ViewListType } from 'src/types/types';
-
-import calendar_month_current from 'src/assets/images/calendar_month_current.svg';
-import calendar_month_last from 'src/assets/images/calendar_month_last.svg';
-import calendar_month_next from 'src/assets/images/calendar_month_next.svg';
-import calendar_three_days_last from 'src/assets/images/calendar_three_days_last.svg';
-import calendar_two_week_last from 'src/assets/images/calendar_two_week_last.svg';
-import calendar_week_current from 'src/assets/images/calendar_week_current.svg';
-import calendar_week_last from 'src/assets/images/calendar_week_last.svg';
-import calendar_week_next from 'src/assets/images/calendar_week_next.svg';
-import todayIcon from 'src/assets/images/todayIcon.svg';
-import tomorrowIcon from 'src/assets/images/tomorrowIcon.svg';
-import yesterdayIcon from 'src/assets/images/yesterdayIcon.svg';
+import calendar_month_current from '../../../../../assets/images/calendar_month_current.svg';
+import calendar_month_last from '../../../../../assets/images/calendar_month_last.svg';
+import calendar_month_next from '../../../../../assets/images/calendar_month_next.svg';
+import calendar_three_days_last from '../../../../../assets/images/calendar_three_days_last.svg';
+import calendar_two_week_last from '../../../../../assets/images/calendar_two_week_last.svg';
+import calendar_week_current from '../../../../../assets/images/calendar_week_current.svg';
+import calendar_week_last from '../../../../../assets/images/calendar_week_last.svg';
+import calendar_week_next from '../../../../../assets/images/calendar_week_next.svg';
+import todayIcon from '../../../../../assets/images/todayIcon.svg';
+import tomorrowIcon from '../../../../../assets/images/tomorrowIcon.svg';
+import yesterdayIcon from '../../../../../assets/images/yesterdayIcon.svg';
+import { ViewListType } from '../../../../../types/types';
 
 export const viewList: ViewListType[] = [
   {

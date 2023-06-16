@@ -1,7 +1,6 @@
 import { StoryObj } from '@storybook/react';
 
-import { SelectOptions } from 'src/types/types';
-
+import { SelectOptions } from '../../types/types';
 import { SelectComponent } from './Select';
 
 const options: SelectOptions[] = [

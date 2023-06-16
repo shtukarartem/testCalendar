@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React from 'react';
 
 import styles from './styles.module.css';
 
@@ -9,7 +9,7 @@ type Props = {
   };
 };
 
-export const MoreButton: FC<Props> = ({ data }) => {
+export const MoreButton: React.FC<Props> = ({ data }) => {
   const { appointmentCount } = data;
   return <div className={styles.wrapper}>{appointmentCount} more</div>;
 };
