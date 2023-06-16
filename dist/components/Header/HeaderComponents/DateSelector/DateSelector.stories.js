@@ -1,17 +1,17 @@
-'use strict';
+"use strict";
 
-require('core-js/modules/es.object.define-property.js');
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+require("core-js/modules/es.object.define-property.js");
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 exports.default = exports.DateSelectorComponent = void 0;
-var _DateSelector = require('./DateSelector');
+var _DateSelector = require("./DateSelector");
 var DateSelectorComponent = {
-  args: {},
+  args: {}
 };
 exports.DateSelectorComponent = DateSelectorComponent;
 var DateSelectorDefaultExport = {
-  component: _DateSelector.DateSelector,
+  component: _DateSelector.DateSelector
 };
 var _default = DateSelectorDefaultExport;
 exports.default = _default;

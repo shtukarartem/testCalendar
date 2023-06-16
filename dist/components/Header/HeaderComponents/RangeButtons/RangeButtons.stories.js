@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-require('core-js/modules/es.object.define-property.js');
-Object.defineProperty(exports, '__esModule', {
-  value: true,
+require("core-js/modules/es.object.define-property.js");
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
 exports.default = exports.RangeButtonsComponent = void 0;
-var _RangeButtons = require('./RangeButtons');
+var _RangeButtons = require("./RangeButtons");
 var meta = {
-  component: _RangeButtons.RangeButtons,
+  component: _RangeButtons.RangeButtons
 };
 var RangeButtonsComponent = {
   args: {
@@ -16,8 +16,8 @@ var RangeButtonsComponent = {
     },
     handleSubtractDate: function handleSubtractDate() {
       console.log();
-    },
-  },
+    }
+  }
 };
 exports.RangeButtonsComponent = RangeButtonsComponent;
 var _default = meta;

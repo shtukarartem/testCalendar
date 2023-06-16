@@ -1,17 +1,17 @@
 import dayjs from 'dayjs';
-import { FC } from 'react';
-
-import { DateCellType } from 'src/types/types';
-import { handleFirstCharInUpperCase } from 'src/utils/utils';
+import React from 'react';
 
 import styles from './styles.module.css';
+
+import { DateCellType } from '../../types/types';
+import { handleFirstCharInUpperCase } from '../../utils/utils';
 
 type Props = {
   data: DateCellType;
   currentView: string;
 };
 
-export const DateCell: FC<Props> = ({ data, currentView }) => (
+export const DateCell: React.FC<Props> = ({ data, currentView }) => (
   <>
     {currentView === 'timelineMonth' ? (
       <div className={styles.wrapper}>

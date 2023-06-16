@@ -1,9 +1,7 @@
 import React from 'react';
-
 import { BookingType } from '../../types/types';
-
 type Props = {
-  data: BookingType;
+    data: BookingType;
 };
 export declare const MoreAppointments: React.FC<Props>;
 export {};

@@ -1,10 +1,9 @@
 import React from 'react';
-
 type Props = {
-  data: {
-    appointmentCount: number;
-    isCompact: boolean;
-  };
+    data: {
+        appointmentCount: number;
+        isCompact: boolean;
+    };
 };
 export declare const MoreButton: React.FC<Props>;
 export {};
