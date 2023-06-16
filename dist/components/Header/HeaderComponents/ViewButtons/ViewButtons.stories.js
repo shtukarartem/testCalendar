@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
-require("core-js/modules/es.object.define-property.js");
-Object.defineProperty(exports, "__esModule", {
-  value: true
+require('core-js/modules/es.object.define-property.js');
+Object.defineProperty(exports, '__esModule', {
+  value: true,
 });
 exports.default = exports.RangeButtonsComponent = void 0;
-var _ViewButtons = require("./ViewButtons");
+var _ViewButtons = require('./ViewButtons');
 var meta = {
-  component: _ViewButtons.ViewButtons
+  component: _ViewButtons.ViewButtons,
 };
 var RangeButtonsComponent = {
   args: {
@@ -16,8 +16,8 @@ var RangeButtonsComponent = {
     },
     handleMinusButton: function handleMinusButton() {
       console.log();
-    }
-  }
+    },
+  },
 };
 exports.RangeButtonsComponent = RangeButtonsComponent;
 var _default = meta;

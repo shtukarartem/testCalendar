@@ -8,13 +8,17 @@ import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 import style from './style.module.css';
 
 import { data, ownersData, roomsData } from '../../sefviceFormData';
+import { DateCellType } from '../../types/types';
 import {
   checkBusyRoom,
   handldleCheckView,
+  handldleSelectTitle,
   handleAddDate,
+  handleFirstCharInUpperCase,
   handleSelectData,
   handleSubtractDate,
 } from '../../utils/utils';
+import { DateCell } from '../DateCell/DateCell';
 import { Appointment } from './../Appointment/Appointment';
 import { Header } from './../Header/Header';
 import { MoreAppointments } from './../MoreAppointments/MoreAppointments';
@@ -33,41 +37,57 @@ const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
     e.cancel = true;
     alert('Данная переговорка уже забронирована на выбранное Вами время');
   }
+  console.log('// TODO here will be action for adding appointment');
 };
 
-const createMeeting = (e: CellClickEvent) => {
+const openCreationModal = (e: CellClickEvent) => {
   e.event?.preventDefault();
-  console.log('this action income from service form');
+  console.log('this action open CreationModal and will income from service form');
 };
 
-const editMeeting = () => {
+const openEditingModal = () => {
   console.log('metting dbl click this action income from service form');
+};
+
+const updateAppointment = () => {
+  console.log('// TODO here will be action for update appointment');
 };
 
 export const Calendar: React.FC = () => {
   const groups = ['rooms'];
+  const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
+    dayjs().locale('ru').format('DD MMMM')
+  );
   const [currentDate, setCurrentDate] = useState(dayjs(new Date()));
   const [currentView, setCurrentView] = useState<{
     type: string;
-    intervalCount?: number;
-  }>({ type: 'timelineMonth' });
+    intervalCount: number;
+  }>({ type: 'timelineDay', intervalCount: 1 });
   const [selectedView, setSelectedView] = useState<string>(currentView.type);
   useEffect(() => {
-    setCurrentView(handldleCheckView(selectedView) ?? currentView);
-  }, [selectedView]); // eslint-disable-line
+    setSelectedView(handldleSelectTitle(currentView));
+  }, [currentDate, currentView]); // eslint-disable-line
 
   const schedulerRef = useRef<Scheduler>(null);
   const scheduler = schedulerRef.current;
+
+  useEffect(() => {
+    if (currentView.type === 'timelineDay' && currentView.intervalCount === 1) {
+      setSelectedPlaceholder(dayjs(currentDate).locale('ru').format('DD MMMM YYYY'));
+    } else
+      setSelectedPlaceholder(
+        handleFirstCharInUpperCase(dayjs(currentDate).locale('ru').format('MMMM YYYY'))
+      );
+  }, [currentDate, currentView]);
 
   const closeTooltip = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     scheduler?.instance.hideAppointmentTooltip();
   };
-
   return (
     <>
       <Header
-        selectPlaceholder="sdssd"
+        selectedPlaceholder={selectedPlaceholder}
         selectViewValue={selectedView}
         handleMinusButton={() =>
           setCurrentView({
@@ -82,12 +102,13 @@ export const Calendar: React.FC = () => {
           })
         }
         handleAddDate={() =>
-          setCurrentDate(handleAddDate(selectedView, currentDate) ?? currentDate)
+          setCurrentDate(handleAddDate(currentView.type, currentDate) ?? currentDate)
         }
         handleSubtractDate={() =>
-          setCurrentDate(handleSubtractDate(selectedView, currentDate) ?? currentDate)
+          setCurrentDate(handleSubtractDate(currentView.type, currentDate) ?? currentDate)
         }
-        handleViewsChange={(value) => setSelectedView(value)}
+        //handleViewsChange={(value) => setSelectedView(value)}
+        handleViewsChange={(value) => setCurrentView(handldleCheckView(value) ?? currentView)}
         handleSelect={(icon: string) => {
           const data = handleSelectData(icon);
           setCurrentDate(data?.currentData ?? currentDate);
@@ -111,14 +132,19 @@ export const Calendar: React.FC = () => {
           if (e.name === 'currentView') setCurrentView(e.value);
         }}
         height={900}
+        dateCellRender={(itemData: DateCellType) => (
+          <DateCell data={itemData} currentView={currentView.type} />
+        )}
         dropDownAppointmentComponent={(data) => <MoreAppointments data={data.data} />}
         groups={groups}
         cellDuration={60}
         firstDayOfWeek={0}
         startDayHour={0}
         endDayHour={24}
-        onCellClick={createMeeting}
-        onAppointmentDblClick={editMeeting}
+        onCellClick={openCreationModal}
+        editing
+        onAppointmentUpdating={updateAppointment}
+        onAppointmentDblClick={openEditingModal}
         appointmentCollectorComponent={(data) => <MoreButton data={data.data} />}
         onAppointmentAdding={handleAppointmentAdding}
         // TODO uncomment later. need for cancel default popul creation

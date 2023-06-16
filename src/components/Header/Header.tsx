@@ -1,11 +1,11 @@
-import dayjs from 'dayjs';
+import IconButton from '@mui/material/IconButton/IconButton';
 import React, { useState } from 'react';
 
 import styles from './styles.module.css';
 
+import IconSettings from '../../assets/images/IconButton.svg';
 import { changeViewOptions } from '../../constants/constants';
 import { ViewListType } from '../../types/types';
-import { handleFirstCharInUpperCase, handleSelectedPlaceholder } from '../../utils/utils';
 import { SelectComponent } from './../Select/Select';
 import { DateSelector } from './HeaderComponents/DateSelector/DateSelector';
 import { viewList } from './HeaderComponents/DateSelector/ViewList/ViewListConstants';
@@ -14,8 +14,8 @@ import { RangeButtons } from './HeaderComponents/RangeButtons/RangeButtons';
 import { ViewButtons } from './HeaderComponents/ViewButtons/ViewButtons';
 
 type Props = {
+  selectedPlaceholder: string;
   selectViewValue: string;
-  selectPlaceholder: string;
   handleAddDate: () => void;
   handleSubtractDate: () => void;
   handleViewsChange: (value: string) => void;
@@ -25,6 +25,7 @@ type Props = {
 };
 
 export const Header: React.FC<Props> = ({
+  selectedPlaceholder,
   selectViewValue,
   handleSubtractDate,
   handleAddDate,
@@ -35,9 +36,6 @@ export const Header: React.FC<Props> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [views, setViews] = useState<ViewListType[]>(viewList);
-  const [selectedPlaceholder, setSelectedPlaceholder] = useState(
-    handleFirstCharInUpperCase(dayjs().locale('ru').format('MMMM'))
-  );
 
   const handlePinned = (i: number) => {
     const newState: ViewListType[] = views.map((item, index) => {
@@ -63,23 +61,23 @@ export const Header: React.FC<Props> = ({
         handleViewClick={(title: string) => {
           setIsOpen(false);
           handleSelect(title);
-          setSelectedPlaceholder(handleSelectedPlaceholder(title));
         }}
       />
       <PinnedViews
         views={views}
         handleSelect={(title) => {
           handleSelect(title);
-          setSelectedPlaceholder(handleSelectedPlaceholder(title));
         }}
       />
       <SelectComponent
         sx={{ height: '32px', fontSize: '0.875rem', marginLeft: 'auto', marginRight: '20px' }}
         value={selectViewValue}
-        label="asdsadasdasd"
         handleChange={handleViewsChange}
         options={changeViewOptions}
       />
+      <IconButton className={styles.settingsIcon}>
+        <img src={IconSettings} alt="" />
+      </IconButton>
     </div>
   );
 };

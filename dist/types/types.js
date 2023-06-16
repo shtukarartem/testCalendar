@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-require("core-js/modules/es.object.define-property.js");
-Object.defineProperty(exports, "__esModule", {
-  value: true
+require('core-js/modules/es.object.define-property.js');
+Object.defineProperty(exports, '__esModule', {
+  value: true,
 });
 //# sourceMappingURL=types.js.map

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
+
 type Props = {
-    children: ReactNode;
+  children: ReactNode;
 };
 export declare const MaterialProvider: React.FC<Props>;
 export {};
