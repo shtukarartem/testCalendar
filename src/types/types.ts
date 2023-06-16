@@ -13,14 +13,19 @@ export type ViewListType = {
 export type RentStatusType = 'paid' | 'booked' | 'overdue';
 
 export type BookingType = {
-  text: string;
-  ownerId: number[];
+  eventId: string;
+  ownerId: string;
+  roomId: string;
   startDate: Date;
   endDate: Date;
-  rooms: number;
-  email: string;
-  number: string;
+  comment: string;
   status: RentStatusType;
+  client_data: {
+    type: string;
+    name: string;
+    email: string;
+    phone: string;
+  };
 };
 
 export type DateCellType = {
@@ -28,4 +33,16 @@ export type DateCellType = {
   groupIndex?: number;
   groups?: string;
   text: string;
+};
+
+export type RoomComponentType = {
+  id: string;
+  room: string;
+  description: string;
+  type: string;
+};
+
+export type OwnerType = {
+  id: string;
+  owner: string;
 };

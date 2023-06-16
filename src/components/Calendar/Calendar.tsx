@@ -8,7 +8,7 @@ import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 import style from './style.module.css';
 
 import { data, ownersData, roomsData } from '../../sefviceFormData';
-import { DateCellType } from '../../types/types';
+import { BookingType, DateCellType, OwnerType, RoomComponentType } from '../../types/types';
 import {
   checkBusyRoom,
   handldleCheckView,
@@ -26,6 +26,11 @@ import { MoreButton } from './../MoreButton/MoreButton';
 import { Room } from './../Room/Room';
 import { TooltipComponent } from './../Tooltip/TooltipComponent';
 
+type Props = {
+  owners?: OwnerType[];
+  rooms?: RoomComponentType[];
+  events?: BookingType[];
+};
 const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
   const isBusyDate = checkBusyRoom(
     data,
@@ -53,8 +58,12 @@ const updateAppointment = () => {
   console.log('// TODO here will be action for update appointment');
 };
 
-export const Calendar: React.FC = () => {
-  const groups = ['rooms'];
+export const Calendar: React.FC<Props> = ({
+  owners = ownersData,
+  rooms = roomsData,
+  events = data,
+}) => {
+  const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
     dayjs().locale('ru').format('DD MMMM')
   );
@@ -118,7 +127,7 @@ export const Calendar: React.FC = () => {
       <Scheduler
         currentView={currentView.type as any} // eslint-disable-line
         className={style.wrapper}
-        dataSource={data}
+        dataSource={events}
         ref={schedulerRef}
         views={[currentView] as any} // eslint-disable-line
         currentDate={currentDate.toDate()}
@@ -162,11 +171,11 @@ export const Calendar: React.FC = () => {
         <Resource
           fieldExpr="ownerId"
           allowMultiple={true}
-          dataSource={ownersData}
+          dataSource={owners}
           label="Owner"
           useColorAsDefault={true}
         />
-        <Resource fieldExpr="rooms" allowMultiple={false} dataSource={roomsData} label="Rooms" />
+        <Resource fieldExpr="roomId" allowMultiple={false} dataSource={rooms} label="Rooms" />
         <Editing allowDragging={false} allowResizing={false} allowUpdating={false} />
       </Scheduler>
     </>
