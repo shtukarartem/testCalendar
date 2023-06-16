@@ -3,16 +3,12 @@ import { Scheduler } from 'devextreme-react';
 import { Editing, Resource, Scrolling, View } from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler, { AppointmentAddingEvent, CellClickEvent } from 'devextreme/ui/scheduler';
-import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
+import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 
-import { Appointment } from 'src/components/Appointment/Appointment';
-import { Header } from 'src/components/Header/Header';
-import { MoreAppointments } from 'src/components/MoreAppointments/MoreAppointments';
-import { MoreButton } from 'src/components/MoreButton/MoreButton';
-import { Room } from 'src/components/Room/Room';
-import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
-import { data, ownersData, roomsData } from 'src/sefviceFormData';
-import { DateCellType } from 'src/types/types';
+import style from './style.module.css';
+
+import { data, ownersData, roomsData } from '../../sefviceFormData';
+import { DateCellType } from '../../types/types';
 import {
   checkBusyRoom,
   handldleCheckView,
@@ -21,11 +17,14 @@ import {
   handleFirstCharInUpperCase,
   handleSelectData,
   handleSubtractDate,
-} from 'src/utils/utils';
-
-import style from './style.module.css';
-
+} from '../../utils/utils';
 import { DateCell } from '../DateCell/DateCell';
+import { Appointment } from './../Appointment/Appointment';
+import { Header } from './../Header/Header';
+import { MoreAppointments } from './../MoreAppointments/MoreAppointments';
+import { MoreButton } from './../MoreButton/MoreButton';
+import { Room } from './../Room/Room';
+import { TooltipComponent } from './../Tooltip/TooltipComponent';
 
 const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
   const isBusyDate = checkBusyRoom(
@@ -54,7 +53,7 @@ const updateAppointment = () => {
   console.log('// TODO here will be action for update appointment');
 };
 
-export const Calendar: FC = () => {
+export const Calendar: React.FC = () => {
   const groups = ['rooms'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
     dayjs().locale('ru').format('DD MMMM')
@@ -109,7 +108,7 @@ export const Calendar: FC = () => {
           setCurrentDate(handleSubtractDate(currentView.type, currentDate) ?? currentDate)
         }
         //handleViewsChange={(value) => setSelectedView(value)}
-        handleViewsChange={(value) => setCurrentView(handldleCheckView(value)?? currentView)}
+        handleViewsChange={(value) => setCurrentView(handldleCheckView(value) ?? currentView)}
         handleSelect={(icon: string) => {
           const data = handleSelectData(icon);
           setCurrentDate(data?.currentData ?? currentDate);

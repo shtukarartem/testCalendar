@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import { FC } from 'react';
-
-import { RoomType } from 'src/types/types';
+import React from 'react';
 
 import styles from './styles.module.css';
+
+import { RoomType } from '../../types/types';
 
 type Props = {
   data: {
@@ -21,7 +21,7 @@ const roomVariants = {
   meeting: styles.meeting,
 };
 
-export const Room: FC<Props> = (props) => {
+export const Room: React.FC<Props> = (props) => {
   const { room, description, type } = props.data;
   return (
     <div>

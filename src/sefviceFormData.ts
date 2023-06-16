@@ -1,5 +1,5 @@
 //import dayjs from 'dayjs';
-import { BookingType } from 'src/types/types';
+import { BookingType } from './types/types';
 
 export const ownersData = [
   {

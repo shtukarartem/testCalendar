@@ -1,5 +1,5 @@
 import { StyledEngineProvider, ThemeProvider, createTheme } from '@mui/material/styles';
-import { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 const theme = createTheme({
   palette: {
@@ -12,7 +12,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const MaterialProvider: FC<Props> = ({ children }) => (
+export const MaterialProvider: React.FC<Props> = ({ children }) => (
   <StyledEngineProvider injectFirst>
     <ThemeProvider theme={theme}>{children}</ThemeProvider>
   </StyledEngineProvider>

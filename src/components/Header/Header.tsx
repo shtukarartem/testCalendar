@@ -1,19 +1,17 @@
 import IconButton from '@mui/material/IconButton/IconButton';
-import { FC, useState } from 'react';
-
-import { DateSelector } from 'src/components/Header/HeaderComponents/DateSelector/DateSelector';
-import { viewList } from 'src/components/Header/HeaderComponents/DateSelector/ViewList/ViewListConstants';
-import { PinnedViews } from 'src/components/Header/HeaderComponents/PinnedViews/PinnedViews';
-import { RangeButtons } from 'src/components/Header/HeaderComponents/RangeButtons/RangeButtons';
-import { ViewButtons } from 'src/components/Header/HeaderComponents/ViewButtons/ViewButtons';
-import { SelectComponent } from 'src/components/Select/Select';
-import { changeViewOptions } from 'src/constants/constants';
-import { ViewListType } from 'src/types/types';
-
-//import { handleSelectedPlaceholder } from 'src/utils/utils';
-import IconSettings from 'src/assets/images/IconButton.svg';
+import React, { useState } from 'react';
 
 import styles from './styles.module.css';
+
+import IconSettings from '../../assets/images/IconButton.svg';
+import { changeViewOptions } from '../../constants/constants';
+import { ViewListType } from '../../types/types';
+import { SelectComponent } from './../Select/Select';
+import { DateSelector } from './HeaderComponents/DateSelector/DateSelector';
+import { viewList } from './HeaderComponents/DateSelector/ViewList/ViewListConstants';
+import { PinnedViews } from './HeaderComponents/PinnedViews/PinnedViews';
+import { RangeButtons } from './HeaderComponents/RangeButtons/RangeButtons';
+import { ViewButtons } from './HeaderComponents/ViewButtons/ViewButtons';
 
 type Props = {
   selectedPlaceholder: string;
@@ -26,7 +24,7 @@ type Props = {
   handleSelect: (icon: string) => void;
 };
 
-export const Header: FC<Props> = ({
+export const Header: React.FC<Props> = ({
   selectedPlaceholder,
   selectViewValue,
   handleSubtractDate,
