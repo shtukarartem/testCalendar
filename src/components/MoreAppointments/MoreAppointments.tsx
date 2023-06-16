@@ -17,13 +17,13 @@ type Props = {
 };
 
 export const MoreAppointments: FC<Props> = ({ data }) => {
-  const { text, status, startDate } = data;
+  const { client_data, status, startDate } = data;
   const startTime = dayjs(startDate).format('HH:mm');
   return (
     <div className={styles.wrapper}>
       <div className={classNames(styles.point, statusVariants[status])}></div>
       <span>
-        {startTime} {text}
+        {startTime} {client_data.name}
       </span>
     </div>
   );

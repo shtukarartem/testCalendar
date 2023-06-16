@@ -149,13 +149,13 @@ const isEqualDates = (date1: Date, date2: Date) => {
 
 export const checkBusyRoom = (
   bookings: BookingType[],
-  rooms: number,
+  roomId: string,
   startDate: Date,
   endDate: Date
 ) =>
   bookings.some(
     (item) =>
-      item.rooms === rooms &&
+      item.roomId === roomId &&
       (isBetween(startDate, item.startDate, item.endDate) ||
         isBetween(endDate, item.startDate, item.endDate) ||
         (isEqualDates(startDate, item.startDate) && isEqualDates(startDate, item.startDate)))

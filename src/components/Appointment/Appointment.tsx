@@ -18,7 +18,7 @@ const statusVariants = {
 };
 
 export const Appointment: FC<Props> = ({ data, currentDate }) => {
-  const { text, startDate, endDate, status } = data;
+  const { client_data , startDate, endDate, status } = data;
   const startTime = dayjs(startDate).format('HH:mm');
   const endTime = dayjs(endDate).format('HH:mm');
   const endDateFormat = dayjs(endDate);
@@ -30,7 +30,7 @@ export const Appointment: FC<Props> = ({ data, currentDate }) => {
       <div className={styles.time}>
         {startTime}-{endTime}
       </div>
-      <div className={styles.time}>{text}</div>
+      <div className={styles.time}>{client_data.name}</div>
     </div>
   );
 };

@@ -12,7 +12,7 @@ import { MoreButton } from 'src/components/MoreButton/MoreButton';
 import { Room } from 'src/components/Room/Room';
 import { TooltipComponent } from 'src/components/Tooltip/TooltipComponent';
 import { data, ownersData, roomsData } from 'src/sefviceFormData';
-import { DateCellType } from 'src/types/types';
+import { BookingType, DateCellType, OwnerType, RoomComponentType } from 'src/types/types';
 import {
   checkBusyRoom,
   handldleCheckView,
@@ -27,6 +27,11 @@ import style from './style.module.css';
 
 import { DateCell } from '../DateCell/DateCell';
 
+type Props = {
+  owners?:OwnerType[],
+  rooms?:RoomComponentType[],
+  events?:BookingType[],
+}
 const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
   const isBusyDate = checkBusyRoom(
     data,
@@ -54,8 +59,8 @@ const updateAppointment = () => {
   console.log('// TODO here will be action for update appointment');
 };
 
-export const Calendar: FC = () => {
-  const groups = ['rooms'];
+export const Calendar: FC<Props> = ({owners=ownersData, rooms=roomsData, events=data}) => {
+  const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
     dayjs().locale('ru').format('DD MMMM')
   );
@@ -119,7 +124,7 @@ export const Calendar: FC = () => {
       <Scheduler
         currentView={currentView.type as any} // eslint-disable-line
         className={style.wrapper}
-        dataSource={data}
+        dataSource={events}
         ref={schedulerRef}
         views={[currentView] as any} // eslint-disable-line
         currentDate={currentDate.toDate()}
@@ -163,11 +168,11 @@ export const Calendar: FC = () => {
         <Resource
           fieldExpr="ownerId"
           allowMultiple={true}
-          dataSource={ownersData}
+          dataSource={owners}
           label="Owner"
           useColorAsDefault={true}
         />
-        <Resource fieldExpr="rooms" allowMultiple={false} dataSource={roomsData} label="Rooms" />
+        <Resource fieldExpr="roomId" allowMultiple={false} dataSource={rooms} label="Rooms" />
         <Editing allowDragging={false} allowResizing={false} allowUpdating={false} />
       </Scheduler>
     </>
