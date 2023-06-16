@@ -56,7 +56,7 @@ export const viewList: ViewListType[] = [
   {
     icon: calendar_month_current,
     title: 'Текущий месяц',
-    isPinned: false,
+    isPinned: true,
   },
   {
     icon: calendar_month_last,
