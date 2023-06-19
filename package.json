@@ -12,11 +12,14 @@
   "homepage": "https://github.com/shtukarartem/testCalendar",
   "dependencies": {
     "styled-component": "^2.8.0",
+    "classnames": "^2.3.2",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.3",
     "@mui/styled-engine-sc": "^5.12.0",
-    "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
     "devextreme": "22.2.6",
     "devextreme-react": "22.2.6",
     "antd": "^5.5.2",
@@ -70,9 +73,6 @@
     }
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "@typescript-eslint/eslint-plugin": "^5.59.8",
-    "@typescript-eslint/parser": "^5.59.8",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
     "pretty-quick": "^3.1.3",
