@@ -140,7 +140,7 @@ export const Calendar: React.FC<Props> = ({
         onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {
           if (e.name === 'currentView') setCurrentView(e.value);
         }}
-        height={900}
+        //height={900}
         dateCellRender={(itemData: DateCellType) => (
           <DateCell data={itemData} currentView={currentView.type} />
         )}
