@@ -169,7 +169,6 @@ var Calendar = function Calendar(_ref) {
     onOptionChanged: function onOptionChanged(e) {
       if (e.name === 'currentView') setCurrentView(e.value);
     },
-    height: 900,
     dateCellRender: function dateCellRender(itemData) {
       return _react.default.createElement(_DateCell.DateCell, {
         data: itemData,
