@@ -1,10 +1,10 @@
 {
   "name": "sf-calendar",
-  "version": "0.0.35",
+  "version": "0.0.34",
   "private": false,
   "license": "MIT",
-  "main": "./dist/components/Calendar/Calendar.js",
-  "module": "./dist/components/Calendar/Calendar.js",
+  "main": "./dist/App.js",
+  "module": "./dist/App.js",
   "types": "./dist/App.d.ts",
   "files": [
     "dist"
