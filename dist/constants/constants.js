@@ -1,11 +1,10 @@
 "use strict";
 
-require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.views = exports.changeViewOptions = void 0;
-var views = [{
+const views = [{
   name: 'День',
   type: 'timelineDay'
 }, {
@@ -16,7 +15,7 @@ var views = [{
   type: 'timelineMonth'
 }];
 exports.views = views;
-var changeViewOptions = [{
+const changeViewOptions = [{
   title: 'День',
   value: 'timelineDay'
 }, {

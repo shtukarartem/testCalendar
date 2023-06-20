@@ -1,25 +1,22 @@
 "use strict";
 
-require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.ViewType = void 0;
-require("core-js/modules/es.symbol.js");
-require("core-js/modules/es.symbol.description.js");
 var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 var _push_pin = _interopRequireDefault(require("../../../../../../assets/images/push_pin.svg"));
 var _unpush_pin = _interopRequireDefault(require("../../../../../../assets/images/unpush_pin.svg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var ViewType = function ViewType(_ref) {
-  var view = _ref.view,
-    handleClickChange = _ref.handleClickChange,
-    _onClick = _ref.onClick;
+const ViewType = _ref => {
+  let {
+    view,
+    handleClickChange,
+    onClick
+  } = _ref;
   return _react.default.createElement("div", {
-    onClick: function onClick() {
-      return _onClick(view.title);
-    },
+    onClick: () => onClick(view.title),
     className: _stylesModule.default.wrapper
   }, _react.default.createElement("div", {
     className: _stylesModule.default.title
@@ -31,7 +28,7 @@ var ViewType = function ViewType(_ref) {
   }, view.title)), _react.default.createElement("div", {
     className: _stylesModule.default.pin
   }, view.isPinned ? _react.default.createElement("img", {
-    onClick: function onClick(event) {
+    onClick: event => {
       handleClickChange();
       event.stopPropagation();
     },
@@ -39,7 +36,7 @@ var ViewType = function ViewType(_ref) {
     alt: ""
   }) : _react.default.createElement("img", {
     className: _stylesModule.default.unpin,
-    onClick: function onClick(event) {
+    onClick: event => {
       handleClickChange();
       event.stopPropagation();
     },

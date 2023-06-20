@@ -1,21 +1,18 @@
 "use strict";
 
-require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = exports.RangeButtonsComponent = void 0;
 var _ViewList = require("./ViewList");
 var _ViewListConstants = require("./ViewListConstants");
-var meta = {
+const meta = {
   component: _ViewList.ViewList
 };
-var RangeButtonsComponent = {
+const RangeButtonsComponent = {
   args: {
     viewList: _ViewListConstants.viewList,
-    handlePinned: function handlePinned(index) {
-      return console.log(index);
-    }
+    handlePinned: index => console.log(index)
   }
 };
 exports.RangeButtonsComponent = RangeButtonsComponent;

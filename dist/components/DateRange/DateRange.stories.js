@@ -1,22 +1,19 @@
 "use strict";
 
-require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = exports.DateRangeComponent = void 0;
 var _DateRange = require("./DateRange");
-var DateRangeComponent = {
+const DateRangeComponent = {
   args: {
     isError: false,
     isFullWidth: false,
-    onChange: function onChange(dates) {
-      return console.log(dates);
-    }
+    onChange: dates => console.log(dates)
   }
 };
 exports.DateRangeComponent = DateRangeComponent;
-var DateRangeDefaultExport = {
+const DateRangeDefaultExport = {
   component: _DateRange.DateRange
 };
 var _default = DateRangeDefaultExport;

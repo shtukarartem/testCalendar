@@ -7,7 +7,7 @@ import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 
 import style from './style.module.css';
 
-import { data, ownersData, roomsData } from '../../sefviceFormData';
+import { data } from '../../sefviceFormData';
 import { BookingType, DateCellType, OwnerType, RoomComponentType } from '../../types/types';
 import {
   checkBusyRoom,
@@ -30,8 +30,14 @@ type Props = {
   owners?: OwnerType[];
   rooms?: RoomComponentType[];
   events?: BookingType[];
+  updateEvent?: () => void;
+  addEvent?: () => void;
+  openUpdateModal?: () => void;
+  openAddingModal?: () => void;
+  closeModal?: () => void;
 };
-const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
+
+const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => void) => {
   const isBusyDate = checkBusyRoom(
     data,
     e.appointmentData.rooms,
@@ -43,25 +49,21 @@ const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
     alert('Данная переговорка уже забронирована на выбранное Вами время');
   }
   console.log('// TODO here will be action for adding appointment');
+  addEvent?.();
 };
 
-const openCreationModal = (e: CellClickEvent) => {
+const openCreationModal = (e: CellClickEvent, openAddingModal?: () => void) => {
   e.event?.preventDefault();
   console.log('this action open CreationModal and will income from service form');
-};
-
-const openEditingModal = () => {
-  console.log('metting dbl click this action income from service form');
-};
-
-const updateAppointment = () => {
-  console.log('// TODO here will be action for update appointment');
+  openAddingModal?.();
 };
 
 export const Calendar: React.FC<Props> = ({
-  owners = ownersData,
-  rooms = roomsData,
-  events = data,
+  owners,
+  rooms,
+  events,
+  openUpdateModal,
+  updateEvent,
 }) => {
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
@@ -152,8 +154,8 @@ export const Calendar: React.FC<Props> = ({
         endDayHour={24}
         onCellClick={openCreationModal}
         editing
-        onAppointmentUpdating={updateAppointment}
-        onAppointmentDblClick={openEditingModal}
+        onAppointmentUpdating={updateEvent}
+        onAppointmentDblClick={openUpdateModal}
         appointmentCollectorComponent={(data) => <MoreButton data={data.data} />}
         onAppointmentAdding={handleAppointmentAdding}
         // TODO uncomment later. need for cancel default popul creation

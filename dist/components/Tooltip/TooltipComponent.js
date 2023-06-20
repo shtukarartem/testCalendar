@@ -1,6 +1,5 @@
 "use strict";
 
-require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -12,9 +11,11 @@ var _dayjs = _interopRequireDefault(require("dayjs"));
 var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var TooltipComponent = function TooltipComponent(_ref) {
-  var data = _ref.data,
-    handleClose = _ref.handleClose;
+const TooltipComponent = _ref => {
+  let {
+    data,
+    handleClose
+  } = _ref;
   return _react.default.createElement("div", {
     className: _stylesModule.default.wrapper
   }, _react.default.createElement("div", {
@@ -46,16 +47,14 @@ var TooltipComponent = function TooltipComponent(_ref) {
   }, _react.default.createElement("button", {
     disabled: true,
     type: "button",
-    onClick: function onClick(event) {
+    onClick: event => {
       event.stopPropagation();
     },
     className: _stylesModule.default.buttonLight
   }, "\u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C \u0431\u0440\u043E\u043D\u044C"), _react.default.createElement("button", {
     disabled: true,
     type: "button",
-    onClick: function onClick(event) {
-      return event.stopPropagation();
-    },
+    onClick: event => event.stopPropagation(),
     className: _stylesModule.default.buttonLight
   }, "\u0417\u0432\u043E\u043D\u0438\u0442\u044C")));
 };
