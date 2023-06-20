@@ -18,7 +18,12 @@ const App = _ref => {
   let {
     owners = _sefviceFormData.ownersData,
     rooms = _sefviceFormData.roomsData,
-    events = _sefviceFormData.data
+    events = _sefviceFormData.data,
+    updateEvent,
+    addEvent,
+    openUpdateModal,
+    openAddingModal,
+    closeModal
   } = _ref;
   (0, _react.useEffect)(() => {
     (0, _localization.locale)('ru');
@@ -26,7 +31,12 @@ const App = _ref => {
   return _react.default.createElement(_MaterialProvider.MaterialProvider, null, _react.default.createElement(_Calendar.Calendar, {
     owners: owners,
     rooms: rooms,
-    events: events
+    events: events,
+    updateEvent: updateEvent,
+    addEvent: addEvent,
+    openUpdateModal: openUpdateModal,
+    openAddingModal: openAddingModal,
+    closeModal: closeModal
   }));
 };
 var _default = App;

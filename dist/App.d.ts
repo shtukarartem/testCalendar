@@ -6,6 +6,11 @@ type Props = {
     owners?: OwnerType[];
     rooms?: RoomComponentType[];
     events?: BookingType[];
+    updateEvent?: () => void;
+    addEvent?: () => void;
+    openUpdateModal?: () => void;
+    openAddingModal?: () => void;
+    closeModal?: () => void;
 };
 declare const App: React.FC<Props>;
 export default App;

@@ -22,30 +22,28 @@ var _TooltipComponent = require("./../Tooltip/TooltipComponent");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-const handleAppointmentAdding = e => {
+const handleAppointmentAdding = (e, addEvent) => {
   const isBusyDate = (0, _utils.checkBusyRoom)(_sefviceFormData.data, e.appointmentData.rooms, e.appointmentData.startDate, e.appointmentData.endDate);
   if (isBusyDate) {
     e.cancel = true;
     alert('Данная переговорка уже забронирована на выбранное Вами время');
   }
   console.log('// TODO here will be action for adding appointment');
+  addEvent === null || addEvent === void 0 ? void 0 : addEvent();
 };
-const openCreationModal = e => {
+const openCreationModal = (e, openAddingModal) => {
   var _e$event;
   (_e$event = e.event) === null || _e$event === void 0 ? void 0 : _e$event.preventDefault();
   console.log('this action open CreationModal and will income from service form');
-};
-const openEditingModal = () => {
-  console.log('metting dbl click this action income from service form');
-};
-const updateAppointment = () => {
-  console.log('// TODO here will be action for update appointment');
+  openAddingModal === null || openAddingModal === void 0 ? void 0 : openAddingModal();
 };
 const Calendar = _ref => {
   let {
     owners,
     rooms,
-    events
+    events,
+    openUpdateModal,
+    updateEvent
   } = _ref;
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = (0, _react.useState)((0, _dayjs.default)().locale('ru').format('DD MMMM'));
@@ -130,8 +128,8 @@ const Calendar = _ref => {
     endDayHour: 24,
     onCellClick: openCreationModal,
     editing: true,
-    onAppointmentUpdating: updateAppointment,
-    onAppointmentDblClick: openEditingModal,
+    onAppointmentUpdating: updateEvent,
+    onAppointmentDblClick: openUpdateModal,
     appointmentCollectorComponent: data => _react.default.createElement(_MoreButton.MoreButton, {
       data: data.data
     }),
