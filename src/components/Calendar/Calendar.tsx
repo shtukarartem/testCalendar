@@ -7,7 +7,7 @@ import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 
 import style from './style.module.css';
 
-import { data, ownersData, roomsData } from '../../sefviceFormData';
+import { data } from '../../sefviceFormData';
 import { BookingType, DateCellType, OwnerType, RoomComponentType } from '../../types/types';
 import {
   checkBusyRoom,
@@ -31,6 +31,7 @@ type Props = {
   rooms?: RoomComponentType[];
   events?: BookingType[];
 };
+
 const handleAppointmentAdding = (e: AppointmentAddingEvent) => {
   const isBusyDate = checkBusyRoom(
     data,
@@ -58,11 +59,7 @@ const updateAppointment = () => {
   console.log('// TODO here will be action for update appointment');
 };
 
-export const Calendar: React.FC<Props> = ({
-  owners = ownersData,
-  rooms = roomsData,
-  events = data,
-}) => {
+export const Calendar: React.FC<Props> = ({ owners, rooms, events }) => {
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
     dayjs().locale('ru').format('DD MMMM')

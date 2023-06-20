@@ -1,12 +1,11 @@
 "use strict";
 
-require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = exports.SelectStoryComponent = void 0;
 var _Select = require("./Select");
-var options = [{
+const options = [{
   title: 'Первый',
   value: '1'
 }, {
@@ -16,18 +15,16 @@ var options = [{
   title: 'Третий',
   value: '3'
 }];
-var SelectStoryComponent = {
+const SelectStoryComponent = {
   args: {
     value: '',
     options: options,
-    handleChange: function handleChange(value) {
-      return console.log(value);
-    },
+    handleChange: value => console.log(value),
     label: 'default'
   }
 };
 exports.SelectStoryComponent = SelectStoryComponent;
-var SelectDefaultExport = {
+const SelectDefaultExport = {
   component: _Select.SelectComponent
 };
 var _default = SelectDefaultExport;

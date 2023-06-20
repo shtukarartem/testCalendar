@@ -1,6 +1,5 @@
 "use strict";
 
-require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -13,15 +12,17 @@ var _utils = require("../../../../utils/utils");
 var _DateRange = require("../../../DateRange/DateRange");
 var _ViewList = require("./ViewList/ViewList");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var Menu = function Menu(_ref) {
-  var views = _ref.views,
-    dates = _ref.dates,
-    isOpen = _ref.isOpen,
-    onSubmit = _ref.onSubmit,
-    onCancel = _ref.onCancel,
-    handlePinned = _ref.handlePinned,
-    handleViewClick = _ref.handleViewClick,
-    handleDates = _ref.handleDates;
+const Menu = _ref => {
+  let {
+    views,
+    dates,
+    isOpen,
+    onSubmit,
+    onCancel,
+    handlePinned,
+    handleViewClick,
+    handleDates
+  } = _ref;
   return _react.default.createElement("div", {
     className: _stylesModule.default.items
   }, _react.default.createElement("div", {

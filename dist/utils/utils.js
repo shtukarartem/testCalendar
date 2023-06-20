@@ -1,15 +1,12 @@
 "use strict";
 
-require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.handleSubtractDate = exports.handleSelectData = exports.handleFirstCharInUpperCase = exports.handleCorrectDateDifference = exports.handleAddDate = exports.handldleSelectTitle = exports.handldleCheckView = exports.checkBusyRoom = void 0;
-require("core-js/modules/es.object.to-string.js");
-require("core-js/modules/es.array.slice.js");
 var _dayjs = _interopRequireDefault(require("dayjs"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var handleAddDate = function handleAddDate(currentView, currentDate) {
+const handleAddDate = (currentView, currentDate) => {
   switch (currentView) {
     case 'timelineMonth':
       return currentDate.add(1, 'month');
@@ -28,7 +25,7 @@ var handleAddDate = function handleAddDate(currentView, currentDate) {
   }
 };
 exports.handleAddDate = handleAddDate;
-var handleSubtractDate = function handleSubtractDate(currentView, currentDate) {
+const handleSubtractDate = (currentView, currentDate) => {
   switch (currentView) {
     case 'timelineMonth':
       return currentDate.subtract(1, 'month');
@@ -47,7 +44,7 @@ var handleSubtractDate = function handleSubtractDate(currentView, currentDate) {
   }
 };
 exports.handleSubtractDate = handleSubtractDate;
-var handldleCheckView = function handldleCheckView(selectedView) {
+const handldleCheckView = selectedView => {
   switch (selectedView) {
     case 'timelineDay':
       return {
@@ -87,7 +84,7 @@ var handldleCheckView = function handldleCheckView(selectedView) {
   }
 };
 exports.handldleCheckView = handldleCheckView;
-var handldleSelectTitle = function handldleSelectTitle(data) {
+const handldleSelectTitle = data => {
   if (data.type === 'timelineDay' && data.intervalCount === 1) {
     if (data.intervalCount === 1) return 'timelineDay';
     if (data.intervalCount === 2) return 'twoDays';
@@ -102,7 +99,7 @@ var handldleSelectTitle = function handldleSelectTitle(data) {
   return data.type;
 };
 exports.handldleSelectTitle = handldleSelectTitle;
-var handleCorrectDateDifference = function handleCorrectDateDifference(diff) {
+const handleCorrectDateDifference = diff => {
   diff++;
   if (Math.abs(diff) % 100 > 10 && Math.abs(diff) % 100 < 20) {
     return "".concat(diff, " \u0434\u043D\u0435\u0439: ");
@@ -116,7 +113,7 @@ var handleCorrectDateDifference = function handleCorrectDateDifference(diff) {
   return "".concat(diff, " \u0434\u043D\u0435\u0439: ");
 };
 exports.handleCorrectDateDifference = handleCorrectDateDifference;
-var handleSelectData = function handleSelectData(icon) {
+const handleSelectData = icon => {
   switch (icon) {
     case 'Сегодня':
       return {
@@ -209,24 +206,16 @@ var handleSelectData = function handleSelectData(icon) {
   }
 };
 exports.handleSelectData = handleSelectData;
-var isBetween = function isBetween(date, start, end) {
-  return start < date && date < end;
-};
-var isEqualDates = function isEqualDates(date1, date2) {
+const isBetween = (date, start, end) => start < date && date < end;
+const isEqualDates = (date1, date2) => {
   if (date1 > date2 || date1 < date2) {
     return false;
   } else {
     return true;
   }
 };
-var checkBusyRoom = function checkBusyRoom(bookings, roomId, startDate, endDate) {
-  return bookings.some(function (item) {
-    return item.roomId === roomId && (isBetween(startDate, item.startDate, item.endDate) || isBetween(endDate, item.startDate, item.endDate) || isEqualDates(startDate, item.startDate) && isEqualDates(startDate, item.startDate));
-  });
-};
+const checkBusyRoom = (bookings, roomId, startDate, endDate) => bookings.some(item => item.roomId === roomId && (isBetween(startDate, item.startDate, item.endDate) || isBetween(endDate, item.startDate, item.endDate) || isEqualDates(startDate, item.startDate) && isEqualDates(startDate, item.startDate)));
 exports.checkBusyRoom = checkBusyRoom;
-var handleFirstCharInUpperCase = function handleFirstCharInUpperCase(title) {
-  return title.charAt(0).toUpperCase() + title.slice(1);
-};
+const handleFirstCharInUpperCase = title => title.charAt(0).toUpperCase() + title.slice(1);
 exports.handleFirstCharInUpperCase = handleFirstCharInUpperCase;
 //# sourceMappingURL=utils.js.map

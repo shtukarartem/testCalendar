@@ -1,6 +1,5 @@
 "use strict";
 
-require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -17,7 +16,7 @@ var _todayIcon = _interopRequireDefault(require("../../../../../assets/images/to
 var _tomorrowIcon = _interopRequireDefault(require("../../../../../assets/images/tomorrowIcon.svg"));
 var _yesterdayIcon = _interopRequireDefault(require("../../../../../assets/images/yesterdayIcon.svg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var viewList = [{
+const viewList = [{
   icon: _todayIcon.default,
   title: 'Сегодня',
   isPinned: true

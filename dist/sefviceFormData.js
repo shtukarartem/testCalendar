@@ -1,11 +1,10 @@
 "use strict";
 
-require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.roomsData = exports.ownersData = exports.data = void 0;
-var ownersData = [{
+const ownersData = [{
   owner: 'Samantha Bright',
   id: '1'
 }, {
@@ -19,7 +18,7 @@ var ownersData = [{
   id: '4'
 }];
 exports.ownersData = ownersData;
-var roomsData = [{
+const roomsData = [{
   room: 'Рабочее место 1',
   description: 'Окно',
   type: 'workPlace',
@@ -71,7 +70,7 @@ var roomsData = [{
   id: '10'
 }];
 exports.roomsData = roomsData;
-var data = [{
+const data = [{
   eventId: '1',
   roomId: '1',
   ownerId: '2',
