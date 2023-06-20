@@ -13,15 +13,38 @@ type Props = {
   owners?: OwnerType[];
   rooms?: RoomComponentType[];
   events?: BookingType[];
+  updateEvent?: () => void;
+  addEvent?: () => void;
+  openUpdateModal?: () => void;
+  openAddingModal?: () => void;
+  closeModal?: () => void;
 };
 
-const App: React.FC<Props> = ({ owners = ownersData, rooms = roomsData, events = data }) => {
+const App: React.FC<Props> = ({
+  owners = ownersData,
+  rooms = roomsData,
+  events = data,
+  updateEvent,
+  addEvent,
+  openUpdateModal,
+  openAddingModal,
+  closeModal,
+}) => {
   useEffect(() => {
     locale('ru');
   }, []);
   return (
     <MaterialProvider>
-      <Calendar owners={owners} rooms={rooms} events={events} />
+      <Calendar
+        owners={owners}
+        rooms={rooms}
+        events={events}
+        updateEvent={updateEvent}
+        addEvent={addEvent}
+        openUpdateModal={openUpdateModal}
+        openAddingModal={openAddingModal}
+        closeModal={closeModal}
+      />
     </MaterialProvider>
   );
 };
