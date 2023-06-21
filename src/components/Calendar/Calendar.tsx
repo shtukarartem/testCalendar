@@ -128,6 +128,7 @@ export const Calendar: React.FC<Props> = ({
         }}
       />
       <Scheduler
+      
         currentView={currentView.type as any} // eslint-disable-line
         className={style.wrapper}
         dataSource={events}
@@ -150,7 +151,7 @@ export const Calendar: React.FC<Props> = ({
         dropDownAppointmentComponent={(data) => <MoreAppointments data={data.data} />}
         groups={groups}
         cellDuration={60}
-        firstDayOfWeek={0}
+        firstDayOfWeek={1}
         startDayHour={0}
         endDayHour={24}
         onCellClick={openCreationModal}
