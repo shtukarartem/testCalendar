@@ -3,6 +3,8 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { IconButton } from '@mui/material';
 import dayjs from 'dayjs';
 import React, { MouseEvent } from 'react';
+import email from '../../assets/images/email.svg'
+import call from '../../assets/images/call.svg'
 
 import styles from './styles.module.css';
 
@@ -25,18 +27,22 @@ export const TooltipComponent: React.FC<Props> = ({ data, handleClose }) => (
     </div>
     <div className={styles.fio}>{data.client_data.name}</div>
     <div className={styles.data}>
-      <span className={styles.dataTitle}>Крайний срок</span>
+      <span className={styles.dataTitle}>Срок бранирования</span>
       <span className={styles.dateText}>
         {dayjs(data.endDate).format('DD.MM.YYYY')} c {dayjs(data.startDate).format('HH:mm')} по{' '}
         {dayjs(data.endDate).format('HH:mm')}
       </span>
     </div>
     <div className={styles.clientType}>
-      <span className={styles.dataTitle}>Тип клиента</span>
-      <span className={styles.dateText}>{data.client_data.type}</span>
+      <div className={styles.dataTitle}>Тип клиента</div>
+      <div className={styles.dateText}>{data.client_data.type}</div>
     </div>
-    <div className={styles.email}>{data.client_data.email}</div>
-    <div className={styles.number}>{data.client_data.phone}</div>
+    <div className={styles.email}>
+      <img src={email} alt="" />{data.client_data.email}
+      </div>
+    <div className={styles.number}>
+    <img src={call} alt="" />{data.client_data.phone}
+      </div>
     <div className={styles.footer}>
       <button
         disabled
