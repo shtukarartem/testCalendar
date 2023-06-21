@@ -26,16 +26,24 @@
   color: var(--neutral-sec-50);
 }
 
-.time,
+.time{
+  font-size: 0.75rem;
+  line-height: 1rem;
+  overflow: hidden;
+}
+
+
 .owner {
   font-size: 0.75rem;
   line-height: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 
 .time {
   font-weight: 400;
 }
 
-.owner {
-  font-weight: 600;
-}
+

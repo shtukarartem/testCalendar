@@ -36,7 +36,7 @@ const Appointment = _ref => {
   }, _react.default.createElement("div", {
     className: _stylesModule.default.time
   }, startTime, "-", endTime), _react.default.createElement("div", {
-    className: _stylesModule.default.time
+    className: _stylesModule.default.owner
   }, client_data.name));
 };
 exports.Appointment = Appointment;

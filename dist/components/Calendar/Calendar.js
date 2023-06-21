@@ -31,11 +31,11 @@ const handleAppointmentAdding = (e, addEvent) => {
   console.log('// TODO here will be action for adding appointment');
   addEvent === null || addEvent === void 0 ? void 0 : addEvent();
 };
-const openCreationModal = (e, openAddingModal) => {
+const openCreationModal = (e, openModal) => {
   var _e$event;
   (_e$event = e.event) === null || _e$event === void 0 ? void 0 : _e$event.preventDefault();
   console.log('this action open CreationModal and will income from service form');
-  openAddingModal === null || openAddingModal === void 0 ? void 0 : openAddingModal();
+  openModal === null || openModal === void 0 ? void 0 : openModal();
 };
 const Calendar = _ref => {
   let {
@@ -43,7 +43,8 @@ const Calendar = _ref => {
     rooms,
     events,
     openUpdateModal,
-    updateEvent
+    updateEvent,
+    openAddingModal
   } = _ref;
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = (0, _react.useState)((0, _dayjs.default)().locale('ru').format('DD MMMM'));
@@ -68,6 +69,7 @@ const Calendar = _ref => {
     scheduler === null || scheduler === void 0 ? void 0 : scheduler.instance.hideAppointmentTooltip();
   };
   return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_Header.Header, {
+    isDisabled: currentView.intervalCount === 1,
     selectedPlaceholder: selectedPlaceholder,
     selectViewValue: selectedView,
     handleMinusButton: () => setCurrentView({
@@ -123,10 +125,10 @@ const Calendar = _ref => {
     }),
     groups: groups,
     cellDuration: 60,
-    firstDayOfWeek: 0,
+    firstDayOfWeek: 1,
     startDayHour: 0,
     endDayHour: 24,
-    onCellClick: openCreationModal,
+    onCellClick: e => openCreationModal(e, openAddingModal),
     editing: true,
     onAppointmentUpdating: updateEvent,
     onAppointmentDblClick: openUpdateModal,
@@ -134,6 +136,9 @@ const Calendar = _ref => {
       data: data.data
     }),
     onAppointmentAdding: handleAppointmentAdding,
+    onAppointmentFormOpening: e => {
+      openAddingModal && (e.cancel = true);
+    },
     resourceCellComponent: data => _react.default.createElement(_Room.Room, {
       data: data.data.data
     })

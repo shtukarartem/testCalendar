@@ -21,6 +21,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const Header = _ref => {
   let {
+    isDisabled,
     selectedPlaceholder,
     selectViewValue,
     handleSubtractDate,
@@ -50,6 +51,7 @@ const Header = _ref => {
     handleAddDate: handleAddDate,
     handleSubtractDate: handleSubtractDate
   }), _react.default.createElement(_ViewButtons.ViewButtons, {
+    isDisabled: isDisabled,
     handleMinusButton: handleMinusButton,
     handlePlusButton: handlePlusButton
   }), _react.default.createElement(_DateSelector.DateSelector, {
