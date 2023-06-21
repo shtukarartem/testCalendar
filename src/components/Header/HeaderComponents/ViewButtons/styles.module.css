@@ -20,3 +20,10 @@
   color: var(--neutral-80);
   border-radius: 0 0 5px 0;
 }
+
+.wrapper :global .Mui-disabled {
+  border: 1px solid var(--neutral-95);
+}
+.disabled{
+  color: var(--neutral-95);
+}
