@@ -98,7 +98,7 @@ export const Calendar: React.FC<Props> = ({
   return (
     <>
       <Header
-        isDsabled={currentView.intervalCount === 1}
+        isDisabled={currentView.intervalCount === 1}
         selectedPlaceholder={selectedPlaceholder}
         selectViewValue={selectedView}
         handleMinusButton={() =>
