@@ -23,7 +23,8 @@ const App = _ref => {
     addEvent,
     openUpdateModal,
     openAddingModal,
-    closeModal
+    closeModal,
+    OpenEventWrapper
   } = _ref;
   (0, _react.useEffect)(() => {
     (0, _localization.locale)('ru');
@@ -36,7 +37,8 @@ const App = _ref => {
     addEvent: addEvent,
     openUpdateModal: openUpdateModal,
     openAddingModal: openAddingModal,
-    closeModal: closeModal
+    closeModal: closeModal,
+    OpenEventWrapper: OpenEventWrapper
   }));
 };
 var _default = App;

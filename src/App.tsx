@@ -18,6 +18,7 @@ type Props = {
   openUpdateModal?: () => void;
   openAddingModal?: () => void;
   closeModal?: () => void;
+  OpenEventWrapper?: React.ComponentType<any>;
 };
 
 const App: React.FC<Props> = ({
@@ -29,6 +30,7 @@ const App: React.FC<Props> = ({
   openUpdateModal,
   openAddingModal,
   closeModal,
+  OpenEventWrapper,
 }) => {
   useEffect(() => {
     locale('ru');
@@ -44,6 +46,7 @@ const App: React.FC<Props> = ({
         openUpdateModal={openUpdateModal}
         openAddingModal={openAddingModal}
         closeModal={closeModal}
+        OpenEventWrapper={OpenEventWrapper}
       />
     </MaterialProvider>
   );

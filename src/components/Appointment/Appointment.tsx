@@ -9,6 +9,7 @@ import { BookingType } from '../../types/types';
 type Props = {
   data: BookingType;
   currentDate: dayjs.Dayjs;
+  OpenEventWrapper?: React.ComponentType<any>;
 };
 
 const statusVariants = {
@@ -17,7 +18,10 @@ const statusVariants = {
   overdue: styles.overdue,
 };
 
-export const Appointment: React.FC<Props> = ({ data, currentDate }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const EmptyComponent: React.FC<any> = ({ children }) => <>{children}</>;
+
+export const Appointment: React.FC<Props> = ({ data, currentDate, OpenEventWrapper }) => {
   const { client_data, startDate, endDate, status } = data;
 
   const startTime = dayjs(startDate).format('HH:mm');
@@ -26,12 +30,18 @@ export const Appointment: React.FC<Props> = ({ data, currentDate }) => {
 
   const isPast = endDateFormat.isBefore(currentDate);
 
+  const LinkWrapper = OpenEventWrapper ?? EmptyComponent;
+
   return (
-    <div className={classNames(styles.wrapper, statusVariants[status], { [styles.past]: isPast })}>
-      <div className={styles.time}>
-        {startTime}-{endTime}
+    <LinkWrapper>
+      <div
+        className={classNames(styles.wrapper, statusVariants[status], { [styles.past]: isPast })}
+      >
+        <div className={styles.time}>
+          {startTime}-{endTime}
+        </div>
+        <div className={styles.owner}>{client_data.name}</div>
       </div>
-      <div className={styles.owner}>{client_data.name}</div>
-    </div>
+    </LinkWrapper>
   );
 };

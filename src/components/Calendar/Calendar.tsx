@@ -39,6 +39,7 @@ type Props = {
   openUpdateModal?: () => void;
   openAddingModal?: () => void;
   closeModal?: () => void;
+  OpenEventWrapper?: React.ComponentType<any>;
 };
 
 const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => void) => {
@@ -69,6 +70,7 @@ export const Calendar: React.FC<Props> = ({
   openUpdateModal,
   updateEvent,
   openAddingModal,
+  OpenEventWrapper,
 }) => {
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
@@ -143,7 +145,11 @@ export const Calendar: React.FC<Props> = ({
           <TooltipComponent data={data.data.appointmentData} handleClose={closeTooltip} />
         )}
         appointmentRender={(data) => (
-          <Appointment data={data.appointmentData} currentDate={currentDate} />
+          <Appointment
+            data={data.appointmentData}
+            currentDate={currentDate}
+            OpenEventWrapper={OpenEventWrapper}
+          />
         )}
         onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {
           if (e.name === 'currentView') setCurrentView(e.value);

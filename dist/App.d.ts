@@ -11,6 +11,7 @@ type Props = {
     openUpdateModal?: () => void;
     openAddingModal?: () => void;
     closeModal?: () => void;
+    OpenEventWrapper?: React.ComponentType<any>;
 };
 declare const App: React.FC<Props>;
 export default App;

@@ -14,11 +14,18 @@ const statusVariants = {
   booked: _stylesModule.default.booked,
   overdue: _stylesModule.default.overdue
 };
-const Appointment = _ref => {
+const EmptyComponent = _ref => {
+  let {
+    children
+  } = _ref;
+  return _react.default.createElement(_react.default.Fragment, null, children);
+};
+const Appointment = _ref2 => {
   let {
     data,
-    currentDate
-  } = _ref;
+    currentDate,
+    OpenEventWrapper
+  } = _ref2;
   const {
     client_data,
     startDate,
@@ -29,7 +36,8 @@ const Appointment = _ref => {
   const endTime = (0, _dayjs.default)(endDate).format('HH:mm');
   const endDateFormat = (0, _dayjs.default)(endDate);
   const isPast = endDateFormat.isBefore(currentDate);
-  return _react.default.createElement("div", {
+  const LinkWrapper = OpenEventWrapper !== null && OpenEventWrapper !== void 0 ? OpenEventWrapper : EmptyComponent;
+  return _react.default.createElement(LinkWrapper, null, _react.default.createElement("div", {
     className: (0, _classnames.default)(_stylesModule.default.wrapper, statusVariants[status], {
       [_stylesModule.default.past]: isPast
     })
@@ -37,7 +45,7 @@ const Appointment = _ref => {
     className: _stylesModule.default.time
   }, startTime, "-", endTime), _react.default.createElement("div", {
     className: _stylesModule.default.owner
-  }, client_data.name));
+  }, client_data.name)));
 };
 exports.Appointment = Appointment;
 //# sourceMappingURL=Appointment.js.map

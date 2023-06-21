@@ -44,7 +44,8 @@ const Calendar = _ref => {
     events,
     openUpdateModal,
     updateEvent,
-    openAddingModal
+    openAddingModal,
+    OpenEventWrapper
   } = _ref;
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = (0, _react.useState)((0, _dayjs.default)().locale('ru').format('DD MMMM'));
@@ -111,7 +112,8 @@ const Calendar = _ref => {
     }),
     appointmentRender: data => _react.default.createElement(_Appointment.Appointment, {
       data: data.appointmentData,
-      currentDate: currentDate
+      currentDate: currentDate,
+      OpenEventWrapper: OpenEventWrapper
     }),
     onOptionChanged: e => {
       if (e.name === 'currentView') setCurrentView(e.value);
