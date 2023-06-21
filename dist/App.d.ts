@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'devextreme/dist/css/dx.light.css';
-import { BookingType, OwnerType, RoomComponentType } from './types/types';
+import { BookingType, OwnerType, RoomComponentType, Scheme } from './types/types';
 type Props = {
     owners?: OwnerType[];
     rooms?: RoomComponentType[];
@@ -11,6 +11,8 @@ type Props = {
     openUpdateModal?: () => void;
     openAddingModal?: () => void;
     closeModal?: () => void;
+    linkDispatcher?: () => void;
+    modalUrl?: Scheme;
     OpenEventWrapper?: React.ComponentType<any>;
 };
 declare const App: React.FC<Props>;

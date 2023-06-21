@@ -1,12 +1,15 @@
 "use strict";
 
+require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.handleSubtractDate = exports.handleSelectData = exports.handleFirstCharInUpperCase = exports.handleCorrectDateDifference = exports.handleAddDate = exports.handldleSelectTitle = exports.handldleCheckView = exports.checkBusyRoom = void 0;
+require("core-js/modules/es.object.to-string.js");
+require("core-js/modules/es.array.slice.js");
 var _dayjs = _interopRequireDefault(require("dayjs"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-const handleAddDate = (currentView, currentDate) => {
+var handleAddDate = function handleAddDate(currentView, currentDate) {
   switch (currentView) {
     case 'timelineMonth':
       return currentDate.add(1, 'month');
@@ -25,7 +28,7 @@ const handleAddDate = (currentView, currentDate) => {
   }
 };
 exports.handleAddDate = handleAddDate;
-const handleSubtractDate = (currentView, currentDate) => {
+var handleSubtractDate = function handleSubtractDate(currentView, currentDate) {
   switch (currentView) {
     case 'timelineMonth':
       return currentDate.subtract(1, 'month');
@@ -44,7 +47,7 @@ const handleSubtractDate = (currentView, currentDate) => {
   }
 };
 exports.handleSubtractDate = handleSubtractDate;
-const handldleCheckView = selectedView => {
+var handldleCheckView = function handldleCheckView(selectedView) {
   switch (selectedView) {
     case 'timelineDay':
       return {
@@ -84,7 +87,7 @@ const handldleCheckView = selectedView => {
   }
 };
 exports.handldleCheckView = handldleCheckView;
-const handldleSelectTitle = data => {
+var handldleSelectTitle = function handldleSelectTitle(data) {
   if (data.type === 'timelineDay' && data.intervalCount === 1) {
     if (data.intervalCount === 1) return 'timelineDay';
     if (data.intervalCount === 2) return 'twoDays';
@@ -99,7 +102,7 @@ const handldleSelectTitle = data => {
   return data.type;
 };
 exports.handldleSelectTitle = handldleSelectTitle;
-const handleCorrectDateDifference = diff => {
+var handleCorrectDateDifference = function handleCorrectDateDifference(diff) {
   diff++;
   if (Math.abs(diff) % 100 > 10 && Math.abs(diff) % 100 < 20) {
     return "".concat(diff, " \u0434\u043D\u0435\u0439: ");
@@ -113,7 +116,7 @@ const handleCorrectDateDifference = diff => {
   return "".concat(diff, " \u0434\u043D\u0435\u0439: ");
 };
 exports.handleCorrectDateDifference = handleCorrectDateDifference;
-const handleSelectData = icon => {
+var handleSelectData = function handleSelectData(icon) {
   switch (icon) {
     case 'Сегодня':
       return {
@@ -206,16 +209,24 @@ const handleSelectData = icon => {
   }
 };
 exports.handleSelectData = handleSelectData;
-const isBetween = (date, start, end) => start < date && date < end;
-const isEqualDates = (date1, date2) => {
+var isBetween = function isBetween(date, start, end) {
+  return start < date && date < end;
+};
+var isEqualDates = function isEqualDates(date1, date2) {
   if (date1 > date2 || date1 < date2) {
     return false;
   } else {
     return true;
   }
 };
-const checkBusyRoom = (bookings, roomId, startDate, endDate) => bookings.some(item => item.roomId === roomId && (isBetween(startDate, item.startDate, item.endDate) || isBetween(endDate, item.startDate, item.endDate) || isEqualDates(startDate, item.startDate) && isEqualDates(startDate, item.startDate)));
+var checkBusyRoom = function checkBusyRoom(bookings, roomId, startDate, endDate) {
+  return bookings.some(function (item) {
+    return item.roomId === roomId && (isBetween(startDate, item.startDate, item.endDate) || isBetween(endDate, item.startDate, item.endDate) || isEqualDates(startDate, item.startDate) && isEqualDates(startDate, item.startDate));
+  });
+};
 exports.checkBusyRoom = checkBusyRoom;
-const handleFirstCharInUpperCase = title => title.charAt(0).toUpperCase() + title.slice(1);
+var handleFirstCharInUpperCase = function handleFirstCharInUpperCase(title) {
+  return title.charAt(0).toUpperCase() + title.slice(1);
+};
 exports.handleFirstCharInUpperCase = handleFirstCharInUpperCase;
 //# sourceMappingURL=utils.js.map

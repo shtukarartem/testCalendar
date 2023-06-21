@@ -40,4 +40,9 @@ export type OwnerType = {
     id: string;
     owner: string;
 };
+export type Scheme = {
+    type: string;
+    scheme: string;
+    params?: Record<string, string>;
+};
 //# sourceMappingURL=types.d.ts.map

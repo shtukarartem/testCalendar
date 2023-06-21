@@ -1,11 +1,12 @@
 "use strict";
 
+require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = exports.RoomComponent = void 0;
 var _Room = require("./Room");
-const RoomComponent = {
+var RoomComponent = {
   args: {
     data: {
       room: 'Рабочее место 1',
@@ -17,7 +18,7 @@ const RoomComponent = {
   }
 };
 exports.RoomComponent = RoomComponent;
-const RoomDefaultExport = {
+var RoomDefaultExport = {
   component: _Room.Room
 };
 var _default = RoomDefaultExport;

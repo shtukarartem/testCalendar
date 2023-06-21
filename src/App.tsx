@@ -7,7 +7,7 @@ import 'devextreme/dist/css/dx.light.css';
 import { Calendar } from './components/Calendar/Calendar';
 import { MaterialProvider } from './providers/MaterialProvider';
 import { data, ownersData, roomsData } from './sefviceFormData';
-import { BookingType, OwnerType, RoomComponentType } from './types/types';
+import { BookingType, OwnerType, RoomComponentType, Scheme } from './types/types';
 
 type Props = {
   owners?: OwnerType[];
@@ -18,6 +18,8 @@ type Props = {
   openUpdateModal?: () => void;
   openAddingModal?: () => void;
   closeModal?: () => void;
+  linkDispatcher?: () => void;
+  modalUrl?: Scheme;
   OpenEventWrapper?: React.ComponentType<any>;
 };
 
@@ -31,6 +33,8 @@ const App: React.FC<Props> = ({
   openAddingModal,
   closeModal,
   OpenEventWrapper,
+  modalUrl,
+  linkDispatcher,
 }) => {
   useEffect(() => {
     locale('ru');
@@ -47,6 +51,8 @@ const App: React.FC<Props> = ({
         openAddingModal={openAddingModal}
         closeModal={closeModal}
         OpenEventWrapper={OpenEventWrapper}
+        modalUrl={modalUrl}
+        linkDispatcher={linkDispatcher}
       />
     </MaterialProvider>
   );

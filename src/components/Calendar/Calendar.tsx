@@ -12,7 +12,7 @@ import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 import style from './style.module.css';
 
 import { data } from '../../sefviceFormData';
-import { BookingType, DateCellType, OwnerType, RoomComponentType } from '../../types/types';
+import { BookingType, DateCellType, OwnerType, RoomComponentType, Scheme } from '../../types/types';
 import {
   checkBusyRoom,
   handldleCheckView,
@@ -39,7 +39,9 @@ type Props = {
   openUpdateModal?: () => void;
   openAddingModal?: () => void;
   closeModal?: () => void;
+  linkDispatcher?: () => void;
   OpenEventWrapper?: React.ComponentType<any>;
+  modalUrl?: Scheme;
 };
 
 const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => void) => {
@@ -71,6 +73,8 @@ export const Calendar: React.FC<Props> = ({
   updateEvent,
   openAddingModal,
   OpenEventWrapper,
+  modalUrl,
+  linkDispatcher,
 }) => {
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
@@ -149,6 +153,8 @@ export const Calendar: React.FC<Props> = ({
             data={data.appointmentData}
             currentDate={currentDate}
             OpenEventWrapper={OpenEventWrapper}
+            modalUrl={modalUrl}
+            linkDispatcher={linkDispatcher}
           />
         )}
         onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {
