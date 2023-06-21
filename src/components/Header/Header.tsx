@@ -14,6 +14,7 @@ import { RangeButtons } from './HeaderComponents/RangeButtons/RangeButtons';
 import { ViewButtons } from './HeaderComponents/ViewButtons/ViewButtons';
 
 type Props = {
+  isDisabled: boolean;
   selectedPlaceholder: string;
   selectViewValue: string;
   handleAddDate: () => void;
@@ -25,6 +26,7 @@ type Props = {
 };
 
 export const Header: React.FC<Props> = ({
+  isDisabled,
   selectedPlaceholder,
   selectViewValue,
   handleSubtractDate,
@@ -49,7 +51,7 @@ export const Header: React.FC<Props> = ({
   return (
     <div className={styles.wrapper}>
       <RangeButtons handleAddDate={handleAddDate} handleSubtractDate={handleSubtractDate} />
-      <ViewButtons handleMinusButton={handleMinusButton} handlePlusButton={handlePlusButton} />
+      <ViewButtons isDisabled={isDisabled} handleMinusButton={handleMinusButton} handlePlusButton={handlePlusButton} />
       <DateSelector
         views={views}
         handlePinned={handlePinned}
