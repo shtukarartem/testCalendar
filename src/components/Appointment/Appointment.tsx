@@ -31,7 +31,7 @@ export const Appointment: React.FC<Props> = ({ data, currentDate }) => {
       <div className={styles.time}>
         {startTime}-{endTime}
       </div>
-      <div className={styles.time}>{client_data.name}</div>
+      <div className={styles.owner}>{client_data.name}</div>
     </div>
   );
 };
