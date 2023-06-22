@@ -68,7 +68,6 @@ var handleAppointmentAdding = function handleAppointmentAdding(e, addEvent) {
 var openCreationModal = function openCreationModal(e, openModal) {
   var _e$event;
   (_e$event = e.event) === null || _e$event === void 0 ? void 0 : _e$event.preventDefault();
-  console.log('this action open CreationModal and will income from service form');
   openModal === null || openModal === void 0 ? void 0 : openModal();
 };
 var Calendar = function Calendar(_ref) {

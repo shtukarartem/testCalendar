@@ -19,7 +19,6 @@ var _classnames = _interopRequireDefault(require("classnames"));
 var _dayjs = _interopRequireDefault(require("dayjs"));
 var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
-var _Link = require("../../navigation/Link");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -30,16 +29,9 @@ var statusVariants = {
   booked: _stylesModule.default.booked,
   overdue: _stylesModule.default.overdue
 };
-var EmptyComponent = function EmptyComponent(_ref) {
-  var children = _ref.children;
-  return _react.default.createElement(_react.default.Fragment, null, children);
-};
-var Appointment = function Appointment(_ref2) {
-  var data = _ref2.data,
-    currentDate = _ref2.currentDate,
-    OpenEventWrapper = _ref2.OpenEventWrapper,
-    modalUrl = _ref2.modalUrl,
-    linkDispatcher = _ref2.linkDispatcher;
+var Appointment = function Appointment(_ref) {
+  var data = _ref.data,
+    currentDate = _ref.currentDate;
   var client_data = data.client_data,
     startDate = data.startDate,
     endDate = data.endDate,
@@ -48,17 +40,13 @@ var Appointment = function Appointment(_ref2) {
   var endTime = (0, _dayjs.default)(endDate).format('HH:mm');
   var endDateFormat = (0, _dayjs.default)(endDate);
   var isPast = endDateFormat.isBefore(currentDate);
-  var LinkWrapper = OpenEventWrapper !== null && OpenEventWrapper !== void 0 ? OpenEventWrapper : EmptyComponent;
-  return _react.default.createElement(LinkWrapper, null, _react.default.createElement(_Link.Link, {
-    url: modalUrl,
-    dispatcher: linkDispatcher
-  }, _react.default.createElement("div", {
+  return _react.default.createElement("div", {
     className: (0, _classnames.default)(_stylesModule.default.wrapper, statusVariants[status], _defineProperty({}, _stylesModule.default.past, isPast))
   }, _react.default.createElement("div", {
     className: _stylesModule.default.time
   }, startTime, "-", endTime), _react.default.createElement("div", {
     className: _stylesModule.default.owner
-  }, client_data.name))));
+  }, client_data.name));
 };
 exports.Appointment = Appointment;
 //# sourceMappingURL=Appointment.js.map

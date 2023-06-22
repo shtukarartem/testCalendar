@@ -33,28 +33,37 @@ const App: React.FC<Props> = ({
   openAddingModal,
   closeModal,
   OpenEventWrapper,
-  modalUrl,
+  // modalUrl,
   linkDispatcher,
 }) => {
   useEffect(() => {
     locale('ru');
   }, []);
   return (
-    <MaterialProvider>
-      <Calendar
-        owners={owners}
-        rooms={rooms}
-        events={events}
-        updateEvent={updateEvent}
-        addEvent={addEvent}
-        openUpdateModal={openUpdateModal}
-        openAddingModal={openAddingModal}
-        closeModal={closeModal}
-        OpenEventWrapper={OpenEventWrapper}
-        modalUrl={modalUrl}
-        linkDispatcher={linkDispatcher}
-      />
-    </MaterialProvider>
+    <div>
+			<MaterialProvider>
+				<Calendar
+					owners={owners}
+					rooms={rooms}
+					events={events}
+					updateEvent={updateEvent}
+					addEvent={addEvent}
+					openUpdateModal={openUpdateModal}
+					openAddingModal={openAddingModal}
+					closeModal={closeModal}
+					OpenEventWrapper={OpenEventWrapper}
+					modalUrl={{
+						type: 'modal',
+						scheme: '/modal/add/:layoutId/:parentLayoutId',
+						params: {
+							parentLayoutId: '58c0f15d-e840-4aa7-b75d-b4eed2464558',
+							layoutId: '697b4c93-2f05-4c33-a520-45b869f14171',
+						},
+					}}
+					linkDispatcher={linkDispatcher}
+				/>
+			</MaterialProvider>
+		</div>
   );
 };
 

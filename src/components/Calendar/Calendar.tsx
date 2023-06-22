@@ -61,7 +61,6 @@ const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => voi
 
 const openCreationModal = (e: CellClickEvent, openModal?: () => void) => {
   e.event?.preventDefault();
-  console.log('this action open CreationModal and will income from service form');
   openModal?.();
 };
 

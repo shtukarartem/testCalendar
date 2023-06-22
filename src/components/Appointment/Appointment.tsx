@@ -4,7 +4,6 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-import { Link } from '../../navigation/Link';
 import { BookingType, Scheme } from '../../types/types';
 
 type Props = {
@@ -21,16 +20,7 @@ const statusVariants = {
   overdue: styles.overdue,
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const EmptyComponent: React.FC<any> = ({ children }) => <>{children}</>;
-
-export const Appointment: React.FC<Props> = ({
-  data,
-  currentDate,
-  OpenEventWrapper,
-  modalUrl,
-  linkDispatcher,
-}) => {
+export const Appointment: React.FC<Props> = ({ data, currentDate }) => {
   const { client_data, startDate, endDate, status } = data;
 
   const startTime = dayjs(startDate).format('HH:mm');
@@ -39,20 +29,14 @@ export const Appointment: React.FC<Props> = ({
 
   const isPast = endDateFormat.isBefore(currentDate);
 
-  const LinkWrapper = OpenEventWrapper ?? EmptyComponent;
-
   return (
-    <LinkWrapper>
-      <Link url={modalUrl} dispatcher={linkDispatcher}>
-        <div
-          className={classNames(styles.wrapper, statusVariants[status], { [styles.past]: isPast })}
-        >
-          <div className={styles.time}>
-            {startTime}-{endTime}
-          </div>
-          <div className={styles.owner}>{client_data.name}</div>
+      <div
+        className={classNames(styles.wrapper, statusVariants[status], { [styles.past]: isPast })}
+      >
+        <div className={styles.time}>
+          {startTime}-{endTime}
         </div>
-      </Link>
-    </LinkWrapper>
+        <div className={styles.owner}>{client_data.name}</div>
+      </div>
   );
 };
