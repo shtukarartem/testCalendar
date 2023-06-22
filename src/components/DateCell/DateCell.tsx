@@ -11,15 +11,11 @@ type Props = {
   currentView: string;
 };
 
-export const DateCell: React.FC<Props> = ({ data, currentView }) => (
+export const DateCell: React.FC<Props> = ({ data }) => (
   <>
-    {currentView === 'timelineMonth' ? (
       <div className={styles.wrapper}>
         <div>{handleFirstCharInUpperCase(dayjs(data.date).locale('ru').format('dd'))}</div>
         <div>{dayjs(data.date).format('DD')}</div>
       </div>
-    ) : (
-      <div> {data.text} </div>
-    )}
   </>
 );

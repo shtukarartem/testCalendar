@@ -61,3 +61,7 @@
 .wrapper :global .dx-scheduler-header-panel-cell {
   height: 64px !important;
 }
+
+.wrapper :global .dx-scheduler-header-row:nth-child(2n) {
+display: none;
+}
