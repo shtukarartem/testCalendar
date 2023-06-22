@@ -49,11 +49,11 @@ export const handldleCheckView = (selectedView: string) => {
     case 'threeDays':
       return { type: 'timelineDay', intervalCount: 3 };
     case 'timelineWeek':
-      return { type: 'timelineWeek', intervalCount: 1 };
+      return { type: 'timelineWeek', intervalCount: 1, cellDuration: 1440 };
     case 'threeWeeks':
-      return { type: 'timelineWeek', intervalCount: 3 };
+      return { type: 'timelineWeek', intervalCount: 3, cellDuration: 1440 };
     case 'twoWeeks':
-      return { type: 'timelineWeek', intervalCount: 2 };
+      return { type: 'timelineWeek', intervalCount: 2, cellDuration: 1440 };
     case 'timelineMonth':
       return { type: 'timelineMonth', intervalCount: 1 };
   }
@@ -104,24 +104,24 @@ export const handleSelectData = (icon: string) => {
     case 'Последние 3 дня':
       return {
         currentData: dayjs().subtract(2, 'day'),
-        currentView: { type: 'timelineDay', intervalCount: 3 },
+        currentView: { type: 'timelineDay', intervalCount: 3, cellDuration: 1440 },
       };
     case 'Текущая неделя':
-      return { currentData: dayjs(), currentView: { type: 'timelineWeek', intervalCount: 1 } };
+      return { currentData: dayjs(), currentView: { type: 'timelineWeek', intervalCount: 1, cellDuration: 1440 } };
     case 'Прошлая неделя':
       return {
         currentData: dayjs().subtract(1, 'week'),
-        currentView: { type: 'timelineWeek', intervalCount: 1 },
+        currentView: { type: 'timelineWeek', intervalCount: 1, cellDuration: 1440 },
       };
     case 'Следующая неделя':
       return {
         currentData: dayjs().add(1, 'week'),
-        currentView: { type: 'timelineWeek', intervalCount: 1 },
+        currentView: { type: 'timelineWeek', intervalCount: 1, cellDuration: 1440 },
       };
     case 'Последние две недели':
       return {
         currentData: dayjs().subtract(1, 'week'),
-        currentView: { type: 'timelineWeek', intervalCount: 2 },
+        currentView: { type: 'timelineWeek', intervalCount: 2, cellDuration: 1440 },
       };
     case 'Текущий месяц':
       return { currentData: dayjs(), currentView: { type: 'timelineMonth', intervalCount: 1 } };

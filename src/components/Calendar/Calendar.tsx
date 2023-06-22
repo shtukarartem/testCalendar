@@ -73,6 +73,7 @@ export const Calendar: React.FC<Props> = ({
   const [currentView, setCurrentView] = useState<{
     type: string;
     intervalCount: number;
+    cellDuration?:number;
   }>({ type: 'timelineDay', intervalCount: 1 });
   const [selectedView, setSelectedView] = useState<string>(currentView.type);
   useEffect(() => {
@@ -101,15 +102,24 @@ export const Calendar: React.FC<Props> = ({
         isDisabled={currentView.intervalCount === 1}
         selectedPlaceholder={selectedPlaceholder}
         selectViewValue={selectedView}
-        handleMinusButton={() =>
-          setCurrentView({
+        handleMinusButton={() => {
+          if(currentView.intervalCount === 2) {
+            setCurrentView({
+              ...currentView,
+              cellDuration: currentView.type === 'timelineWeek' ? 1440 : 60,
+              intervalCount: currentView.intervalCount ? currentView.intervalCount - 1 : 1,
+            })
+          } else setCurrentView({
             ...currentView,
+            cellDuration: 1440,
             intervalCount: currentView.intervalCount ? currentView.intervalCount - 1 : 1,
           })
+        }
         }
         handlePlusButton={() =>
           setCurrentView({
             ...currentView,
+            cellDuration: 1440,
             intervalCount: currentView.intervalCount ? currentView.intervalCount + 1 : 1,
           })
         }
@@ -128,7 +138,6 @@ export const Calendar: React.FC<Props> = ({
         }}
       />
       <Scheduler
-      
         currentView={currentView.type as any} // eslint-disable-line
         className={style.wrapper}
         dataSource={events}
