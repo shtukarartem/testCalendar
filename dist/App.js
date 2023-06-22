@@ -37,6 +37,7 @@ var App = function App(_ref) {
     openAddingModal = _ref.openAddingModal,
     closeModal = _ref.closeModal,
     OpenEventWrapper = _ref.OpenEventWrapper,
+    modalUrl = _ref.modalUrl,
     linkDispatcher = _ref.linkDispatcher;
   (0, _react.useEffect)(function () {
     (0, _localization.locale)('ru');
@@ -51,14 +52,7 @@ var App = function App(_ref) {
     openAddingModal: openAddingModal,
     closeModal: closeModal,
     OpenEventWrapper: OpenEventWrapper,
-    modalUrl: {
-      type: 'modal',
-      scheme: '/modal/add/:layoutId/:parentLayoutId',
-      params: {
-        parentLayoutId: '58c0f15d-e840-4aa7-b75d-b4eed2464558',
-        layoutId: '697b4c93-2f05-4c33-a520-45b869f14171'
-      }
-    },
+    modalUrl: modalUrl,
     linkDispatcher: linkDispatcher
   })));
 };

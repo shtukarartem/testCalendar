@@ -32,6 +32,7 @@ var _dayjs = _interopRequireDefault(require("dayjs"));
 var _devextremeReact = require("devextreme-react");
 var _scheduler = require("devextreme-react/scheduler");
 var _react = _interopRequireWildcard(require("react"));
+var _reactRouterDom = require("react-router-dom");
 var _styleModule = _interopRequireDefault(require("./style.module.css"));
 var _sefviceFormData = require("../../sefviceFormData");
 var _utils = require("../../utils/utils");
@@ -65,10 +66,11 @@ var handleAppointmentAdding = function handleAppointmentAdding(e, addEvent) {
   console.log('// TODO here will be action for adding appointment');
   addEvent === null || addEvent === void 0 ? void 0 : addEvent();
 };
-var openCreationModal = function openCreationModal(e, openModal) {
+var openCreationModal = function openCreationModal(e, openModal, openModalFunc) {
   var _e$event;
   (_e$event = e.event) === null || _e$event === void 0 ? void 0 : _e$event.preventDefault();
   openModal === null || openModal === void 0 ? void 0 : openModal();
+  openModalFunc === null || openModalFunc === void 0 ? void 0 : openModalFunc();
 };
 var Calendar = function Calendar(_ref) {
   var owners = _ref.owners,
@@ -80,6 +82,13 @@ var Calendar = function Calendar(_ref) {
     OpenEventWrapper = _ref.OpenEventWrapper,
     modalUrl = _ref.modalUrl,
     linkDispatcher = _ref.linkDispatcher;
+  var location = (0, _reactRouterDom.useLocation)();
+  var navigate = (0, _reactRouterDom.useNavigate)();
+  console.log('location', location);
+  console.log('navigate', navigate);
+  var openModalFunc = function openModalFunc() {
+    navigate(modalUrl);
+  };
   var groups = ['roomId'];
   var _useState = (0, _react.useState)((0, _dayjs.default)().locale('ru').format('DD MMMM')),
     _useState2 = _slicedToArray(_useState, 2),
@@ -164,7 +173,6 @@ var Calendar = function Calendar(_ref) {
         data: data.appointmentData,
         currentDate: currentDate,
         OpenEventWrapper: OpenEventWrapper,
-        modalUrl: modalUrl,
         linkDispatcher: linkDispatcher
       });
     },
@@ -188,7 +196,7 @@ var Calendar = function Calendar(_ref) {
     startDayHour: 0,
     endDayHour: 24,
     onCellClick: function onCellClick(e) {
-      return openCreationModal(e, openAddingModal);
+      return openCreationModal(e, openAddingModal, openModalFunc);
     },
     editing: true,
     onAppointmentUpdating: updateEvent,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookingType, OwnerType, RoomComponentType, Scheme } from '../../types/types';
+import { BookingType, OwnerType, RoomComponentType } from '../../types/types';
 type Props = {
     owners?: OwnerType[];
     rooms?: RoomComponentType[];
@@ -11,7 +11,7 @@ type Props = {
     closeModal?: () => void;
     linkDispatcher?: () => void;
     OpenEventWrapper?: React.ComponentType<any>;
-    modalUrl?: Scheme;
+    modalUrl?: string;
 };
 export declare const Calendar: React.FC<Props>;
 export {};

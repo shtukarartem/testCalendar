@@ -8,11 +8,12 @@ import dxScheduler, {
   CellClickEvent,
 } from 'devextreme/ui/scheduler';
 import React, { MouseEvent, useEffect, useRef, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import style from './style.module.css';
 
 import { data } from '../../sefviceFormData';
-import { BookingType, DateCellType, OwnerType, RoomComponentType, Scheme } from '../../types/types';
+import { BookingType, DateCellType, OwnerType, RoomComponentType } from '../../types/types';
 import {
   checkBusyRoom,
   handldleCheckView,
@@ -41,7 +42,7 @@ type Props = {
   closeModal?: () => void;
   linkDispatcher?: () => void;
   OpenEventWrapper?: React.ComponentType<any>;
-  modalUrl?: Scheme;
+  modalUrl?: string;
 };
 
 const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => void) => {
@@ -59,9 +60,17 @@ const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => voi
   addEvent?.();
 };
 
-const openCreationModal = (e: CellClickEvent, openModal?: () => void) => {
+const openCreationModal = (
+  e: CellClickEvent,
+  openModal?: () => void,
+  openModalFunc?: () => void
+) => {
   e.event?.preventDefault();
+  // const currentUrl = window.location.href;
+  // const newUrl = currentUrl.slice(0, currentUrl.length + 1) + modalUrl;
+  // window.location.replace(newUrl);
   openModal?.();
+  openModalFunc?.();
 };
 
 export const Calendar: React.FC<Props> = ({
@@ -75,6 +84,15 @@ export const Calendar: React.FC<Props> = ({
   modalUrl,
   linkDispatcher,
 }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log('location', location);
+  console.log('navigate', navigate);
+
+  const openModalFunc = () => {
+    navigate(modalUrl as string);
+  };
+
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
     dayjs().locale('ru').format('DD MMMM')
@@ -152,7 +170,7 @@ export const Calendar: React.FC<Props> = ({
             data={data.appointmentData}
             currentDate={currentDate}
             OpenEventWrapper={OpenEventWrapper}
-            modalUrl={modalUrl}
+            // modalUrl={modalUrl}
             linkDispatcher={linkDispatcher}
           />
         )}
@@ -169,7 +187,7 @@ export const Calendar: React.FC<Props> = ({
         firstDayOfWeek={1}
         startDayHour={0}
         endDayHour={24}
-        onCellClick={(e: CellClickEvent) => openCreationModal(e, openAddingModal)}
+        onCellClick={(e: CellClickEvent) => openCreationModal(e, openAddingModal, openModalFunc)}
         editing
         onAppointmentUpdating={updateEvent}
         onAppointmentDblClick={openUpdateModal}
