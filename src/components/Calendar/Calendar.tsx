@@ -69,8 +69,8 @@ const openCreationModal = (
   // const currentUrl = window.location.href;
   // const newUrl = currentUrl.slice(0, currentUrl.length + 1) + modalUrl;
   // window.location.replace(newUrl);
-  openModal?.();
   openModalFunc?.();
+  openModal?.();
 };
 
 export const Calendar: React.FC<Props> = ({

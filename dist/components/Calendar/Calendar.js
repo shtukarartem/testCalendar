@@ -69,8 +69,8 @@ var handleAppointmentAdding = function handleAppointmentAdding(e, addEvent) {
 var openCreationModal = function openCreationModal(e, openModal, openModalFunc) {
   var _e$event;
   (_e$event = e.event) === null || _e$event === void 0 ? void 0 : _e$event.preventDefault();
-  openModal === null || openModal === void 0 ? void 0 : openModal();
   openModalFunc === null || openModalFunc === void 0 ? void 0 : openModalFunc();
+  openModal === null || openModal === void 0 ? void 0 : openModal();
 };
 var Calendar = function Calendar(_ref) {
   var owners = _ref.owners,
