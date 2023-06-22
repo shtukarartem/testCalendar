@@ -103,16 +103,17 @@ export const Calendar: React.FC<Props> = ({
         selectedPlaceholder={selectedPlaceholder}
         selectViewValue={selectedView}
         handleMinusButton={() => {
-          if(currentView.intervalCount === 2) {
+          const intervalCount = currentView.intervalCount
+          if(intervalCount === 2) {
             setCurrentView({
               ...currentView,
               cellDuration: currentView.type === 'timelineWeek' ? 1440 : 60,
-              intervalCount: currentView.intervalCount ? currentView.intervalCount - 1 : 1,
+              intervalCount: intervalCount ? intervalCount - 1 : 1,
             })
           } else setCurrentView({
             ...currentView,
             cellDuration: 1440,
-            intervalCount: currentView.intervalCount ? currentView.intervalCount - 1 : 1,
+            intervalCount: intervalCount ? intervalCount - 1 : 1,
           })
         }
         }
