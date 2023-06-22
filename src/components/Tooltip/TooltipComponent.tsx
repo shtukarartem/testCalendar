@@ -25,7 +25,7 @@ export const TooltipComponent: React.FC<Props> = ({ data, handleClose }) => (
         <CloseIcon />
       </IconButton>
     </div>
-    <div className={styles.fio}>{data.client_data.name}</div>
+    <span className={styles.fio}>{data.client_data.name}</span>
     <div className={styles.data}>
       <span className={styles.dataTitle}>Срок бранирования</span>
       <span className={styles.dateText}>
@@ -34,8 +34,8 @@ export const TooltipComponent: React.FC<Props> = ({ data, handleClose }) => (
       </span>
     </div>
     <div className={styles.clientType}>
-      <div className={styles.dataTitle}>Тип клиента</div>
-      <div className={styles.dateText}>{data.client_data.type}</div>
+      <span className={styles.dataTitle}>Тип клиента</span>
+      <span className={styles.dateText}>{data.client_data.type}</span>
     </div>
     <div className={styles.email}>
       <img src={email} alt="" />{data.client_data.email}
