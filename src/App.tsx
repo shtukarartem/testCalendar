@@ -1,5 +1,6 @@
 import { locale } from 'devextreme/localization';
 import React, { useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import './App.css';
 import 'devextreme/dist/css/dx.light.css';
@@ -40,23 +41,25 @@ const App: React.FC<Props> = ({
     locale('ru');
   }, []);
   return (
-    <div>
-      <MaterialProvider>
-        <Calendar
-          owners={owners}
-          rooms={rooms}
-          events={events}
-          updateEvent={updateEvent}
-          addEvent={addEvent}
-          openUpdateModal={openUpdateModal}
-          openAddingModal={openAddingModal}
-          closeModal={closeModal}
-          OpenEventWrapper={OpenEventWrapper}
-          modalUrl={modalUrl}
-          linkDispatcher={linkDispatcher}
-        />
-      </MaterialProvider>
-    </div>
+    <BrowserRouter>
+      <div>
+        <MaterialProvider>
+          <Calendar
+            owners={owners}
+            rooms={rooms}
+            events={events}
+            updateEvent={updateEvent}
+            addEvent={addEvent}
+            openUpdateModal={openUpdateModal}
+            openAddingModal={openAddingModal}
+            closeModal={closeModal}
+            OpenEventWrapper={OpenEventWrapper}
+            modalUrl={modalUrl}
+            linkDispatcher={linkDispatcher}
+          />
+        </MaterialProvider>
+      </div>
+    </BrowserRouter>
   );
 };
 

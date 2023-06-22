@@ -17,6 +17,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _localization = require("devextreme/localization");
 var _react = _interopRequireWildcard(require("react"));
+var _reactRouterDom = require("react-router-dom");
 require("./App.css");
 require("devextreme/dist/css/dx.light.css");
 var _Calendar = require("./components/Calendar/Calendar");
@@ -42,7 +43,7 @@ var App = function App(_ref) {
   (0, _react.useEffect)(function () {
     (0, _localization.locale)('ru');
   }, []);
-  return _react.default.createElement("div", null, _react.default.createElement(_MaterialProvider.MaterialProvider, null, _react.default.createElement(_Calendar.Calendar, {
+  return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("div", null, _react.default.createElement(_MaterialProvider.MaterialProvider, null, _react.default.createElement(_Calendar.Calendar, {
     owners: owners,
     rooms: rooms,
     events: events,
@@ -54,7 +55,7 @@ var App = function App(_ref) {
     OpenEventWrapper: OpenEventWrapper,
     modalUrl: modalUrl,
     linkDispatcher: linkDispatcher
-  })));
+  }))));
 };
 var _default = App;
 exports.default = _default;
