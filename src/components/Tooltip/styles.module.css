@@ -52,10 +52,7 @@
   font-size: 1.375rem;
   line-height: 1.75rem;
   color: var(--neutral-10);
-  /* text-wrap: balance; */
    white-space: pre-wrap;
-  /* overflow-wrap: break-word; */
-  /* word-wrap: break-word; */
 }
 
 .data {

@@ -27,14 +27,14 @@ export const TooltipComponent: React.FC<Props> = ({ data, handleClose }) => (
     </div>
     <span className={styles.fio}>{data.client_data.name}</span>
     <div className={styles.data}>
-      <span className={styles.dataTitle}>Срок бранирования</span>
+      <span className={styles.dataTitle}>Срок бронирования</span>
       <span className={styles.dateText}>
         {dayjs(data.endDate).format('DD.MM.YYYY')} c {dayjs(data.startDate).format('HH:mm')} по{' '}
         {dayjs(data.endDate).format('HH:mm')}
       </span>
     </div>
     <div className={styles.clientType}>
-      <span className={styles.dataTitle}>Тип клиента</span>
+      <span className={styles.dataTitle}>Тип клиента defalt</span>
       <span className={styles.dateText}>{data.client_data.type}</span>
     </div>
     <div className={styles.email}>
