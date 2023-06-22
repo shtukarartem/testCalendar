@@ -59,6 +59,7 @@ export const Header: React.FC<Props> = ({
         selectPlaceholder={selectedPlaceholder}
         onCancel={() => setIsOpen(false)}
         handleOpen={() => setIsOpen(true)}
+        handleClose={() => setIsOpen(false)}
         onSubmit={() => setIsOpen(false)}
         handleViewClick={(title: string) => {
           setIsOpen(false);
