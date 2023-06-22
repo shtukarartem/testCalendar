@@ -44,16 +44,15 @@
 }
 
 .fio {
-  width: 18.75rem;
+  padding: 0;
+  width: 300px;
   font-family: 'Noto Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1.375rem;
   line-height: 1.75rem;
-  display: flex;
-  align-items: center;
   color: var(--neutral-10);
-  overflow: auto;
+   white-space: pre-wrap;
 }
 
 .data {
@@ -61,7 +60,7 @@
   flex-direction: column;
   align-items: start;
   padding: 0px;
-  gap: 0.5rem;
+
 }
 
 .dataTitle {
@@ -88,10 +87,9 @@
 
 .clientType {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 0px;
-  gap: 0.5rem;
   width: 18.5rem;
   height: 2.5rem;
 }
@@ -99,7 +97,6 @@
 .email {
   display: flex;
   flex-direction: row;
-  align-items: center;
   padding: 0px;
   gap: 0.5rem;
   font-family: 'Noto Sans', sans-serif;
@@ -116,7 +113,6 @@
 .number {
   display: flex;
   flex-direction: row;
-  align-items: center;
   padding: 0px;
   gap: 0.5rem;
   font-family: 'Noto Sans', sans-serif;
