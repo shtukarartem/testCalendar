@@ -11,6 +11,7 @@ type Props = {
     openUpdateModal?: () => void;
     openAddingModal?: () => void;
     closeModal?: () => void;
+    modalUrl?: string;
 };
 declare const App: React.FC<Props>;
 export default App;

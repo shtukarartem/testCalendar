@@ -1,19 +1,20 @@
 "use strict";
 
+require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = exports.RangeButtonsComponent = void 0;
 var _ViewButtons = require("./ViewButtons");
-const meta = {
+var meta = {
   component: _ViewButtons.ViewButtons
 };
-const RangeButtonsComponent = {
+var RangeButtonsComponent = {
   args: {
-    handlePlusButton: () => {
+    handlePlusButton: function handlePlusButton() {
       console.log('adsadsadasadsadasd');
     },
-    handleMinusButton: () => {
+    handleMinusButton: function handleMinusButton() {
       console.log();
     }
   }

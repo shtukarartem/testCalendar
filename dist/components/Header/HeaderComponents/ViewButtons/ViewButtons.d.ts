@@ -1,5 +1,6 @@
 import React from 'react';
 type Props = {
+    isDisabled: boolean;
     handlePlusButton: () => void;
     handleMinusButton: () => void;
 };

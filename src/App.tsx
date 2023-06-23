@@ -1,5 +1,6 @@
 import { locale } from 'devextreme/localization';
 import React, { useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import './App.css';
 import 'devextreme/dist/css/dx.light.css';
@@ -18,6 +19,7 @@ type Props = {
   openUpdateModal?: () => void;
   openAddingModal?: () => void;
   closeModal?: () => void;
+  modalUrl?: string;
 };
 
 const App: React.FC<Props> = ({
@@ -34,18 +36,22 @@ const App: React.FC<Props> = ({
     locale('ru');
   }, []);
   return (
-    <MaterialProvider>
-      <Calendar
-        owners={owners}
-        rooms={rooms}
-        events={events}
-        updateEvent={updateEvent}
-        addEvent={addEvent}
-        openUpdateModal={openUpdateModal}
-        openAddingModal={openAddingModal}
-        closeModal={closeModal}
-      />
-    </MaterialProvider>
+    <BrowserRouter>
+      <div>
+        <MaterialProvider>
+          <Calendar
+            owners={owners}
+            rooms={rooms}
+            events={events}
+            updateEvent={updateEvent}
+            addEvent={addEvent}
+            openUpdateModal={openUpdateModal}
+            openAddingModal={openAddingModal}
+            closeModal={closeModal}
+          />
+        </MaterialProvider>
+      </div>
+    </BrowserRouter>
   );
 };
 

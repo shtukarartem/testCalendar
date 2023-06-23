@@ -2,7 +2,11 @@ import dayjs from 'dayjs';
 import { Scheduler } from 'devextreme-react';
 import { Editing, Resource, Scrolling, View } from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
-import dxScheduler, { AppointmentAddingEvent, CellClickEvent } from 'devextreme/ui/scheduler';
+import dxScheduler, {
+  AppointmentAddingEvent,
+  AppointmentFormOpeningEvent,
+  CellClickEvent,
+} from 'devextreme/ui/scheduler';
 import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 
 import style from './style.module.css';
@@ -52,10 +56,9 @@ const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => voi
   addEvent?.();
 };
 
-const openCreationModal = (e: CellClickEvent, openAddingModal?: () => void) => {
+const openCreationModal = (e: CellClickEvent, openModal?: () => void) => {
   e.event?.preventDefault();
-  console.log('this action open CreationModal and will income from service form');
-  openAddingModal?.();
+  openModal?.();
 };
 
 export const Calendar: React.FC<Props> = ({
@@ -64,6 +67,7 @@ export const Calendar: React.FC<Props> = ({
   events,
   openUpdateModal,
   updateEvent,
+  openAddingModal,
 }) => {
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
@@ -73,7 +77,7 @@ export const Calendar: React.FC<Props> = ({
   const [currentView, setCurrentView] = useState<{
     type: string;
     intervalCount: number;
-    cellDuration?:number;
+    cellDuration?: number;
   }>({ type: 'timelineDay', intervalCount: 1 });
   const [selectedView, setSelectedView] = useState<string>(currentView.type);
   useEffect(() => {
@@ -103,20 +107,20 @@ export const Calendar: React.FC<Props> = ({
         selectedPlaceholder={selectedPlaceholder}
         selectViewValue={selectedView}
         handleMinusButton={() => {
-          const intervalCount = currentView.intervalCount
-          if(intervalCount === 2) {
+          const intervalCount = currentView.intervalCount;
+          if (intervalCount === 2) {
             setCurrentView({
               ...currentView,
               cellDuration: currentView.type === 'timelineWeek' ? 1440 : 60,
               intervalCount: intervalCount ? intervalCount - 1 : 1,
-            })
-          } else setCurrentView({
-            ...currentView,
-            cellDuration: 1440,
-            intervalCount: intervalCount ? intervalCount - 1 : 1,
-          })
-        }
-        }
+            });
+          } else
+            setCurrentView({
+              ...currentView,
+              cellDuration: 1440,
+              intervalCount: intervalCount ? intervalCount - 1 : 1,
+            });
+        }}
         handlePlusButton={() =>
           setCurrentView({
             ...currentView,
@@ -164,16 +168,16 @@ export const Calendar: React.FC<Props> = ({
         firstDayOfWeek={1}
         startDayHour={0}
         endDayHour={24}
-        onCellClick={openCreationModal}
+        onCellClick={(e: CellClickEvent) => openCreationModal(e, openAddingModal)}
         editing
         onAppointmentUpdating={updateEvent}
         onAppointmentDblClick={openUpdateModal}
         appointmentCollectorComponent={(data) => <MoreButton data={data.data} />}
         onAppointmentAdding={handleAppointmentAdding}
         // TODO uncomment later. need for cancel default popul creation
-        // onAppointmentFormOpening={(e: AppointmentFormOpeningEvent) => {
-        //   e.cancel = true;
-        // }}
+        onAppointmentFormOpening={(e: AppointmentFormOpeningEvent) => {
+          openAddingModal && (e.cancel = true);
+        }}
         resourceCellComponent={(data) => <Room data={data.data.data} />}
         // TODO uncomment later. need for pass action from ServiceForm
         // onAppointmentClick={() => {

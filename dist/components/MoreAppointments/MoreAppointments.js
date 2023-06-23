@@ -1,5 +1,6 @@
 "use strict";
 
+require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9,21 +10,17 @@ var _dayjs = _interopRequireDefault(require("dayjs"));
 var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-const statusVariants = {
+var statusVariants = {
   paid: _stylesModule.default.paid,
   booked: _stylesModule.default.booked,
   overdue: _stylesModule.default.overdue
 };
-const MoreAppointments = _ref => {
-  let {
-    data
-  } = _ref;
-  const {
-    client_data,
-    status,
-    startDate
-  } = data;
-  const startTime = (0, _dayjs.default)(startDate).format('HH:mm');
+var MoreAppointments = function MoreAppointments(_ref) {
+  var data = _ref.data;
+  var client_data = data.client_data,
+    status = data.status,
+    startDate = data.startDate;
+  var startTime = (0, _dayjs.default)(startDate).format('HH:mm');
   return _react.default.createElement("div", {
     className: _stylesModule.default.wrapper
   }, _react.default.createElement("div", {
