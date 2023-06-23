@@ -17,6 +17,7 @@ type Props = {
   onSubmit: () => void;
   onCancel: () => void;
   handleOpen: () => void;
+  handleClose: () => void;
   handlePinned: (index: number) => void;
   handleViewClick: (title: string) => void;
 };
@@ -28,6 +29,7 @@ export const DateSelector: React.FC<Props> = ({
   onSubmit,
   onCancel,
   handleOpen,
+  handleClose,
   handlePinned,
   handleViewClick,
 }) => {
@@ -49,6 +51,7 @@ export const DateSelector: React.FC<Props> = ({
         className={styles.select}
         labelId="demo-simple-select-standard-label"
         onOpen={handleOpen}
+        onClose={handleClose}
         open={isOpen}
         renderValue={() => selectValue}
       >
