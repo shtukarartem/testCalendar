@@ -103,6 +103,9 @@ var Header = function Header(_ref) {
     handleOpen: function handleOpen() {
       return setIsOpen(true);
     },
+    handleClose: function handleClose() {
+      return setIsOpen(false);
+    },
     onSubmit: function onSubmit() {
       return setIsOpen(false);
     },

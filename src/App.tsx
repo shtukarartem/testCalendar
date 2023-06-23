@@ -19,9 +19,7 @@ type Props = {
   openUpdateModal?: () => void;
   openAddingModal?: () => void;
   closeModal?: () => void;
-  linkDispatcher?: () => void;
   modalUrl?: string;
-  OpenEventWrapper?: React.ComponentType<any>;
 };
 
 const App: React.FC<Props> = ({
@@ -33,9 +31,6 @@ const App: React.FC<Props> = ({
   openUpdateModal,
   openAddingModal,
   closeModal,
-  OpenEventWrapper,
-  modalUrl,
-  linkDispatcher,
 }) => {
   useEffect(() => {
     locale('ru');
@@ -53,9 +48,6 @@ const App: React.FC<Props> = ({
             openUpdateModal={openUpdateModal}
             openAddingModal={openAddingModal}
             closeModal={closeModal}
-            OpenEventWrapper={OpenEventWrapper}
-            modalUrl={modalUrl}
-            linkDispatcher={linkDispatcher}
           />
         </MaterialProvider>
       </div>

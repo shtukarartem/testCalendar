@@ -9,9 +9,6 @@ type Props = {
     openUpdateModal?: () => void;
     openAddingModal?: () => void;
     closeModal?: () => void;
-    linkDispatcher?: () => void;
-    OpenEventWrapper?: React.ComponentType<any>;
-    modalUrl?: string;
 };
 export declare const Calendar: React.FC<Props>;
 export {};

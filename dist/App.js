@@ -36,10 +36,7 @@ var App = function App(_ref) {
     addEvent = _ref.addEvent,
     openUpdateModal = _ref.openUpdateModal,
     openAddingModal = _ref.openAddingModal,
-    closeModal = _ref.closeModal,
-    OpenEventWrapper = _ref.OpenEventWrapper,
-    modalUrl = _ref.modalUrl,
-    linkDispatcher = _ref.linkDispatcher;
+    closeModal = _ref.closeModal;
   (0, _react.useEffect)(function () {
     (0, _localization.locale)('ru');
   }, []);
@@ -51,10 +48,7 @@ var App = function App(_ref) {
     addEvent: addEvent,
     openUpdateModal: openUpdateModal,
     openAddingModal: openAddingModal,
-    closeModal: closeModal,
-    OpenEventWrapper: OpenEventWrapper,
-    modalUrl: modalUrl,
-    linkDispatcher: linkDispatcher
+    closeModal: closeModal
   }))));
 };
 var _default = App;

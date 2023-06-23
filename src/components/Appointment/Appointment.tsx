@@ -9,9 +9,7 @@ import { BookingType, Scheme } from '../../types/types';
 type Props = {
   data: BookingType;
   currentDate: dayjs.Dayjs;
-  OpenEventWrapper?: React.ComponentType<any>;
   modalUrl?: Scheme;
-  linkDispatcher?: () => void;
 };
 
 const statusVariants = {

@@ -67,17 +67,20 @@ var handldleCheckView = function handldleCheckView(selectedView) {
     case 'timelineWeek':
       return {
         type: 'timelineWeek',
-        intervalCount: 1
+        intervalCount: 1,
+        cellDuration: 1440
       };
     case 'threeWeeks':
       return {
         type: 'timelineWeek',
-        intervalCount: 3
+        intervalCount: 3,
+        cellDuration: 1440
       };
     case 'twoWeeks':
       return {
         type: 'timelineWeek',
-        intervalCount: 2
+        intervalCount: 2,
+        cellDuration: 1440
       };
     case 'timelineMonth':
       return {
@@ -147,7 +150,8 @@ var handleSelectData = function handleSelectData(icon) {
         currentData: (0, _dayjs.default)().subtract(2, 'day'),
         currentView: {
           type: 'timelineDay',
-          intervalCount: 3
+          intervalCount: 3,
+          cellDuration: 1440
         }
       };
     case 'Текущая неделя':
@@ -155,7 +159,8 @@ var handleSelectData = function handleSelectData(icon) {
         currentData: (0, _dayjs.default)(),
         currentView: {
           type: 'timelineWeek',
-          intervalCount: 1
+          intervalCount: 1,
+          cellDuration: 1440
         }
       };
     case 'Прошлая неделя':
@@ -163,7 +168,8 @@ var handleSelectData = function handleSelectData(icon) {
         currentData: (0, _dayjs.default)().subtract(1, 'week'),
         currentView: {
           type: 'timelineWeek',
-          intervalCount: 1
+          intervalCount: 1,
+          cellDuration: 1440
         }
       };
     case 'Следующая неделя':
@@ -171,7 +177,8 @@ var handleSelectData = function handleSelectData(icon) {
         currentData: (0, _dayjs.default)().add(1, 'week'),
         currentView: {
           type: 'timelineWeek',
-          intervalCount: 1
+          intervalCount: 1,
+          cellDuration: 1440
         }
       };
     case 'Последние две недели':
@@ -179,7 +186,8 @@ var handleSelectData = function handleSelectData(icon) {
         currentData: (0, _dayjs.default)().subtract(1, 'week'),
         currentView: {
           type: 'timelineWeek',
-          intervalCount: 2
+          intervalCount: 2,
+          cellDuration: 1440
         }
       };
     case 'Текущий месяц':

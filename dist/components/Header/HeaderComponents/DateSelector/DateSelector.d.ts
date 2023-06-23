@@ -8,6 +8,7 @@ type Props = {
     onSubmit: () => void;
     onCancel: () => void;
     handleOpen: () => void;
+    handleClose: () => void;
     handlePinned: (index: number) => void;
     handleViewClick: (title: string) => void;
 };

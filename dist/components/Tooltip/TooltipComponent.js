@@ -10,6 +10,8 @@ var _OpenInNew = _interopRequireDefault(require("@mui/icons-material/OpenInNew")
 var _material = require("@mui/material");
 var _dayjs = _interopRequireDefault(require("dayjs"));
 var _react = _interopRequireDefault(require("react"));
+var _email = _interopRequireDefault(require("../../assets/images/email.svg"));
+var _call = _interopRequireDefault(require("../../assets/images/call.svg"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var TooltipComponent = function TooltipComponent(_ref) {
@@ -23,25 +25,31 @@ var TooltipComponent = function TooltipComponent(_ref) {
     disabled: true
   }, _react.default.createElement(_OpenInNew.default, null)), _react.default.createElement(_material.IconButton, {
     onClick: handleClose
-  }, _react.default.createElement(_Close.default, null))), _react.default.createElement("div", {
+  }, _react.default.createElement(_Close.default, null))), _react.default.createElement("span", {
     className: _stylesModule.default.fio
   }, data.client_data.name), _react.default.createElement("div", {
     className: _stylesModule.default.data
   }, _react.default.createElement("span", {
     className: _stylesModule.default.dataTitle
-  }, "\u041A\u0440\u0430\u0439\u043D\u0438\u0439 \u0441\u0440\u043E\u043A"), _react.default.createElement("span", {
+  }, "\u0421\u0440\u043E\u043A \u0431\u0440\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F"), _react.default.createElement("span", {
     className: _stylesModule.default.dateText
   }, (0, _dayjs.default)(data.endDate).format('DD.MM.YYYY'), " c ", (0, _dayjs.default)(data.startDate).format('HH:mm'), " \u043F\u043E", ' ', (0, _dayjs.default)(data.endDate).format('HH:mm'))), _react.default.createElement("div", {
     className: _stylesModule.default.clientType
   }, _react.default.createElement("span", {
     className: _stylesModule.default.dataTitle
-  }, "\u0422\u0438\u043F \u043A\u043B\u0438\u0435\u043D\u0442\u0430"), _react.default.createElement("span", {
+  }, "\u0422\u0438\u043F \u043A\u043B\u0438\u0435\u043D\u0442\u0430 defalt"), _react.default.createElement("span", {
     className: _stylesModule.default.dateText
   }, data.client_data.type)), _react.default.createElement("div", {
     className: _stylesModule.default.email
-  }, data.client_data.email), _react.default.createElement("div", {
+  }, _react.default.createElement("img", {
+    src: _email.default,
+    alt: ""
+  }), data.client_data.email), _react.default.createElement("div", {
     className: _stylesModule.default.number
-  }, data.client_data.phone), _react.default.createElement("div", {
+  }, _react.default.createElement("img", {
+    src: _call.default,
+    alt: ""
+  }), data.client_data.phone), _react.default.createElement("div", {
     className: _stylesModule.default.footer
   }, _react.default.createElement("button", {
     disabled: true,

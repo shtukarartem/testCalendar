@@ -8,7 +8,6 @@ import dxScheduler, {
   CellClickEvent,
 } from 'devextreme/ui/scheduler';
 import React, { MouseEvent, useEffect, useRef, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 import style from './style.module.css';
 
@@ -40,9 +39,6 @@ type Props = {
   openUpdateModal?: () => void;
   openAddingModal?: () => void;
   closeModal?: () => void;
-  linkDispatcher?: () => void;
-  OpenEventWrapper?: React.ComponentType<any>;
-  modalUrl?: string;
 };
 
 const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => void) => {
@@ -60,16 +56,8 @@ const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => voi
   addEvent?.();
 };
 
-const openCreationModal = (
-  e: CellClickEvent,
-  openModal?: () => void,
-  openModalFunc?: () => void
-) => {
+const openCreationModal = (e: CellClickEvent, openModal?: () => void) => {
   e.event?.preventDefault();
-  // const currentUrl = window.location.href;
-  // const newUrl = currentUrl.slice(0, currentUrl.length + 1) + modalUrl;
-  // window.location.replace(newUrl);
-  openModalFunc?.();
   openModal?.();
 };
 
@@ -80,19 +68,7 @@ export const Calendar: React.FC<Props> = ({
   openUpdateModal,
   updateEvent,
   openAddingModal,
-  OpenEventWrapper,
-  modalUrl,
-  linkDispatcher,
 }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  console.log('location', location);
-  console.log('navigate', navigate);
-
-  const openModalFunc = () => {
-    navigate(modalUrl as string);
-  };
-
   const groups = ['roomId'];
   const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
     dayjs().locale('ru').format('DD MMMM')
@@ -101,7 +77,7 @@ export const Calendar: React.FC<Props> = ({
   const [currentView, setCurrentView] = useState<{
     type: string;
     intervalCount: number;
-    cellDuration?:number;
+    cellDuration?: number;
   }>({ type: 'timelineDay', intervalCount: 1 });
   const [selectedView, setSelectedView] = useState<string>(currentView.type);
   useEffect(() => {
@@ -131,20 +107,20 @@ export const Calendar: React.FC<Props> = ({
         selectedPlaceholder={selectedPlaceholder}
         selectViewValue={selectedView}
         handleMinusButton={() => {
-          const intervalCount = currentView.intervalCount
-          if(intervalCount === 2) {
+          const intervalCount = currentView.intervalCount;
+          if (intervalCount === 2) {
             setCurrentView({
               ...currentView,
               cellDuration: currentView.type === 'timelineWeek' ? 1440 : 60,
               intervalCount: intervalCount ? intervalCount - 1 : 1,
-            })
-          } else setCurrentView({
-            ...currentView,
-            cellDuration: 1440,
-            intervalCount: intervalCount ? intervalCount - 1 : 1,
-          })
-        }
-        }
+            });
+          } else
+            setCurrentView({
+              ...currentView,
+              cellDuration: 1440,
+              intervalCount: intervalCount ? intervalCount - 1 : 1,
+            });
+        }}
         handlePlusButton={() =>
           setCurrentView({
             ...currentView,
@@ -177,13 +153,7 @@ export const Calendar: React.FC<Props> = ({
           <TooltipComponent data={data.data.appointmentData} handleClose={closeTooltip} />
         )}
         appointmentRender={(data) => (
-          <Appointment
-            data={data.appointmentData}
-            currentDate={currentDate}
-            OpenEventWrapper={OpenEventWrapper}
-            // modalUrl={modalUrl}
-            linkDispatcher={linkDispatcher}
-          />
+          <Appointment data={data.appointmentData} currentDate={currentDate} />
         )}
         onOptionChanged={(e: OptionChangedEventInfo<dxScheduler>) => {
           if (e.name === 'currentView') setCurrentView(e.value);
@@ -198,7 +168,7 @@ export const Calendar: React.FC<Props> = ({
         firstDayOfWeek={1}
         startDayHour={0}
         endDayHour={24}
-        onCellClick={(e: CellClickEvent) => openCreationModal(e, openAddingModal, openModalFunc)}
+        onCellClick={(e: CellClickEvent) => openCreationModal(e, openAddingModal)}
         editing
         onAppointmentUpdating={updateEvent}
         onAppointmentDblClick={openUpdateModal}

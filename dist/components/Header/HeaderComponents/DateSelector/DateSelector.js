@@ -43,6 +43,7 @@ var DateSelector = function DateSelector(_ref) {
     onSubmit = _ref.onSubmit,
     onCancel = _ref.onCancel,
     handleOpen = _ref.handleOpen,
+    handleClose = _ref.handleClose,
     handlePinned = _ref.handlePinned,
     handleViewClick = _ref.handleViewClick;
   var _useState = (0, _react.useState)(null),
@@ -69,6 +70,7 @@ var DateSelector = function DateSelector(_ref) {
     className: _stylesModule.default.select,
     labelId: "demo-simple-select-standard-label",
     onOpen: handleOpen,
+    onClose: handleClose,
     open: isOpen,
     renderValue: function renderValue() {
       return selectValue;

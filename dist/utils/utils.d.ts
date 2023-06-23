@@ -5,6 +5,11 @@ export declare const handleSubtractDate: (currentView: string, currentDate: dayj
 export declare const handldleCheckView: (selectedView: string) => {
     type: string;
     intervalCount: number;
+    cellDuration?: undefined;
+} | {
+    type: string;
+    intervalCount: number;
+    cellDuration: number;
 } | undefined;
 export declare const handldleSelectTitle: (data: {
     type: string;
@@ -16,6 +21,14 @@ export declare const handleSelectData: (icon: string) => {
     currentView: {
         type: string;
         intervalCount: number;
+        cellDuration?: undefined;
+    };
+} | {
+    currentData: dayjs.Dayjs;
+    currentView: {
+        type: string;
+        intervalCount: number;
+        cellDuration: number;
     };
 } | undefined;
 export declare const checkBusyRoom: (bookings: BookingType[], roomId: string, startDate: Date, endDate: Date) => boolean;
