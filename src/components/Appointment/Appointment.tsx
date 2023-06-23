@@ -4,12 +4,11 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-import { BookingType, Scheme } from '../../types/types';
+import { BookingType } from '../../types/types';
 
 type Props = {
   data: BookingType;
   currentDate: dayjs.Dayjs;
-  modalUrl?: Scheme;
 };
 
 const statusVariants = {
@@ -28,13 +27,11 @@ export const Appointment: React.FC<Props> = ({ data, currentDate }) => {
   const isPast = endDateFormat.isBefore(currentDate);
 
   return (
-      <div
-        className={classNames(styles.wrapper, statusVariants[status], { [styles.past]: isPast })}
-      >
-        <div className={styles.time}>
-          {startTime}-{endTime}
-        </div>
-        <div className={styles.owner}>{client_data.name}</div>
+    <div className={classNames(styles.wrapper, statusVariants[status], { [styles.past]: isPast })}>
+      <div className={styles.time}>
+        {startTime}-{endTime}
       </div>
+      <div className={styles.owner}>{client_data.name}</div>
+    </div>
   );
 };
