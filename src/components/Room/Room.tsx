@@ -16,7 +16,7 @@ type Props = {
 };
 
 const roomVariants = {
-  Рабочееместо: styles.workPlace,
+  'Рабочее место': styles.workPlace,
   Офис: styles.office,
   Переговорная: styles.meeting,
 };
