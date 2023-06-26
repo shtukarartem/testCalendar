@@ -11,9 +11,9 @@ var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var statusVariants = {
-  paid: _stylesModule.default.paid,
-  booked: _stylesModule.default.booked,
-  overdue: _stylesModule.default.overdue
+  Оплачен: _stylesModule.default.paid,
+  Бронь: _stylesModule.default.booked,
+  Просрочен: _stylesModule.default.overdue
 };
 var MoreAppointments = function MoreAppointments(_ref) {
   var data = _ref.data;

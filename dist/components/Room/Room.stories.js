@@ -11,7 +11,7 @@ var RoomComponent = {
     data: {
       room: 'Рабочее место 1',
       description: 'Окно',
-      type: 'workPlace',
+      type: 'Рабочее место',
       id: 1,
       color: '#1e90ff'
     }

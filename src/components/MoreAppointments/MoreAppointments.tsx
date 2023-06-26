@@ -7,9 +7,9 @@ import styles from './styles.module.css';
 import { BookingType } from '../../types/types';
 
 const statusVariants = {
-  paid: styles.paid,
-  booked: styles.booked,
-  overdue: styles.overdue,
+  Оплачен: styles.paid,
+  Бронь: styles.booked,
+  Просрочен: styles.overdue,
 };
 
 type Props = {
