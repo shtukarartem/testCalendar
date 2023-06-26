@@ -2,13 +2,13 @@ export type SelectOptions = {
     title: string;
     value: string;
 };
-export type RoomType = 'workPlace' | 'office' | 'meeting';
+export type RoomType = 'Рабочее место' | 'Офис' | 'Переговорная';
 export type ViewListType = {
     icon: string;
     title: string;
     isPinned: boolean;
 };
-export type RentStatusType = 'paid' | 'booked' | 'overdue';
+export type RentStatusType = 'Оплачен' | 'Бронь' | 'Просрочен';
 export type BookingType = {
     eventId: string;
     ownerId: string;

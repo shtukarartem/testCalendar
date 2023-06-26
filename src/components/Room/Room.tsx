@@ -16,9 +16,9 @@ type Props = {
 };
 
 const roomVariants = {
-  workPlace: styles.workPlace,
-  office: styles.office,
-  meeting: styles.meeting,
+  'Рабочее место': styles.workPlace,
+  Офис: styles.office,
+  Переговорная: styles.meeting,
 };
 
 export const Room: React.FC<Props> = (props) => {

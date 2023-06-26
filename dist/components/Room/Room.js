@@ -7,14 +7,17 @@ Object.defineProperty(exports, "__esModule", {
 exports.Room = void 0;
 require("core-js/modules/es.symbol.js");
 require("core-js/modules/es.symbol.description.js");
+require("core-js/modules/es.regexp.exec.js");
+require("core-js/modules/es.string.replace.js");
+require("core-js/modules/esnext.string.replace-all.js");
 var _classnames = _interopRequireDefault(require("classnames"));
 var _react = _interopRequireDefault(require("react"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var roomVariants = {
-  workPlace: _stylesModule.default.workPlace,
-  office: _stylesModule.default.office,
-  meeting: _stylesModule.default.meeting
+  Рабочееместо: _stylesModule.default.workPlace,
+  Офис: _stylesModule.default.office,
+  Переговорная: _stylesModule.default.meeting
 };
 var Room = function Room(props) {
   var _props$data = props.data,
@@ -24,7 +27,7 @@ var Room = function Room(props) {
   return _react.default.createElement("div", null, _react.default.createElement("div", {
     className: _stylesModule.default.room
   }, _react.default.createElement("div", {
-    className: (0, _classnames.default)(_stylesModule.default.point, roomVariants[type])
+    className: (0, _classnames.default)(_stylesModule.default.point, roomVariants[type.replaceAll(' ', '')])
   }), _react.default.createElement("span", null, room)), _react.default.createElement("div", {
     className: _stylesModule.default.description
   }, description));
