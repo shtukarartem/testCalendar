@@ -26,7 +26,7 @@ export const Room: React.FC<Props> = (props) => {
   return (
     <div>
       <div className={styles.room}>
-        <div className={classNames(styles.point, roomVariants[type.replaceAll(' ', '') as keyof typeof roomVariants])}></div>
+        <div className={classNames(styles.point, roomVariants[type])}></div>
         <span>{room}</span>
       </div>
       <div className={styles.description}>{description}</div>
