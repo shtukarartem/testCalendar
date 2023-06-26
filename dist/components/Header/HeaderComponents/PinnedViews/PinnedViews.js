@@ -57,8 +57,9 @@ var PinnedViews = function PinnedViews(_ref) {
   return _react.default.createElement("div", {
     className: _stylesModule.default.wrapper
   }, views.map(function (item, index) {
-    return _react.default.createElement(_react.default.Fragment, null, item.isPinned && _react.default.createElement("img", {
-      key: index,
+    return _react.default.createElement(_react.default.Fragment, {
+      key: index
+    }, item.isPinned && _react.default.createElement("img", {
       className: (0, _classnames.default)(_stylesModule.default.icon, _defineProperty({}, _stylesModule.default.select, isSelect && selectIcon === item.title)),
       onClick: function onClick() {
         handleClick(item.title);
