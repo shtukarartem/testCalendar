@@ -74,7 +74,7 @@ var Calendar = function Calendar(_ref) {
   var owners = _ref.owners,
     rooms = _ref.rooms,
     events = _ref.events,
-    openUpdateModal = _ref.openUpdateModal,
+    openEditModal = _ref.openEditModal,
     updateEvent = _ref.updateEvent,
     openAddingModal = _ref.openAddingModal;
   var groups = ['roomId'];
@@ -161,7 +161,8 @@ var Calendar = function Calendar(_ref) {
     appointmentTooltipComponent: function appointmentTooltipComponent(data) {
       return _react.default.createElement(_TooltipComponent.TooltipComponent, {
         data: data.data.appointmentData,
-        handleClose: closeTooltip
+        handleClose: closeTooltip,
+        openEditModal: openEditModal
       });
     },
     appointmentRender: function appointmentRender(data) {
@@ -194,7 +195,6 @@ var Calendar = function Calendar(_ref) {
     },
     editing: true,
     onAppointmentUpdating: updateEvent,
-    onAppointmentDblClick: openUpdateModal,
     appointmentCollectorComponent: function appointmentCollectorComponent(data) {
       return _react.default.createElement(_MoreButton.MoreButton, {
         data: data.data

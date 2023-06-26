@@ -10,19 +10,22 @@ var _OpenInNew = _interopRequireDefault(require("@mui/icons-material/OpenInNew")
 var _material = require("@mui/material");
 var _dayjs = _interopRequireDefault(require("dayjs"));
 var _react = _interopRequireDefault(require("react"));
-var _email = _interopRequireDefault(require("../../assets/images/email.svg"));
-var _call = _interopRequireDefault(require("../../assets/images/call.svg"));
 var _stylesModule = _interopRequireDefault(require("./styles.module.css"));
+var _call = _interopRequireDefault(require("../../assets/images/call.svg"));
+var _email = _interopRequireDefault(require("../../assets/images/email.svg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var TooltipComponent = function TooltipComponent(_ref) {
   var data = _ref.data,
+    openEditModal = _ref.openEditModal,
     handleClose = _ref.handleClose;
   return _react.default.createElement("div", {
     className: _stylesModule.default.wrapper
   }, _react.default.createElement("div", {
     className: _stylesModule.default.icons
   }, _react.default.createElement(_material.IconButton, {
-    disabled: true
+    onClick: function onClick() {
+      return openEditModal === null || openEditModal === void 0 ? void 0 : openEditModal(data.eventId);
+    }
   }, _react.default.createElement(_OpenInNew.default, null)), _react.default.createElement(_material.IconButton, {
     onClick: handleClose
   }, _react.default.createElement(_Close.default, null))), _react.default.createElement("span", {

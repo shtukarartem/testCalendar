@@ -8,8 +8,8 @@ type Props = {
     events?: BookingType[];
     updateEvent?: () => void;
     addEvent?: () => void;
-    openUpdateModal?: () => void;
     openAddingModal?: () => void;
+    openEditModal?: (id: string) => void;
     closeModal?: () => void;
     modalUrl?: string;
 };

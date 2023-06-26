@@ -6,7 +6,7 @@ type Props = {
     events?: BookingType[];
     updateEvent?: () => void;
     addEvent?: () => void;
-    openUpdateModal?: () => void;
+    openEditModal?: (id: string) => void;
     openAddingModal?: () => void;
     closeModal?: () => void;
 };

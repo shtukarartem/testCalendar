@@ -3,22 +3,23 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { IconButton } from '@mui/material';
 import dayjs from 'dayjs';
 import React, { MouseEvent } from 'react';
-import email from '../../assets/images/email.svg'
-import call from '../../assets/images/call.svg'
 
 import styles from './styles.module.css';
 
+import call from '../../assets/images/call.svg';
+import email from '../../assets/images/email.svg';
 import { BookingType } from '../../types/types';
 
 type Props = {
   data: BookingType;
   handleClose: (e: MouseEvent<HTMLButtonElement>) => void;
+  openEditModal?: (id: string) => void;
 };
 
-export const TooltipComponent: React.FC<Props> = ({ data, handleClose }) => (
+export const TooltipComponent: React.FC<Props> = ({ data, openEditModal, handleClose }) => (
   <div className={styles.wrapper}>
     <div className={styles.icons}>
-      <IconButton disabled>
+      <IconButton onClick={() => openEditModal?.(data.eventId)}>
         <OpenInNewIcon />
       </IconButton>
       <IconButton onClick={handleClose}>
@@ -38,11 +39,13 @@ export const TooltipComponent: React.FC<Props> = ({ data, handleClose }) => (
       <span className={styles.dateText}>{data.client_data.type}</span>
     </div>
     <div className={styles.email}>
-      <img src={email} alt="" />{data.client_data.email}
-      </div>
+      <img src={email} alt="" />
+      {data.client_data.email}
+    </div>
     <div className={styles.number}>
-    <img src={call} alt="" />{data.client_data.phone}
-      </div>
+      <img src={call} alt="" />
+      {data.client_data.phone}
+    </div>
     <div className={styles.footer}>
       <button
         disabled

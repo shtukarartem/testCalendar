@@ -34,8 +34,8 @@ var App = function App(_ref) {
     events = _ref$events === void 0 ? _sefviceFormData.data : _ref$events,
     updateEvent = _ref.updateEvent,
     addEvent = _ref.addEvent,
-    openUpdateModal = _ref.openUpdateModal,
     openAddingModal = _ref.openAddingModal,
+    openEditModal = _ref.openEditModal,
     closeModal = _ref.closeModal;
   (0, _react.useEffect)(function () {
     (0, _localization.locale)('ru');
@@ -46,7 +46,7 @@ var App = function App(_ref) {
     events: events,
     updateEvent: updateEvent,
     addEvent: addEvent,
-    openUpdateModal: openUpdateModal,
+    openEditModal: openEditModal,
     openAddingModal: openAddingModal,
     closeModal: closeModal
   }))));
