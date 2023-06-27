@@ -22,6 +22,7 @@ import {
   handleSelectData,
   handleSubtractDate,
 } from '../../utils/utils';
+import { DataCell } from '../DataCell/DataCell';
 import { DateCell } from '../DateCell/DateCell';
 import { Appointment } from './../Appointment/Appointment';
 import { Header } from './../Header/Header';
@@ -170,6 +171,7 @@ export const Calendar: React.FC<Props> = ({
         groups={groups}
         cellDuration={60}
         firstDayOfWeek={1}
+        dataCellRender={(data) => <DataCell currentView={currentView.type} data={data} />}
         startDayHour={8}
         endDayHour={21}
         editing

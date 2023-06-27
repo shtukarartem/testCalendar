@@ -7,3 +7,10 @@
   letter-spacing: 0.031rem;
   color: #aeaaae;
 }
+
+.cell {
+  padding-top: 0.5rem;
+  background: var(--white-transp-110);
+  width: 100%;
+  height: 100%;
+}
