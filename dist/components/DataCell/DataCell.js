@@ -17,8 +17,8 @@ require("core-js/modules/es.object.to-string.js");
 require("core-js/modules/es.number.constructor.js");
 var _classnames = _interopRequireDefault(require("classnames"));
 var _react = _interopRequireDefault(require("react"));
-var _utils = require("src/utils/utils");
 var _styleModule = _interopRequireDefault(require("./style.module.css"));
+var _utils = require("../../utils/utils");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
