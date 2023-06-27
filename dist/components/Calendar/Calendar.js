@@ -35,6 +35,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _styleModule = _interopRequireDefault(require("./style.module.css"));
 var _sefviceFormData = require("../../sefviceFormData");
 var _utils = require("../../utils/utils");
+var _DataCell = require("../DataCell/DataCell");
 var _DateCell = require("../DateCell/DateCell");
 var _Appointment = require("./../Appointment/Appointment");
 var _Header = require("./../Header/Header");
@@ -64,11 +65,6 @@ var handleAppointmentAdding = function handleAppointmentAdding(e, addEvent) {
   }
   console.log('// TODO here will be action for adding appointment');
   addEvent === null || addEvent === void 0 ? void 0 : addEvent();
-};
-var openCreationModal = function openCreationModal(e, openModal) {
-  var _e$event;
-  (_e$event = e.event) === null || _e$event === void 0 ? void 0 : _e$event.preventDefault();
-  openModal === null || openModal === void 0 ? void 0 : openModal();
 };
 var Calendar = function Calendar(_ref) {
   var owners = _ref.owners,
@@ -188,13 +184,19 @@ var Calendar = function Calendar(_ref) {
     groups: groups,
     cellDuration: 60,
     firstDayOfWeek: 1,
+    dataCellRender: function dataCellRender(data) {
+      return _react.default.createElement(_DataCell.DataCell, {
+        currentView: currentView.type,
+        data: data
+      });
+    },
     startDayHour: 8,
     endDayHour: 21,
-    onCellClick: function onCellClick(e) {
-      return openCreationModal(e, openAddingModal);
-    },
     editing: true,
     onAppointmentUpdating: updateEvent,
+    onAppointmentDblClick: function onAppointmentDblClick(e) {
+      e.cancel = true;
+    },
     appointmentCollectorComponent: function appointmentCollectorComponent(data) {
       return _react.default.createElement(_MoreButton.MoreButton, {
         data: data.data
@@ -202,7 +204,8 @@ var Calendar = function Calendar(_ref) {
     },
     onAppointmentAdding: handleAppointmentAdding,
     onAppointmentFormOpening: function onAppointmentFormOpening(e) {
-      openAddingModal && (e.cancel = true);
+      e.cancel = true;
+      openAddingModal === null || openAddingModal === void 0 ? void 0 : openAddingModal();
     },
     resourceCellComponent: function resourceCellComponent(data) {
       return _react.default.createElement(_Room.Room, {

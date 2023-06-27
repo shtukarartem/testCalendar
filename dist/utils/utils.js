@@ -4,7 +4,7 @@ require("core-js/modules/es.object.define-property.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.handleSubtractDate = exports.handleSelectData = exports.handleFirstCharInUpperCase = exports.handleCorrectDateDifference = exports.handleAddDate = exports.handldleSelectTitle = exports.handldleCheckView = exports.checkBusyRoom = void 0;
+exports.handleWeekend = exports.handleSubtractDate = exports.handleSelectData = exports.handleFirstCharInUpperCase = exports.handleCorrectDateDifference = exports.handleAddDate = exports.handldleSelectTitle = exports.handldleCheckView = exports.checkBusyRoom = void 0;
 require("core-js/modules/es.object.to-string.js");
 require("core-js/modules/es.array.slice.js");
 var _dayjs = _interopRequireDefault(require("dayjs"));
@@ -237,4 +237,8 @@ var handleFirstCharInUpperCase = function handleFirstCharInUpperCase(title) {
   return title.charAt(0).toUpperCase() + title.slice(1);
 };
 exports.handleFirstCharInUpperCase = handleFirstCharInUpperCase;
+var handleWeekend = function handleWeekend(date, currentView) {
+  return (0, _dayjs.default)(date).day() > 5 || (0, _dayjs.default)(date).day() < 1 && currentView !== 'timelineDay';
+};
+exports.handleWeekend = handleWeekend;
 //# sourceMappingURL=utils.js.map

@@ -33,4 +33,5 @@ export declare const handleSelectData: (icon: string) => {
 } | undefined;
 export declare const checkBusyRoom: (bookings: BookingType[], roomId: string, startDate: Date, endDate: Date) => boolean;
 export declare const handleFirstCharInUpperCase: (title: string) => string;
+export declare const handleWeekend: (date: Date, currentView: string) => boolean;
 //# sourceMappingURL=utils.d.ts.map
