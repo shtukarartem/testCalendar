@@ -165,3 +165,6 @@ export const checkBusyRoom = (
 
 export const handleFirstCharInUpperCase = (title: string) =>
   title.charAt(0).toUpperCase() + title.slice(1);
+
+export const handleWeekend = (date: Date, currentView: string) =>
+  dayjs(date).day() > 5 || (dayjs(date).day() < 1 && currentView !== 'timelineDay');
