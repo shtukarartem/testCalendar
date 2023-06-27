@@ -1,41 +1,58 @@
-import 'devextreme/dist/css/dx.light.css';
-import Scheduler, {Resource} from 'devextreme-react/scheduler';
-import { data, priorityData, resourcesData } from './data';
-import style from './style.module.css';
-const views = ['timelineDay', 'timelineWeek', 'timelineMonth'];
+import { locale } from 'devextreme/localization';
+import React, { useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-const groups = ['priority'];
-const currentDate = new Date(2021, 1, 2);
-function App() {
+import './App.css';
+import 'devextreme/dist/css/dx.light.css';
+
+import { Calendar } from './components/Calendar/Calendar';
+import { MaterialProvider } from './providers/MaterialProvider';
+import { data, ownersData, roomsData } from './sefviceFormData';
+import { BookingType, OwnerType, RoomComponentType } from './types/types';
+
+type Props = {
+  owners?: OwnerType[];
+  rooms?: RoomComponentType[];
+  events?: BookingType[];
+  updateEvent?: () => void;
+  addEvent?: () => void;
+  openAddingModal?: () => void;
+  openEditModal?: (id: string) => void;
+  closeModal?: () => void;
+  modalUrl?: string;
+};
+
+const App: React.FC<Props> = ({
+  owners = ownersData,
+  rooms = roomsData,
+  events = data,
+  updateEvent,
+  addEvent,
+  openAddingModal,
+  openEditModal,
+  closeModal,
+}) => {
+  useEffect(() => {
+    locale('ru');
+  }, []);
   return (
-      <Scheduler
-        className={style.wrapper}
-        timeZone="America/Los_Angeles"
-        dataSource={data}
-        views={views as any}
-        defaultCurrentView="timelineMonth"
-        defaultCurrentDate={currentDate}
-        height={900}
-        groups={groups}
-        cellDuration={61}
-        firstDayOfWeek={0}
-        startDayHour={8}
-        endDayHour={20}>
-        <Resource
-          fieldExpr="ownerId"
-          allowMultiple={true}
-          dataSource={resourcesData}
-          label="Owner"
-          useColorAsDefault={ true }
-        />
-        <Resource
-          fieldExpr="priority"
-          allowMultiple={false}
-          dataSource={priorityData}
-          label="Priority"
-        />
-      </Scheduler>
+    <BrowserRouter>
+      <div>
+        <MaterialProvider>
+          <Calendar
+            owners={owners}
+            rooms={rooms}
+            events={events}
+            updateEvent={updateEvent}
+            addEvent={addEvent}
+            openEditModal={openEditModal}
+            openAddingModal={openAddingModal}
+            closeModal={closeModal}
+          />
+        </MaterialProvider>
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
