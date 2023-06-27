@@ -4,8 +4,8 @@ import { Editing, Resource, Scrolling, View } from 'devextreme-react/scheduler';
 import { OptionChangedEventInfo } from 'devextreme/core/dom_component';
 import dxScheduler, {
   AppointmentAddingEvent,
+  AppointmentDblClickEvent,
   AppointmentFormOpeningEvent,
-  CellClickEvent,
 } from 'devextreme/ui/scheduler';
 import React, { MouseEvent, useEffect, useRef, useState } from 'react';
 
@@ -56,9 +56,9 @@ const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => voi
   addEvent?.();
 };
 
-const openCreationModal = (e: CellClickEvent, openModal?: () => void) => {
-  e.event?.preventDefault();
+const openCreationModal = (openModal?: () => void) => {
   openModal?.();
+  alert('openCreationModal');
 };
 
 export const Calendar: React.FC<Props> = ({
@@ -172,15 +172,17 @@ export const Calendar: React.FC<Props> = ({
         firstDayOfWeek={1}
         startDayHour={8}
         endDayHour={21}
-        onCellClick={(e: CellClickEvent) => openCreationModal(e, openAddingModal)}
         editing
         onAppointmentUpdating={updateEvent}
-        // onAppointmentDblClick={openUpdateModal}
+        onAppointmentDblClick={(e: AppointmentDblClickEvent) => {
+          e.cancel = true;
+        }}
         appointmentCollectorComponent={(data) => <MoreButton data={data.data} />}
         onAppointmentAdding={handleAppointmentAdding}
-        // TODO uncomment later. need for cancel default popul creation
         onAppointmentFormOpening={(e: AppointmentFormOpeningEvent) => {
-          openAddingModal && (e.cancel = true);
+          // need for cancel default popul creation
+          e.cancel = true;
+          openCreationModal(openAddingModal);
         }}
         resourceCellComponent={(data) => <Room data={data.data.data} />}
         // TODO uncomment later. need for pass action from ServiceForm
