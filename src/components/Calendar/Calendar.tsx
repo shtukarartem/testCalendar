@@ -170,8 +170,8 @@ export const Calendar: React.FC<Props> = ({
         groups={groups}
         cellDuration={60}
         firstDayOfWeek={1}
-        startDayHour={0}
-        endDayHour={24}
+        startDayHour={8}
+        endDayHour={21}
         onCellClick={(e: CellClickEvent) => openCreationModal(e, openAddingModal)}
         editing
         onAppointmentUpdating={updateEvent}

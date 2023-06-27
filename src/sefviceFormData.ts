@@ -23,61 +23,61 @@ export const roomsData: RoomComponentType[] = [
   {
     room: 'Рабочее место 1',
     description: 'Окно',
-    type: 'workPlace',
+    type: 'Рабочее место',
     id: '1',
   },
   {
     room: 'Рабочее место 2',
     description: 'Окно, ПК',
-    type: 'workPlace',
+    type: 'Рабочее место',
     id: '2',
   },
   {
     room: 'Рабочее место 3',
     description: 'Окно',
-    type: 'workPlace',
+    type: 'Рабочее место',
     id: '3',
   },
   {
     room: 'Офис 1',
     description: '20 мест',
-    type: 'office',
+    type: 'Офис',
     id: '4',
   },
   {
     room: 'Офис 2',
     description: '58 мест',
-    type: 'office',
+    type: 'Офис',
     id: '5',
   },
   {
     room: 'Офис 3',
     description: '30 мест',
-    type: 'office',
+    type: 'Офис',
     id: '6',
   },
   {
     room: 'Переговорная 1',
     description: '5 мест',
-    type: 'meeting',
+    type: 'Переговорная',
     id: '7',
   },
   {
     room: 'Переговорная 2',
     description: '6 мест',
-    type: 'meeting',
+    type: 'Переговорная',
     id: '8',
   },
   {
     room: 'Переговорная 3',
     description: '10 мест',
-    type: 'meeting',
+    type: 'Переговорная',
     id: '9',
   },
   {
     room: 'Переговорная 4',
     description: '8 мест',
-    type: 'meeting',
+    type: 'Переговорная',
     id: '10',
   },
 ];
@@ -90,7 +90,7 @@ export const data: BookingType[] = [
     startDate: new Date('2023-06-01T16:00:00.000'),
     endDate: new Date('2023-06-01T17:30:00.000'),
     comment: 'test',
-    status: 'overdue',
+    status: 'Просрочен',
     client_data: {
       type: 'OAO',
       name: 'Газпром',
@@ -105,7 +105,7 @@ export const data: BookingType[] = [
     startDate: new Date('2023-06-01T18:30:00.000'),
     endDate: new Date('2023-06-01T20:15:00.000'),
     comment: 'test',
-    status: 'paid',
+    status: 'Оплачен',
     client_data: {
       type: 'OAO',
       name: 'Лукойл',
@@ -120,7 +120,7 @@ export const data: BookingType[] = [
     startDate: new Date('2023-06-01T20:15:00.000'),
     endDate: new Date('2023-06-01T23:15:00.000'),
     comment: 'test',
-    status: 'paid',
+    status: 'Оплачен',
     client_data: {
       email: 'qweqew@qweqwe.com',
       phone: '+375295976883',
@@ -134,7 +134,7 @@ export const data: BookingType[] = [
     roomId: '2',
     startDate: new Date('2023-06-01T23:45:00.000'),
     endDate: new Date('2023-06-02T18:15:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       email: 'qweqew@qweqwe.com',
@@ -149,7 +149,7 @@ export const data: BookingType[] = [
     ownerId: '1',
     startDate: new Date('2023-06-02T15:15:00.000'),
     endDate: new Date('2023-06-02T17:45:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Yandex',
@@ -165,7 +165,7 @@ export const data: BookingType[] = [
     ownerId: '2',
     startDate: new Date('2023-06-02T19:00:00.000'),
     endDate: new Date('2023-06-02T20:45:00.000'),
-    status: 'overdue',
+    status: 'Просрочен',
     comment: 'test',
     client_data: {
       name: 'Exadel',
@@ -180,7 +180,7 @@ export const data: BookingType[] = [
     ownerId: '2',
     startDate: new Date('2023-06-03T17:00:00.000'),
     endDate: new Date('2023-06-03T18:15:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       email: 'qweqew@qweqwe.com',
@@ -195,7 +195,7 @@ export const data: BookingType[] = [
     ownerId: '3',
     startDate: new Date('2023-06-03T18:45:00.000'),
     endDate: new Date('2023-06-03T20:45:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'VironIT',
@@ -210,7 +210,7 @@ export const data: BookingType[] = [
     ownerId: '1',
     startDate: new Date('2023-06-05T01:00:00.000'),
     endDate: new Date('2023-06-04T16:30:00.000'),
-    status: 'overdue',
+    status: 'Просрочен',
     comment: 'test',
     client_data: {
       email: 'qweqew@qweqwe.com',
@@ -225,7 +225,7 @@ export const data: BookingType[] = [
     ownerId: '3',
     startDate: new Date('2023-06-05T00:15:00.000'),
     endDate: new Date('2023-06-04T15:00:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Liddl',
@@ -240,7 +240,7 @@ export const data: BookingType[] = [
     ownerId: '2',
     startDate: new Date('2023-06-05T21:15:00.000'),
     endDate: new Date('2023-06-05T22:30:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Алексей Иванов',
@@ -255,7 +255,7 @@ export const data: BookingType[] = [
     ownerId: '2',
     startDate: new Date('2023-06-08T21:00:00.000'),
     endDate: new Date('2023-06-09T19:00:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Билайн',
@@ -270,7 +270,7 @@ export const data: BookingType[] = [
     ownerId: '1',
     startDate: new Date('2023-06-08T19:45:00.000'),
     endDate: new Date('2023-06-08T20:15:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Recall Rebate Form',
@@ -285,7 +285,7 @@ export const data: BookingType[] = [
     ownerId: '4',
     startDate: new Date('2023-06-09T22:15:00.000'),
     endDate: new Date('2023-06-10T00:30:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Create Report on Customer Feedback',
@@ -300,7 +300,7 @@ export const data: BookingType[] = [
     ownerId: '2',
     startDate: new Date('2023-06-09T23:15:00.000'),
     endDate: new Date('2023-06-10T01:30:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Review Customer Feedback Report',
@@ -315,7 +315,7 @@ export const data: BookingType[] = [
     ownerId: '3',
     startDate: new Date('2023-06-10T16:30:00.000'),
     endDate: new Date('2023-06-10T17:30:00.000'),
-    status: 'overdue',
+    status: 'Просрочен',
     comment: 'test',
     client_data: {
       name: 'Customer Feedback Report Analysis',
@@ -330,7 +330,7 @@ export const data: BookingType[] = [
     ownerId: '4',
     startDate: new Date('2023-06-10T19:30:00.000'),
     endDate: new Date('2023-06-10T20:30:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Prepare Shipping Cost Analysis Report',
@@ -345,7 +345,7 @@ export const data: BookingType[] = [
     ownerId: '2',
     startDate: new Date('2023-06-10T21:15:00.000'),
     endDate: new Date('2023-06-10T23:00:00.000'),
-    status: 'overdue',
+    status: 'Просрочен',
     comment: 'test',
     client_data: {
       name: 'Provide Feedback on Shippers',
@@ -360,7 +360,7 @@ export const data: BookingType[] = [
     ownerId: '1',
     startDate: new Date('2023-06-11T00:30:00.000'),
     endDate: new Date('2023-06-11T03:00:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Select Preferred Shipper',
@@ -375,7 +375,7 @@ export const data: BookingType[] = [
     ownerId: '2',
     startDate: new Date('2023-06-11T15:30:00.000'),
     endDate: new Date('2023-06-11T17:00:00.000'),
-    status: 'overdue',
+    status: 'Просрочен',
     comment: 'test',
     client_data: {
       name: 'Complete Shipper Selection Form',
@@ -390,7 +390,7 @@ export const data: BookingType[] = [
     roomId: '1',
     startDate: new Date('2023-06-11T19:00:00.000'),
     endDate: new Date('2023-06-11T21:15:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Upgrade Server Hardware',
@@ -405,7 +405,7 @@ export const data: BookingType[] = [
     ownerId: '3',
     startDate: new Date('2023-06-11T21:45:00.000'),
     endDate: new Date('2023-06-11T23:30:00.000'),
-    status: 'overdue',
+    status: 'Просрочен',
     comment: 'test',
     client_data: {
       name: 'Upgrade Personal Computers',
@@ -420,7 +420,7 @@ export const data: BookingType[] = [
     ownerId: '1',
     startDate: new Date('2023-06-12T17:30:00.000'),
     endDate: new Date('2023-06-12T20:00:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Upgrade Apps to Windows RT or stay with WinForms',
@@ -435,7 +435,7 @@ export const data: BookingType[] = [
     ownerId: '4',
     startDate: new Date('2023-06-15T18:30:00.000'),
     endDate: new Date('2023-06-15T20:15:00.000'),
-    status: 'overdue',
+    status: 'Просрочен',
     comment: 'test',
     client_data: {
       name: 'Create Icons for Website',
@@ -450,7 +450,7 @@ export const data: BookingType[] = [
     ownerId: '1',
     startDate: new Date('2023-06-16T16:45:00.000'),
     endDate: new Date('2023-06-16T18:45:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Create New Product Pages',
@@ -465,7 +465,7 @@ export const data: BookingType[] = [
     ownerId: '3',
     startDate: new Date('2023-06-16T19:00:00.000'),
     endDate: new Date('2023-06-16T22:15:00.000'),
-    status: 'booked',
+    status: 'Бронь',
     comment: 'test',
     client_data: {
       name: 'Approve Website Launch',
@@ -480,7 +480,7 @@ export const data: BookingType[] = [
     ownerId: '3',
     startDate: new Date('2023-06-17T16:30:00.000'),
     endDate: new Date('2023-06-17T18:00:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Update Customer Shipping Profiles',
@@ -495,7 +495,7 @@ export const data: BookingType[] = [
     ownerId: '4',
     startDate: new Date('2023-06-17T19:45:00.000'),
     endDate: new Date('2023-06-17T21:00:00.000'),
-    status: 'overdue',
+    status: 'Просрочен',
     comment: 'test',
     client_data: {
       name: 'Create New Shipping Return Labels',
@@ -510,7 +510,7 @@ export const data: BookingType[] = [
     ownerId: '3',
     startDate: new Date('2023-06-17T22:00:00.000'),
     endDate: new Date('2023-06-17T23:30:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Get Design for Shipping Return Labels',
@@ -525,7 +525,7 @@ export const data: BookingType[] = [
     ownerId: '4',
     startDate: new Date('2023-06-18T15:30:00.000'),
     endDate: new Date('2023-06-18T16:15:00.000'),
-    status: 'overdue',
+    status: 'Просрочен',
     comment: 'test',
     client_data: {
       name: 'PSD needed for Shipping Return Labels',
@@ -540,7 +540,7 @@ export const data: BookingType[] = [
     ownerId: '1',
     startDate: new Date('2023-06-18T18:30:00.000'),
     endDate: new Date('2023-06-18T23:00:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Contact ISP and Discuss Payment Options',
@@ -555,7 +555,7 @@ export const data: BookingType[] = [
     ownerId: '2',
     startDate: new Date('2023-06-19T00:00:00.000'),
     endDate: new Date('2023-06-19T03:00:00.000'),
-    status: 'booked',
+    status: 'Бронь',
     comment: 'test',
     client_data: {
       name: 'Prepare Year-End Support Summary Report',
@@ -571,7 +571,7 @@ export const data: BookingType[] = [
     startDate: new Date('2023-06-19T15:00:00.000'),
     endDate: new Date('2023-06-19T16:15:00.000'),
     comment: 'test',
-    status: 'booked',
+    status: 'Бронь',
     client_data: {
       name: 'Review New Training Material',
       email: 'qweqew@qweqwe.com',
@@ -585,7 +585,7 @@ export const data: BookingType[] = [
     ownerId: '2',
     startDate: new Date('2023-06-19T19:45:00.000'),
     endDate: new Date('2023-06-19T21:00:00.000'),
-    status: 'booked',
+    status: 'Бронь',
     comment: 'test',
     client_data: {
       name: 'Distribute Training Material to Support Staff',
@@ -600,7 +600,7 @@ export const data: BookingType[] = [
     ownerId: '2',
     startDate: new Date('2023-06-19T21:15:00.000'),
     endDate: new Date('2023-06-19T23:15:00.000'),
-    status: 'booked',
+    status: 'Бронь',
     comment: 'test',
     client_data: {
       name: 'Training Material Distribution Schedule',
@@ -615,7 +615,7 @@ export const data: BookingType[] = [
     ownerId: '4',
     startDate: new Date('2023-06-22T16:30:00.000'),
     endDate: new Date('2023-06-22T17:15:00.000'),
-    status: 'booked',
+    status: 'Бронь',
     comment: 'test',
     client_data: {
       name: 'Approval on Converting to New HDMI Specification',
@@ -630,7 +630,7 @@ export const data: BookingType[] = [
     ownerId: '3',
     startDate: new Date('2023-06-22T17:00:00.000'),
     endDate: new Date('2023-06-22T19:30:00.000'),
-    status: 'paid',
+    status: 'Оплачен',
     comment: 'test',
     client_data: {
       name: 'Create New Spike for Automation Server',
