@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { FC } from 'react';
+import React from 'react';
 
 import { handleWeekend } from 'src/utils/utils';
 
@@ -9,7 +9,7 @@ type Props = {
   data: any;
   currentView: string;
 };
-export const DataCell: FC<Props> = ({ data, currentView }) => (
+export const DataCell: React.FC<Props> = ({ data, currentView }) => (
   <div
     className={classNames({
       [style.cell]: handleWeekend(data.startDate, currentView),
