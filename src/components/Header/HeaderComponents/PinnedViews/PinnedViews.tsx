@@ -22,7 +22,7 @@ export const PinnedViews: React.FC<Props> = ({ views, handleSelect }) => {
       {views.map((item, index) => (
         <React.Fragment key={index}>
           {item.isPinned && (
-              <img
+            <img
               className={classNames(styles.icon, {
                 [styles.select]: isSelect && selectIcon === item.title,
               })}
@@ -33,7 +33,7 @@ export const PinnedViews: React.FC<Props> = ({ views, handleSelect }) => {
               src={item.icon}
               alt=""
             />
-            )}
+          )}
         </React.Fragment>
       ))}
     </div>

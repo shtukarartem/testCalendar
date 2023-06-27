@@ -36,7 +36,7 @@ type Props = {
   events?: BookingType[];
   updateEvent?: () => void;
   addEvent?: () => void;
-  openUpdateModal?: () => void;
+  openEditModal?: (id: string) => void;
   openAddingModal?: () => void;
   closeModal?: () => void;
 };
@@ -65,7 +65,7 @@ export const Calendar: React.FC<Props> = ({
   owners,
   rooms,
   events,
-  openUpdateModal,
+  openEditModal,
   updateEvent,
   openAddingModal,
 }) => {
@@ -150,7 +150,11 @@ export const Calendar: React.FC<Props> = ({
         views={[currentView] as any} // eslint-disable-line
         currentDate={currentDate.toDate()}
         appointmentTooltipComponent={(data) => (
-          <TooltipComponent data={data.data.appointmentData} handleClose={closeTooltip} />
+          <TooltipComponent
+            data={data.data.appointmentData}
+            handleClose={closeTooltip}
+            openEditModal={openEditModal}
+          />
         )}
         appointmentRender={(data) => (
           <Appointment data={data.appointmentData} currentDate={currentDate} />
@@ -166,12 +170,12 @@ export const Calendar: React.FC<Props> = ({
         groups={groups}
         cellDuration={60}
         firstDayOfWeek={1}
-        startDayHour={0}
-        endDayHour={24}
+        startDayHour={8}
+        endDayHour={21}
         onCellClick={(e: CellClickEvent) => openCreationModal(e, openAddingModal)}
         editing
         onAppointmentUpdating={updateEvent}
-        onAppointmentDblClick={openUpdateModal}
+        // onAppointmentDblClick={openUpdateModal}
         appointmentCollectorComponent={(data) => <MoreButton data={data.data} />}
         onAppointmentAdding={handleAppointmentAdding}
         // TODO uncomment later. need for cancel default popul creation

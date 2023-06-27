@@ -51,7 +51,11 @@ export const Header: React.FC<Props> = ({
   return (
     <div className={styles.wrapper}>
       <RangeButtons handleAddDate={handleAddDate} handleSubtractDate={handleSubtractDate} />
-      <ViewButtons isDisabled={isDisabled} handleMinusButton={handleMinusButton} handlePlusButton={handlePlusButton} />
+      <ViewButtons
+        isDisabled={isDisabled}
+        handleMinusButton={handleMinusButton}
+        handlePlusButton={handlePlusButton}
+      />
       <DateSelector
         views={views}
         handlePinned={handlePinned}

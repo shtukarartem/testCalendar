@@ -24,6 +24,6 @@
 .wrapper :global .Mui-disabled {
   border: 1px solid var(--neutral-95);
 }
-.disabled{
+.disabled {
   color: var(--neutral-95);
 }

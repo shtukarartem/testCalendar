@@ -63,5 +63,5 @@
 }
 
 .wrapper :global .dx-scheduler-header-row:nth-child(2n) {
-display: none;
+  display: none;
 }

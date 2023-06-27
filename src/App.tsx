@@ -16,8 +16,8 @@ type Props = {
   events?: BookingType[];
   updateEvent?: () => void;
   addEvent?: () => void;
-  openUpdateModal?: () => void;
   openAddingModal?: () => void;
+  openEditModal?: (id: string) => void;
   closeModal?: () => void;
   modalUrl?: string;
 };
@@ -28,8 +28,8 @@ const App: React.FC<Props> = ({
   events = data,
   updateEvent,
   addEvent,
-  openUpdateModal,
   openAddingModal,
+  openEditModal,
   closeModal,
 }) => {
   useEffect(() => {
@@ -45,7 +45,7 @@ const App: React.FC<Props> = ({
             events={events}
             updateEvent={updateEvent}
             addEvent={addEvent}
-            openUpdateModal={openUpdateModal}
+            openEditModal={openEditModal}
             openAddingModal={openAddingModal}
             closeModal={closeModal}
           />

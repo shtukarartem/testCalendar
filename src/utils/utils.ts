@@ -107,7 +107,10 @@ export const handleSelectData = (icon: string) => {
         currentView: { type: 'timelineDay', intervalCount: 3, cellDuration: 1440 },
       };
     case 'Текущая неделя':
-      return { currentData: dayjs(), currentView: { type: 'timelineWeek', intervalCount: 1, cellDuration: 1440 } };
+      return {
+        currentData: dayjs(),
+        currentView: { type: 'timelineWeek', intervalCount: 1, cellDuration: 1440 },
+      };
     case 'Прошлая неделя':
       return {
         currentData: dayjs().subtract(1, 'week'),
