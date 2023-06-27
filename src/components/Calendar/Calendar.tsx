@@ -57,11 +57,6 @@ const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => voi
   addEvent?.();
 };
 
-const openCreationModal = (openModal?: () => void) => {
-  openModal?.();
-  alert('openCreationModal');
-};
-
 export const Calendar: React.FC<Props> = ({
   owners,
   rooms,
@@ -184,7 +179,7 @@ export const Calendar: React.FC<Props> = ({
         onAppointmentFormOpening={(e: AppointmentFormOpeningEvent) => {
           // need for cancel default popul creation
           e.cancel = true;
-          openCreationModal(openAddingModal);
+          openAddingModal?.();
         }}
         resourceCellComponent={(data) => <Room data={data.data.data} />}
         // TODO uncomment later. need for pass action from ServiceForm
