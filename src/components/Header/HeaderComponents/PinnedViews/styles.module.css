@@ -5,8 +5,8 @@
   gap: 0.625rem;
 }
 .icon:hover {
-  filter: invert(34%) sepia(85%) saturate(3241%) hue-rotate(230deg) brightness(100%) contrast(101%);
+  filter: invert(28%) sepia(82%) saturate(2341%) hue-rotate(232deg) brightness(107%) contrast(106%);
 }
 .select {
-  filter: invert(34%) sepia(85%) saturate(3241%) hue-rotate(230deg) brightness(100%) contrast(101%);
+  filter: invert(28%) sepia(82%) saturate(2341%) hue-rotate(232deg) brightness(107%) contrast(106%);
 }
