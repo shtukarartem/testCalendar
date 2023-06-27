@@ -12,13 +12,17 @@ type Props = {
   handleMinusButton: () => void;
 };
 
-export const ViewButtons: React.FC<Props> = ({ isDisabled, handleMinusButton, handlePlusButton }) => (
+export const ViewButtons: React.FC<Props> = ({
+  isDisabled,
+  handleMinusButton,
+  handlePlusButton,
+}) => (
   <div className={styles.wrapper}>
     <IconButton className={styles.addButton} onClick={handlePlusButton}>
       <AddIcon />
     </IconButton>
     <IconButton disabled={isDisabled} className={styles.removeButton} onClick={handleMinusButton}>
-      <RemoveIcon className={classNames({[styles.disabled]: isDisabled} )} />
+      <RemoveIcon className={classNames({ [styles.disabled]: isDisabled })} />
     </IconButton>
   </div>
 );

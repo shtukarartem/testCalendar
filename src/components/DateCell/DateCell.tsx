@@ -13,9 +13,9 @@ type Props = {
 
 export const DateCell: React.FC<Props> = ({ data }) => (
   <>
-      <div className={styles.wrapper}>
-        <div>{handleFirstCharInUpperCase(dayjs(data.date).locale('ru').format('dd'))}</div>
-        <div>{dayjs(data.date).format('DD')}</div>
-      </div>
+    <div className={styles.wrapper}>
+      <div>{handleFirstCharInUpperCase(dayjs(data.date).locale('ru').format('dd'))}</div>
+      <div>{dayjs(data.date).format('DD')}</div>
+    </div>
   </>
 );

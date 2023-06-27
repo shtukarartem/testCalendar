@@ -52,7 +52,7 @@
   font-size: 1.375rem;
   line-height: 1.75rem;
   color: var(--neutral-10);
-   white-space: pre-wrap;
+  white-space: pre-wrap;
 }
 
 .data {
@@ -60,7 +60,6 @@
   flex-direction: column;
   align-items: start;
   padding: 0px;
-
 }
 
 .dataTitle {
