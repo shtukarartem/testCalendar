@@ -65,3 +65,6 @@
 .wrapper :global .dx-scheduler-header-row:nth-child(2n) {
   display: none;
 }
+.wrapper{
+  border-top: 1px solid var(--neutral-80);
+}
