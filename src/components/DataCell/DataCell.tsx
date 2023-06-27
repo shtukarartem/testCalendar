@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import { handleWeekend } from 'src/utils/utils';
+import { handleWeekend } from '../../utils/utils';
 
 import style from './style.module.css';
 
