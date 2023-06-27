@@ -16,6 +16,7 @@ require("core-js/modules/es.symbol.description.js");
 require("core-js/modules/es.object.to-string.js");
 require("core-js/modules/es.number.constructor.js");
 var _classnames = _interopRequireDefault(require("classnames"));
+var _react = _interopRequireDefault(require("react"));
 var _utils = require("src/utils/utils");
 var _styleModule = _interopRequireDefault(require("./style.module.css"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -26,7 +27,7 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 var DataCell = function DataCell(_ref) {
   var data = _ref.data,
     currentView = _ref.currentView;
-  return React.createElement("div", {
+  return _react.default.createElement("div", {
     className: (0, _classnames.default)(_defineProperty({}, _styleModule.default.cell, (0, _utils.handleWeekend)(data.startDate, currentView)))
   });
 };
