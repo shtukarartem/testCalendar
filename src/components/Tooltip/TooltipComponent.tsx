@@ -16,9 +16,7 @@ type Props = {
   openEditModal?: (id: string) => void;
 };
 
-export const TooltipComponent: React.FC<Props> = ({ data, openEditModal, handleClose }) => {
-  console.log(dayjs(data.startDate).diff(data.endDate, 'day'));
-  return (
+export const TooltipComponent: React.FC<Props> = ({ data, openEditModal, handleClose }) => (
     <div className={styles.wrapper}>
       <div className={styles.icons}>
         <IconButton onClick={() => openEditModal?.(data.eventId)}>
@@ -72,4 +70,3 @@ export const TooltipComponent: React.FC<Props> = ({ data, openEditModal, handleC
       </div>
     </div>
   );
-};
