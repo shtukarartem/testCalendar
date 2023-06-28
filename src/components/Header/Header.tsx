@@ -77,7 +77,7 @@ export const Header: React.FC<Props> = ({
         }}
       />
       <SelectComponent
-        sx={{ height: '32px', fontSize: '0.875rem', marginLeft: 'auto', marginRight: '20px' }}
+        sx={{ height: '32px', fontSize: '0.875rem', marginLeft: 'auto', marginRight: '20px', marginTop: '3px'}}
         value={selectViewValue}
         handleChange={handleViewsChange}
         options={changeViewOptions}
