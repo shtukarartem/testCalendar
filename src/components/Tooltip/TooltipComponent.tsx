@@ -16,55 +16,60 @@ type Props = {
   openEditModal?: (id: string) => void;
 };
 
-export const TooltipComponent: React.FC<Props> = ({ data, openEditModal, handleClose }) => (
-  <div className={styles.wrapper}>
-    <div className={styles.icons}>
-      <IconButton onClick={() => openEditModal?.(data.eventId)}>
-        <OpenInNewIcon />
-      </IconButton>
-      <IconButton onClick={handleClose}>
-        <CloseIcon />
-      </IconButton>
+export const TooltipComponent: React.FC<Props> = ({ data, openEditModal, handleClose }) => {
+  console.log(dayjs(data.startDate).diff(data.endDate, 'day'));
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.icons}>
+        <IconButton onClick={() => openEditModal?.(data.eventId)}>
+          <OpenInNewIcon />
+        </IconButton>
+        <IconButton onClick={handleClose}>
+          <CloseIcon />
+        </IconButton>
+      </div>
+      <span className={styles.fio}>{data.client_data.name}</span>
+      <div className={styles.data}>
+        <span className={styles.dataTitle}>Срок бронирования</span>
+        <span className={styles.dateText}>
+          c {dayjs(data.startDate).format('DD.MM.YYYY')} {dayjs(data.startDate).format('HH:mm')} по {' '}
+          {dayjs(data.startDate).diff(data.endDate, 'day')
+            ? dayjs(data.endDate).format('DD.MM.YYYY')
+            : ''} {dayjs(data.endDate).format('HH:mm')}
+        </span>
+      </div>
+      <div className={styles.clientType}>
+        <span className={styles.dataTitle}>Тип клиента</span>
+        <span className={styles.dateText}>{data.client_data.type}</span>
+      </div>
+      <div className={styles.email}>
+        <img src={email} alt="" />
+        {data.client_data.email}
+      </div>
+      <div className={styles.number}>
+        <img src={call} alt="" />
+        {data.client_data.phone}
+      </div>
+      <div className={styles.footer}>
+        <button
+          disabled
+          type="button"
+          onClick={(event: MouseEvent<HTMLButtonElement>) => {
+            event.stopPropagation();
+          }}
+          className={styles.buttonLight}
+        >
+          Отменить бронь
+        </button>
+        <button
+          disabled
+          type="button"
+          onClick={(event: MouseEvent<HTMLButtonElement>) => event.stopPropagation()}
+          className={styles.buttonLight}
+        >
+          Звонить
+        </button>
+      </div>
     </div>
-    <span className={styles.fio}>{data.client_data.name}</span>
-    <div className={styles.data}>
-      <span className={styles.dataTitle}>Срок бронирования</span>
-      <span className={styles.dateText}>
-        {dayjs(data.endDate).format('DD.MM.YYYY')} c {dayjs(data.startDate).format('HH:mm')} по{' '}
-        {dayjs(data.endDate).format('HH:mm')}
-      </span>
-    </div>
-    <div className={styles.clientType}>
-      <span className={styles.dataTitle}>Тип клиента defalt</span>
-      <span className={styles.dateText}>{data.client_data.type}</span>
-    </div>
-    <div className={styles.email}>
-      <img src={email} alt="" />
-      {data.client_data.email}
-    </div>
-    <div className={styles.number}>
-      <img src={call} alt="" />
-      {data.client_data.phone}
-    </div>
-    <div className={styles.footer}>
-      <button
-        disabled
-        type="button"
-        onClick={(event: MouseEvent<HTMLButtonElement>) => {
-          event.stopPropagation();
-        }}
-        className={styles.buttonLight}
-      >
-        Отменить бронь
-      </button>
-      <button
-        disabled
-        type="button"
-        onClick={(event: MouseEvent<HTMLButtonElement>) => event.stopPropagation()}
-        className={styles.buttonLight}
-      >
-        Звонить
-      </button>
-    </div>
-  </div>
-);
+  );
+};

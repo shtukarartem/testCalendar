@@ -464,7 +464,7 @@ export const data: BookingType[] = [
     roomId: '1',
     ownerId: '3',
     startDate: new Date('2023-06-16T19:00:00.000'),
-    endDate: new Date('2023-06-16T22:15:00.000'),
+    endDate: new Date('2023-06-17T22:15:00.000'),
     status: 'Бронь',
     comment: 'test',
     client_data: {
