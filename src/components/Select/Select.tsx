@@ -14,11 +14,10 @@ type Props = {
   handleChange: (value: string) => void;
 };
 
-export const SelectComponent: React.FC<Props> = ({ options, value, sx, label, handleChange }) => (
+export const SelectComponent: React.FC<Props> = ({ options, value, sx, handleChange }) => (
   <Select
     sx={sx}
     value={value}
-    label={label ?? 'test'}
     onChange={(event: SelectChangeEvent<string>) => {
       handleChange(event.target.value);
     }}
