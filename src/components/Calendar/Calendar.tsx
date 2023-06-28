@@ -169,7 +169,6 @@ export const Calendar: React.FC<Props> = ({
         dataCellRender={(data) => <DataCell currentView={currentView.type} data={data} />}
         startDayHour={8}
         endDayHour={21}
-        editing
         onAppointmentUpdating={updateEvent}
         onAppointmentDblClick={(e: AppointmentDblClickEvent) => {
           e.cancel = true;
