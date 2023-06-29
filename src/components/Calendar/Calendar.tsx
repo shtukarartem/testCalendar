@@ -196,7 +196,7 @@ export const Calendar: React.FC<Props> = ({
           useColorAsDefault={true}
         />
         <Resource fieldExpr="roomId" allowMultiple={false} dataSource={rooms} label="Rooms" />
-        <Editing allowDragging={false} allowResizing={false} allowUpdating={false} />
+        <Editing allowDragging={false} allowResizing={false} />
       </Scheduler>
     </>
   );
