@@ -187,7 +187,7 @@ export const Calendar: React.FC<Props> = ({
         // }}
       >
         <View type="timelineMonth" />
-        <Scrolling mode="virtual" />
+        <Scrolling mode="standard" />
         <Resource
           fieldExpr="ownerId"
           allowMultiple={true}
