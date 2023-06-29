@@ -42,6 +42,7 @@
 .wrapper :global .dx-scheduler-appointment-horizontal {
   height: 5rem !important;
   margin-top: -1.625rem;
+  min-width: 1rem;
   border: none;
 }
 
