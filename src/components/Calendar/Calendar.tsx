@@ -163,7 +163,7 @@ export const Calendar: React.FC<Props> = ({
           <DateCell data={itemData} currentView={currentView.type} />
         )}
         dropDownAppointmentComponent={(data) => (
-          <MoreAppointments data={data.data} updateEvent={updateEvent} />
+          <MoreAppointments data={data.data} />
         )}
         groups={groups}
         cellDuration={60}
@@ -180,7 +180,12 @@ export const Calendar: React.FC<Props> = ({
         onAppointmentFormOpening={(e: AppointmentFormOpeningEvent) => {
           // need for cancel default popul creation
           e.cancel = true;
-          openAddingModal?.();
+          console.log('here', e);
+          if (e?.appointmentData?.eventId) {
+            openEditModal?.(e?.appointmentData?.eventId);
+          } else {
+            openAddingModal?.();
+          }
         }}
         resourceCellComponent={(data) => <Room data={data.data.data} />}
         // TODO uncomment later. need for pass action from ServiceForm
