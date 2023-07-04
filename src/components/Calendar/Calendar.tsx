@@ -162,7 +162,9 @@ export const Calendar: React.FC<Props> = ({
         dateCellRender={(itemData: DateCellType) => (
           <DateCell data={itemData} currentView={currentView.type} />
         )}
-        dropDownAppointmentComponent={(data) => <MoreAppointments data={data.data} />}
+        dropDownAppointmentComponent={(data) => (
+          <MoreAppointments data={data.data} updateEvent={updateEvent} />
+        )}
         groups={groups}
         cellDuration={60}
         firstDayOfWeek={1}

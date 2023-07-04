@@ -14,13 +14,14 @@ const statusVariants = {
 
 type Props = {
   data: BookingType;
+  updateEvent?: () => void;
 };
 
-export const MoreAppointments: React.FC<Props> = ({ data }) => {
+export const MoreAppointments: React.FC<Props> = ({ data, updateEvent }) => {
   const { client_data, status, startDate } = data;
   const startTime = dayjs(startDate).format('HH:mm');
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} role="button" onClick={updateEvent}>
       <div className={classNames(styles.point, statusVariants[status])}></div>
       <span>
         {startTime} {client_data.name}
