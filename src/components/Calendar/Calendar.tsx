@@ -162,9 +162,7 @@ export const Calendar: React.FC<Props> = ({
         dateCellRender={(itemData: DateCellType) => (
           <DateCell data={itemData} currentView={currentView.type} />
         )}
-        dropDownAppointmentComponent={(data) => (
-          <MoreAppointments data={data.data} />
-        )}
+        dropDownAppointmentComponent={(data) => <MoreAppointments data={data.data} />}
         groups={groups}
         cellDuration={60}
         firstDayOfWeek={1}
@@ -180,7 +178,6 @@ export const Calendar: React.FC<Props> = ({
         onAppointmentFormOpening={(e: AppointmentFormOpeningEvent) => {
           // need for cancel default popul creation
           e.cancel = true;
-          console.log('here', e);
           if (e?.appointmentData?.eventId) {
             openEditModal?.(e?.appointmentData?.eventId);
           } else {
