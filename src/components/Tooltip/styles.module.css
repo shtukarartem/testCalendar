@@ -3,7 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: 1.5rem;
+	padding: 0.6875rem;
 	gap: 1rem;
 	background-color: var(--white-transp-100);
 }
@@ -13,6 +13,7 @@
 	align-items: center;
 	justify-content: end;
 	width: 100%;
+	margin-bottom: -1rem;
 }
 
 .footer {
@@ -22,6 +23,7 @@
 	align-items: center;
 	padding: 0px;
 	gap: 1rem;
+	width: 100%;
 }
 
 .buttonLight {

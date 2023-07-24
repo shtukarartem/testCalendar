@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import dayjs from 'dayjs';
-import React from 'react';
+import React, { memo } from 'react';
 
 import styles from './styles.module.css';
 
@@ -12,7 +12,7 @@ type Props = {
   currentView: string;
 };
 
-export const DateCell: React.FC<Props> = ({ data, currentView }) => (
+export const DateCell: React.FC<Props> = memo(({ data, currentView }) => (
   <>
     <div
       className={classNames(styles.wrapper, {
@@ -23,4 +23,4 @@ export const DateCell: React.FC<Props> = ({ data, currentView }) => (
       <div>{dayjs(data.date).format('DD')}</div>
     </div>
   </>
-);
+));

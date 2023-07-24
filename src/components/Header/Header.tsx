@@ -1,5 +1,5 @@
 import IconButton from '@mui/material/IconButton/IconButton';
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 
 import styles from './styles.module.css';
 
@@ -25,72 +25,74 @@ type Props = {
   handleSelect: (icon: string) => void;
 };
 
-export const Header: React.FC<Props> = ({
-  isDisabled,
-  selectedPlaceholder,
-  selectViewValue,
-  handleSubtractDate,
-  handleAddDate,
-  handleViewsChange,
-  handleMinusButton,
-  handlePlusButton,
-  handleSelect,
-}) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [views, setViews] = useState<ViewListType[]>(viewList);
+export const Header: React.FC<Props> = memo(
+  ({
+    isDisabled,
+    selectedPlaceholder,
+    selectViewValue,
+    handleSubtractDate,
+    handleAddDate,
+    handleViewsChange,
+    handleMinusButton,
+    handlePlusButton,
+    handleSelect,
+  }) => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [views, setViews] = useState<ViewListType[]>(viewList);
 
-  const handlePinned = (i: number) => {
-    const newState: ViewListType[] = views.map((item, index) => {
-      if (index === i) {
-        return { ...item, isPinned: !item.isPinned };
-      }
-      return item;
-    });
-    setViews(newState);
-  };
-  return (
-    <div className={styles.wrapper}>
-      <RangeButtons handleAddDate={handleAddDate} handleSubtractDate={handleSubtractDate} />
-      <ViewButtons
-        isDisabled={isDisabled}
-        handleMinusButton={handleMinusButton}
-        handlePlusButton={handlePlusButton}
-      />
-      <DateSelector
-        views={views}
-        handlePinned={handlePinned}
-        isOpen={isOpen}
-        selectPlaceholder={selectedPlaceholder}
-        onCancel={() => setIsOpen(false)}
-        handleOpen={() => setIsOpen(true)}
-        handleClose={() => setIsOpen(false)}
-        onSubmit={() => setIsOpen(false)}
-        handleViewClick={(title: string) => {
-          setIsOpen(false);
-          handleSelect(title);
-        }}
-      />
-      <PinnedViews
-        views={views}
-        handleSelect={(title) => {
-          handleSelect(title);
-        }}
-      />
-      <SelectComponent
-        sx={{
-          height: '32px',
-          fontSize: '0.875rem',
-          marginLeft: 'auto',
-          marginRight: '20px',
-          marginTop: '3px',
-        }}
-        value={selectViewValue}
-        handleChange={handleViewsChange}
-        options={changeViewOptions}
-      />
-      <IconButton className={styles.settingsIcon}>
-        <img src={IconSettings} alt="" />
-      </IconButton>
-    </div>
-  );
-};
+    const handlePinned = (i: number) => {
+      const newState: ViewListType[] = views.map((item, index) => {
+        if (index === i) {
+          return { ...item, isPinned: !item.isPinned };
+        }
+        return item;
+      });
+      setViews(newState);
+    };
+    return (
+      <div className={styles.wrapper}>
+        <RangeButtons handleAddDate={handleAddDate} handleSubtractDate={handleSubtractDate} />
+        <ViewButtons
+          isDisabled={isDisabled}
+          handleMinusButton={handleMinusButton}
+          handlePlusButton={handlePlusButton}
+        />
+        <DateSelector
+          views={views}
+          handlePinned={handlePinned}
+          isOpen={isOpen}
+          selectPlaceholder={selectedPlaceholder}
+          onCancel={() => setIsOpen(false)}
+          handleOpen={() => setIsOpen(true)}
+          handleClose={() => setIsOpen(false)}
+          onSubmit={() => setIsOpen(false)}
+          handleViewClick={(title: string) => {
+            setIsOpen(false);
+            handleSelect(title);
+          }}
+        />
+        <PinnedViews
+          views={views}
+          handleSelect={(title) => {
+            handleSelect(title);
+          }}
+        />
+        <SelectComponent
+          sx={{
+            height: '32px',
+            fontSize: '0.875rem',
+            marginLeft: 'auto',
+            marginRight: '20px',
+            marginTop: '3px',
+          }}
+          value={selectViewValue}
+          handleChange={handleViewsChange}
+          options={changeViewOptions}
+        />
+        <IconButton className={styles.settingsIcon}>
+          <img src={IconSettings} alt="" />
+        </IconButton>
+      </div>
+    );
+  }
+);
