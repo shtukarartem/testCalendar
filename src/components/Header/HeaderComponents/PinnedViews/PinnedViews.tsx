@@ -24,7 +24,9 @@ export const PinnedViews: React.FC<Props> = ({ views, handleSelect }) => {
           {item.isPinned && (
             <img
               className={classNames(styles.icon, {
-                [styles.select]: isSelect && selectIcon === item.title,
+                [styles.select]:
+                  (isSelect && selectIcon === item.title) ||
+                  (!isSelect && item.title === 'Сегодня'),
               })}
               onClick={() => {
                 handleClick(item.title);

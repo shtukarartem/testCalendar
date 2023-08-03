@@ -20,6 +20,7 @@ type Props = {
   openEditModal?: (id: string) => void;
   closeModal?: () => void;
   modalUrl?: string;
+  isEmpty?: boolean;
 };
 
 const App: React.FC<Props> = ({
@@ -31,6 +32,7 @@ const App: React.FC<Props> = ({
   openAddingModal,
   openEditModal,
   closeModal,
+  isEmpty,
 }) => {
   useEffect(() => {
     locale('ru');
@@ -42,7 +44,7 @@ const App: React.FC<Props> = ({
           <Calendar
             owners={owners}
             rooms={rooms}
-            events={events}
+            events={isEmpty ? [] : events}
             updateEvent={updateEvent}
             addEvent={addEvent}
             openEditModal={openEditModal}
