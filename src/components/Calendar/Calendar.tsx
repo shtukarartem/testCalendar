@@ -40,6 +40,7 @@ type Props = {
   openEditModal?: (id: string) => void;
   openAddingModal?: () => void;
   closeModal?: () => void;
+  deleteEvent?: (id: string[]) => void;
 };
 
 const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => void) => {
@@ -58,7 +59,7 @@ const handleAppointmentAdding = (e: AppointmentAddingEvent, addEvent?: () => voi
 };
 
 export const Calendar: React.FC<Props> = memo(
-  ({ owners, rooms, events, openEditModal, updateEvent, openAddingModal }) => {
+  ({ owners, rooms, events, openEditModal, updateEvent, openAddingModal, deleteEvent }) => {
     const groups = ['roomId'];
     const [selectedPlaceholder, setSelectedPlaceholder] = useState<string>(
       dayjs().locale('ru').format('DD MMMM')
@@ -146,6 +147,7 @@ export const Calendar: React.FC<Props> = memo(
               data={data.data.appointmentData}
               handleClose={closeTooltip}
               openEditModal={openEditModal}
+              deleteEvent={deleteEvent}
             />
           )}
           appointmentRender={(data) => (
