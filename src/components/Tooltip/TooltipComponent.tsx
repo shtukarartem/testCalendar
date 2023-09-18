@@ -1,6 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { IconButton } from '@mui/material';
+import classNames from 'classnames';
 import dayjs from 'dayjs';
 import React, { MouseEvent } from 'react';
 
@@ -70,7 +71,7 @@ export const TooltipComponent: React.FC<Props> = ({
         disabled
         type="button"
         onClick={(event: MouseEvent<HTMLButtonElement>) => event.stopPropagation()}
-        className={styles.buttonLight}
+        className={classNames(styles.buttonLight, styles.disabled)}
       >
         Звонить
       </button>

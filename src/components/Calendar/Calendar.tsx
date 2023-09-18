@@ -126,7 +126,6 @@ export const Calendar: React.FC<Props> = memo(
           handleSubtractDate={() =>
             setCurrentDate(handleSubtractDate(currentView.type, currentDate) ?? currentDate)
           }
-          //handleViewsChange={(value) => setSelectedView(value)}
           handleViewsChange={(value) => setCurrentView(handldleCheckView(value) ?? currentView)}
           handleSelect={(icon: string) => {
             const data = handleSelectData(icon);
