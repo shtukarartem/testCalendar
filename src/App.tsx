@@ -16,6 +16,7 @@ type Props = {
   events?: BookingType[];
   updateEvent?: () => void;
   addEvent?: () => void;
+  deleteEvent?: (id: string[]) => void;
   openAddingModal?: () => void;
   openEditModal?: (id: string) => void;
   closeModal?: () => void;
@@ -33,6 +34,7 @@ const App: React.FC<Props> = ({
   openEditModal,
   closeModal,
   isEmpty,
+  deleteEvent,
 }) => {
   useEffect(() => {
     locale('ru');
@@ -50,6 +52,7 @@ const App: React.FC<Props> = ({
             openEditModal={openEditModal}
             openAddingModal={openAddingModal}
             closeModal={closeModal}
+            deleteEvent={deleteEvent}
           />
         </MaterialProvider>
       </div>

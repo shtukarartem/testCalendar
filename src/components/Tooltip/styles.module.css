@@ -131,3 +131,13 @@
 .dx-popup-content {
 	max-height: 62.5rem;
 }
+
+.disabled {
+	color: var(--electric-blue-30);
+	cursor: not-allowed;
+}
+
+.disabled:hover {
+	color: var(--electric-blue-30);
+	background-color: var(--white-transp-100);
+}

@@ -1,6 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { IconButton } from '@mui/material';
+import classNames from 'classnames';
 import dayjs from 'dayjs';
 import React, { MouseEvent } from 'react';
 
@@ -14,9 +15,15 @@ type Props = {
   data: BookingType;
   handleClose: (e: MouseEvent<HTMLButtonElement>) => void;
   openEditModal?: (id: string) => void;
+  deleteEvent?: (id: string[]) => void;
 };
 
-export const TooltipComponent: React.FC<Props> = ({ data, openEditModal, handleClose }) => (
+export const TooltipComponent: React.FC<Props> = ({
+  data,
+  openEditModal,
+  handleClose,
+  deleteEvent,
+}) => (
   <div className={styles.wrapper}>
     <div className={styles.icons}>
       <IconButton onClick={() => openEditModal?.(data.eventId)}>
@@ -51,10 +58,10 @@ export const TooltipComponent: React.FC<Props> = ({ data, openEditModal, handleC
     </div>
     <div className={styles.footer}>
       <button
-        disabled
         type="button"
         onClick={(event: MouseEvent<HTMLButtonElement>) => {
           event.stopPropagation();
+          deleteEvent?.([data.eventId]);
         }}
         className={styles.buttonLight}
       >
@@ -64,7 +71,7 @@ export const TooltipComponent: React.FC<Props> = ({ data, openEditModal, handleC
         disabled
         type="button"
         onClick={(event: MouseEvent<HTMLButtonElement>) => event.stopPropagation()}
-        className={styles.buttonLight}
+        className={classNames(styles.buttonLight, styles.disabled)}
       >
         Звонить
       </button>
