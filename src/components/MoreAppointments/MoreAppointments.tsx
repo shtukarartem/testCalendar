@@ -10,6 +10,8 @@ const statusVariants = {
   Оплачен: styles.paid,
   Бронь: styles.booked,
   Просрочен: styles.overdue,
+  Запланировано: styles.paid,
+  Проведено: styles.overdue,
 };
 
 type Props = {

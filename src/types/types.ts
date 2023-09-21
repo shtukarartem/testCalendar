@@ -10,7 +10,7 @@ export type ViewListType = {
   title: string;
   isPinned: boolean;
 };
-export type RentStatusType = 'Оплачен' | 'Бронь' | 'Просрочен';
+export type RentStatusType = 'Оплачен' | 'Бронь' | 'Просрочен' | 'Запланировано' | 'Проведено';
 
 export type BookingType = {
   eventId: string;
