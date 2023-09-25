@@ -13,8 +13,11 @@ type Props = {
 
 const statusVariants = {
   Оплачен: styles.paid,
-  Бронь: styles.booked,
+  // Бронь: styles.booked,
   Просрочен: styles.overdue,
+  Запланировано: styles.paid,
+  Бронь: styles.booked,
+  Проведено: styles.overdue,
 };
 
 export const Appointment: React.FC<Props> = ({ data, currentDate }) => {
